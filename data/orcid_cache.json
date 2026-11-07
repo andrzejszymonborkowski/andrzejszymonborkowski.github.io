@@ -1504,7 +1504,9 @@
   "venue": "MATERIAŁY BUDOWLANE",
   "doi": "10.15199/33.2022.06.11",
   "url": "http://dx.doi.org/10.15199/33.2022.06.11",
-  "authors": [],
+  "authors": [
+   "Andrzej Borkowski"
+  ],
   "bibtex": "@article{Borkowski_2022,\tdoi = {10.15199/33.2022.06.11},\turl = {https://doi.org/10.15199%2F33.2022.06.11},\tyear = 2022,\tmonth = {jun},\tpublisher = {Wydawnictwo {SIGMA}-{NOT}, sp. z.o.o.},\tvolume = {1},\tnumber = {6},\tpages = {68--72},\tauthor = {Andrzej Borkowski},\ttitle = {Zastosowanie technologii {BIM} w istniej{\\k{a}}cych obiektach na przyk{\\l}adzie budynku biurowego},\tjournal = {{MATERIA}{\\L}Y {BUDOWLANE}}}",
   "source": "ORCID"
  },
@@ -1551,7 +1553,7 @@
   "doi": "10.5604/01.3001.0013.6405",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon}, title= {Model BIM z chmury punktów}, year= {2019}, journal= {Builder }, volume= {270}, number= {01}, pages= {42-44}, doi= {10.5604/01.3001.0013.6405}, language= {pl}"
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{BorkowskiModel2019, author= {Borkowski, Andrzej Szymon}, title= {Model BIM z chmury punktów}, year= {2019}, journal= {Builder }, volume= {270}, number= {01}, pages= {42-44}, doi= {10.5604/01.3001.0013.6405}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -1565,8 +1567,8 @@
   "doi": "10.1007/s12303-017-0005-9",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon",
-   "Kwiatkowska-Malina, Jolanta}, title= {Geostatistical modelling as an assessment tool of soil pollution based on deposition from atmospheric air}, year= {2017}, journal= {Geosciences Journal}, volume= {21}, number= {4}, pages= {645-653}, doi= {10.1007/s12303-017-0005-9}, language= {en}"
+   "Andrzej Szymon Borkowski",
+   "Jolanta Kwiatkowska-Malina"
   ],
   "bibtex": "@article{BorkowskiGeostatistical2017, author= {Borkowski, Andrzej Szymon and Kwiatkowska-Malina, Jolanta}, title= {Geostatistical modelling as an assessment tool of soil pollution based on deposition from atmospheric air}, year= {2017}, journal= {Geosciences Journal}, volume= {21}, number= {4}, pages= {645-653}, doi= {10.1007/s12303-017-0005-9}, language= {en}}\n\n",
   "source": "ORCID"
@@ -1580,12 +1582,8 @@
   "doi": "10.5593/sgem2019/2.2/s09.025",
   "url": "",
   "authors": [
-   "Sajnóg, Natalia",
-   "Borkowski, Andrzej Szymon}, title= {Luxury real estate market in Poland}, year= {2019}, series= {International Multidisciplinary Scientific GeoConference & EXPO SGEM}, volume= {19}, number= {2.2}, pages= {197-205}, doi= {10.5593/sgem2019/2.2/S09.025}, booktitle= {Informatics, Geoinformatics",
-   "Remote Sensing. Issue 2.2, Conference Proceedings, Volume 19. Geodesy",
-   "Mine Surveying, Photogrammetry",
-   "Remote Sensing, Cartography",
-   "GIS}, editor= {}, language= {en}"
+   "Natalia Sajnóg",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@inproceedings{SajnogLuxury2019, author= {Sajnóg, Natalia and Borkowski, Andrzej Szymon}, title= {Luxury real estate market in Poland}, year= {2019}, series= {International Multidisciplinary Scientific GeoConference & EXPO SGEM}, volume= {19}, number= {2.2}, pages= {197-205}, doi= {10.5593/sgem2019/2.2/S09.025}, booktitle= {Informatics, Geoinformatics and Remote Sensing. Issue 2.2, Conference Proceedings, Volume 19. Geodesy and Mine Surveying, Photogrammetry and Remote Sensing, Cartography and GIS}, editor= {}, language= {en}}\n\n",
   "source": "ORCID"
@@ -1599,8 +1597,8 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Kwiatkowska-Malina, Jolanta",
-   "Borkowski, Andrzej Szymon}, title= {Zastosowanie technik informacyjnych w kształceniu na GP - budowa modeli przestrzennych 3D ze szczególnym uwzględnieniem analizy oddziaływania przedsięwzięć na środowisko przyrodnicze}, publisher= {Oficyna Wydawnicza Politechniki Warszawskiej}, year= {2016}, series= {Monografie Naukowe / Wydział Geodezji i Kartografii Politechniki Warszawskiej. Gospodarka Przestrzenna }, volume= {XI}, pages= {44-54}, booktitle= {Projektowanie urbanistyczne w procesie kształcenia na kierunku studiów Gospodarka Przestrzenna}, editor= {Chmielewski, Jan}, language= {pl}"
+   "Jolanta Kwiatkowska-Malina",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@incollection{Kwiatkowska-MalinaZastosowanie2016, author= {Kwiatkowska-Malina, Jolanta and Borkowski, Andrzej Szymon}, title= {Zastosowanie technik informacyjnych w kształceniu na GP - budowa modeli przestrzennych 3D ze szczególnym uwzględnieniem analizy oddziaływania przedsięwzięć na środowisko przyrodnicze}, publisher= {Oficyna Wydawnicza Politechniki Warszawskiej}, year= {2016}, series= {Monografie Naukowe / Wydział Geodezji i Kartografii Politechniki Warszawskiej. Gospodarka Przestrzenna }, volume= {XI}, pages= {44-54}, booktitle= {Projektowanie urbanistyczne w procesie kształcenia na kierunku studiów Gospodarka Przestrzenna}, editor= {Chmielewski, Jan}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -1614,8 +1612,8 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Węgierek, P.",
-   "Borkowski, Andrzej Szymon}, title= {AUTODESK AutoCAD - lispy, makrooperacje, zmienne systemowe}, publisher= {Ośrodek Kształcenia Zawodowego ELPRO Sp. z o.o.}, address= {Lublin}, year= {2016}, language= {pl}"
+   "P. Węgierek",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@book{WegierekAUTODESK2016, author= {Węgierek, P. and Borkowski, Andrzej Szymon}, title= {AUTODESK AutoCAD - lispy, makrooperacje, zmienne systemowe}, publisher= {Ośrodek Kształcenia Zawodowego ELPRO Sp. z o.o.}, address= {Lublin}, year= {2016}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -1744,7 +1742,10 @@
   "venue": "AIMS Geosciences",
   "doi": "10.3934/geosci.2020009",
   "url": "http://dx.doi.org/10.3934/geosci.2020009",
-  "authors": [],
+  "authors": [
+   "Jolanta Kwiatkowska-Malina",
+   "and Andrzej Szymon Borkowski"
+  ],
   "bibtex": "@article{Kwiatkowska_Malina_2020,\tdoi = {10.3934/geosci.2020009},\turl = {https://doi.org/10.3934%2Fgeosci.2020009},\tyear = 2020,\tpublisher = {American Institute of Mathematical Sciences ({AIMS})},\tvolume = {6},\tnumber = {2},\tpages = {135--148},\tauthor = {Jolanta Kwiatkowska-Malina and   and Andrzej Szymon Borkowski},\ttitle = {Geostatistical modelling of soil contamination with arsenic, cadmium, lead, and nickel: the Silesian voivodeship, Poland case study},\tjournal = {{AIMS} Geosciences}}",
   "source": "ORCID"
  },
@@ -1772,7 +1773,7 @@
   "doi": "10.17512/znb.2020.1.01",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon}, title= {SYMULACJE EWAKUACJI W MODELU BIM}, year= {2020}, journal= {Zeszyty Naukowe Politechniki Częstochowskiej. Budownictwo.}, volume= {176}, number= {26}, pages= {7-11}, doi= {10.17512/znb.2020.1.01}, language= {pl}"
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{BorkowskiSYMULACJE2020, author= {Borkowski, Andrzej Szymon}, title= {SYMULACJE EWAKUACJI W MODELU BIM}, year= {2020}, journal= {Zeszyty Naukowe Politechniki Częstochowskiej. Budownictwo.}, volume= {176}, number= {26}, pages= {7-11}, doi= {10.17512/znb.2020.1.01}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -1786,7 +1787,7 @@
   "doi": "10.15199/33.2017.08.59",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon}, title= {Model analityczny w technologii BIM}, year= {2017}, journal= {Materiały Budowlane}, number= {540}, pages= {206-208}, doi= {10.15199/33.2017.08.59}, language= {pl}"
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{BorkowskiModel2017, author= {Borkowski, Andrzej Szymon}, title= {Model analityczny w technologii BIM}, year= {2017}, journal= {Materiały Budowlane}, number= {540}, pages= {206-208}, doi= {10.15199/33.2017.08.59}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -1800,7 +1801,7 @@
   "doi": "10.24358/bud-arcg_17_163_05",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon}, title= {Importowanie mapy zasadniczej do modelu BIM}, year= {2017}, journal= {Budownictwo i Architektura}, number= {16 (3)}, pages= {45-51}, doi= {10.24358/Bud-Arcg_17_163_05}, language= {pl}"
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{BorkowskiImportowanie2017, author= {Borkowski, Andrzej Szymon}, title= {Importowanie mapy zasadniczej do modelu BIM}, year= {2017}, journal= {Budownictwo i Architektura}, number= {16 (3)}, pages= {45-51}, doi= {10.24358/Bud-Arcg_17_163_05}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -1814,9 +1815,9 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Kwiatkowska-Malina, Jolanta",
-   "Bielska, Anna",
-   "Borkowski, Andrzej Szymon}, title= {Use of data of the geostatistics portal in sustainable rural land development: two case studies in Poland}, year= {2016}, journal= {Fresenius Environmental Bulletin}, volume= {25}, number= {3}, pages= {775-782}, language= {en}"
+   "Jolanta Kwiatkowska-Malina",
+   "Anna Bielska",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{Kwiatkowska-MalinaUse2016, author= {Kwiatkowska-Malina, Jolanta and Bielska, Anna and Borkowski, Andrzej Szymon}, title= {Use of data of the geostatistics portal in sustainable rural land development: two case studies in Poland}, year= {2016}, journal= {Fresenius Environmental Bulletin}, volume= {25}, number= {3}, pages= {775-782}, language= {en}}\n\n",
   "source": "ORCID"
@@ -1830,10 +1831,8 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Kwiatkowska-Malina, Jolanta",
-   "Borkowski, Andrzej Szymon}, title= {Analysis of atmospheric air pollution deposition to soil environment: The Masovian Voivodeship case study}, publisher= {International Multidisciplinary Scientific GeoConference SGEM}, year= {2015}, series= {International Multidisciplinary Scientific GeoConference & EXPO SGEM}, volume= {1}, pages= {451-461}, booktitle= {Informatics, Geoinformatics",
-   "Remote Sensing. Conference Proceedings V. I, Informatics, Geoinformatics, Photogrametry",
-   "Remote Sensing}, editor= {}, language= {en}"
+   "Jolanta Kwiatkowska-Malina",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@inproceedings{Kwiatkowska-MalinaAnalysis2015, author= {Kwiatkowska-Malina, Jolanta and Borkowski, Andrzej Szymon}, title= {Analysis of atmospheric air pollution deposition to soil environment: The Masovian Voivodeship case study}, publisher= {International Multidisciplinary Scientific GeoConference SGEM}, year= {2015}, series= {International Multidisciplinary Scientific GeoConference & EXPO SGEM}, volume= {1}, pages= {451-461}, booktitle= {Informatics, Geoinformatics and Remote Sensing. Conference Proceedings V. I, Informatics, Geoinformatics, Photogrametry and Remote Sensing}, editor= {}, language= {en}}\n\n",
   "source": "ORCID"
@@ -1847,9 +1846,9 @@
   "doi": "10.2478/ssa-2019-0006",
   "url": "",
   "authors": [
-   "Kwiatkowska-Malina, Jolanta",
-   "Bielska, Anna",
-   "Borkowski, Andrzej Szymon}, title= {Soil maps at a scale of 1:5000 as a source of soil databases taking soil variability into consideration: a case study from Czermin commune, S Poland}, year= {2019}, journal= {Soil Science Annual}, volume= {70}, number= {1}, pages= {44-53}, doi= {10.2478/ssa-2019-0006}, language= {en}"
+   "Jolanta Kwiatkowska-Malina",
+   "Anna Bielska",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{Kwiatkowska-MalinaSoil2019, author= {Kwiatkowska-Malina, Jolanta and Bielska, Anna and Borkowski, Andrzej Szymon}, title= {Soil maps at a scale of 1:5000 as a source of soil databases taking soil variability into consideration: a case study from Czermin commune, S Poland}, year= {2019}, journal= {Soil Science Annual}, volume= {70}, number= {1}, pages= {44-53}, doi= {10.2478/ssa-2019-0006}, language= {en}}\n\n",
   "source": "ORCID"
@@ -1863,7 +1862,7 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon}, title= {O przygotowaniu detali rysunkowych za pomocą modelu BIM i niezależnie od niego}, year= {2018}, journal= {Inżynieria i Budownictwo}, number= {1}, pages= {33-34}, language= {pl}"
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{BorkowskiO2018, author= {Borkowski, Andrzej Szymon}, title= {O przygotowaniu detali rysunkowych za pomocą modelu BIM i niezależnie od niego}, year= {2018}, journal= {Inżynieria i Budownictwo}, number= {1}, pages= {33-34}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -1877,10 +1876,9 @@
   "doi": "10.5593/sgem2017/32/s13.088",
   "url": "",
   "authors": [
-   "Kwiatkowska-Malina, Jolanta",
-   "Bielska, Anna",
-   "Borkowski, Andrzej Szymon}, title= {The use of available data for the assessment of the spatial variability of soil properties in Poland}, year= {2017}, series= {International Multidisciplinary Scientific GeoConference & EXPO SGEM}, volume= {17}, number= {32}, pages= {679-686}, doi= {10.5593/sgem2017/32/S13.088}, booktitle= {Water Resources. Forest, Marine",
-   "Ocean Ecosystems. Issue 32. Conference Proceedings , Volume 17}, editor= {}, language= {en}"
+   "Jolanta Kwiatkowska-Malina",
+   "Anna Bielska",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@inproceedings{Kwiatkowska-MalinaThe2017, author= {Kwiatkowska-Malina, Jolanta and Bielska, Anna and Borkowski, Andrzej Szymon}, title= {The use of available data for the assessment of the spatial variability of soil properties in Poland}, year= {2017}, series= {International Multidisciplinary Scientific GeoConference & EXPO SGEM}, volume= {17}, number= {32}, pages= {679-686}, doi= {10.5593/sgem2017/32/S13.088}, booktitle= {Water Resources. Forest, Marine and Ocean Ecosystems. Issue 32. Conference Proceedings , Volume 17}, editor= {}, language= {en}}\n\n",
   "source": "ORCID"
@@ -1894,7 +1892,7 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon}, title= {Programowanie stropów w BIM}, year= {2018}, journal= {Builder}, number= {118}, pages= {70-73}, language= {pl}"
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{BorkowskiProgramowanie2018, author= {Borkowski, Andrzej Szymon}, title= {Programowanie stropów w BIM}, year= {2018}, journal= {Builder}, number= {118}, pages= {70-73}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -1908,9 +1906,7 @@
   "doi": "10.32474/tceia.2019.03.000164",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon}, title= {File Hygiene",
-   "BIM Models Restrictions}, year= {2019}, journal= {Trends in Civil Engineering",
-   "its Architecture}, volume= {3}, number= {3}, pages= {430-435}, doi= {10.32474/TCEIA.2019.03.000164}, language= {en}"
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{BorkowskiFile2019, author= {Borkowski, Andrzej Szymon}, title= {File Hygiene and BIM Models Restrictions}, year= {2019}, journal= {Trends in Civil Engineering and its Architecture}, volume= {3}, number= {3}, pages= {430-435}, doi= {10.32474/TCEIA.2019.03.000164}, language= {en}}\n\n",
   "source": "ORCID"
@@ -1924,7 +1920,7 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon}, title= {Projektowanie instalacji mechanicznych z wykorzystaniem technologii BIM}, year= {2017}, journal= {Rynek Instalacyjny}, number= {12}, pages= {38-40}, language= {pl}"
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@article{BorkowskiProjektowanie2017, author= {Borkowski, Andrzej Szymon}, title= {Projektowanie instalacji mechanicznych z wykorzystaniem technologii BIM}, year= {2017}, journal= {Rynek Instalacyjny}, number= {12}, pages= {38-40}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -2249,8 +2245,8 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Borkowski, Andrzej Szymon",
-   "Węgierek, P.}, title= {Revit Architecture. Podstawy projektowania (instrukcja oprogramowania) }, publisher= {Ośrodek Kształcenia Zawodowego ELPRO Sp. z o.o.}, address= {ul. Stefczyka 32, 20-151 Lublin}, year= {2015}, language= {pl}"
+   "Andrzej Szymon Borkowski",
+   "P. Węgierek"
   ],
   "bibtex": "@book{BorkowskiRevit2015, author= {Borkowski, Andrzej Szymon and Węgierek, P.}, title= {Revit Architecture. Podstawy projektowania (instrukcja oprogramowania) }, publisher= {Ośrodek Kształcenia Zawodowego ELPRO Sp. z o.o.}, address= {ul. Stefczyka 32, 20-151 Lublin}, year= {2015}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -2264,11 +2260,10 @@
   "doi": "10.5593/sgem2014/b32/s13.037",
   "url": "",
   "authors": [
-   "Delnicki, Maciej",
-   "Chmielewski, Jan Maciej",
-   "Kwiatkowska-Malina, Jolanta",
-   "Borkowski, Andrzej Szymon}, title= {The potential water erosion hazard analysis: The Kielce case study }, publisher= {International Multidisciplinary Scientific GeoConference SGEM}, year= {2014}, series= {International Multidisciplinary Scientific GeoConference & EXPO SGEM}, volume= {II}, pages= {273-280}, doi= {10.5593/SGEM2014/B32/S13.037}, booktitle= {Soils Forest Ecosystems Marine",
-   "Ocean Ecosystems. Conference Proceedings}, editor= {}, language= {en}"
+   "Maciej Delnicki",
+   "Jan Maciej Chmielewski",
+   "Jolanta Kwiatkowska-Malina",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@inproceedings{DelnickiThe2014, author= {Delnicki, Maciej and Chmielewski, Jan Maciej and Kwiatkowska-Malina, Jolanta and Borkowski, Andrzej Szymon}, title= {The potential water erosion hazard analysis: The Kielce case study }, publisher= {International Multidisciplinary Scientific GeoConference SGEM}, year= {2014}, series= {International Multidisciplinary Scientific GeoConference & EXPO SGEM}, volume= {II}, pages= {273-280}, doi= {10.5593/SGEM2014/B32/S13.037}, booktitle= {Soils Forest Ecosystems Marine and Ocean Ecosystems. Conference Proceedings}, editor= {}, language= {en}}\n\n",
   "source": "ORCID"
@@ -2311,8 +2306,8 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Kwiatkowska-Malina, Jolanta",
-   "Borkowski, Andrzej Szymon}, title= {Wykorzystanie metod geostatystycznych w badaniu zanieczyszczeń powietrza pod kątem oceny stanu gleb}, publisher= {Polskie Zrzeszenie Inżynierów i Techników Sanitarnych Oddział Wielkopolski}, year= {2014}, pages= {245-254}, booktitle= {Remediacja, rekultywacja i rewitalizacja}, editor= {Malina, G.}, language= {pl}"
+   "Jolanta Kwiatkowska-Malina",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@incollection{Kwiatkowska-MalinaWykorzystanie2014, author= {Kwiatkowska-Malina, Jolanta and Borkowski, Andrzej Szymon}, title= {Wykorzystanie metod geostatystycznych w badaniu zanieczyszczeń powietrza pod kątem oceny stanu gleb}, publisher= {Polskie Zrzeszenie Inżynierów i Techników Sanitarnych Oddział Wielkopolski}, year= {2014}, pages= {245-254}, booktitle= {Remediacja, rekultywacja i rewitalizacja}, editor= {Malina, G.}, language= {pl}}\n\n",
   "source": "ORCID"
@@ -2326,8 +2321,8 @@
   "doi": "",
   "url": "",
   "authors": [
-   "Kwiatkowska-Malina, Jolanta",
-   "Borkowski, Andrzej Szymon}, title= {Analiza stanu wybranych zanieczyszczeń powietrza atmosferycznego na terenie Polski}, publisher= {Oficyna Wydawnicza Politechniki Warszawskiej}, year= {2014}, series= {Monografie Naukowe / Wydział Geodezji i Kartografii Politechniki Warszawskiej. Gospodarka Przestrzenna }, volume= {V}, pages= {94-106}, booktitle= {Współczesne uwarunkowania gospodarowania przestrzenią - szanse i zagrożenia dla zrównoważonego rozwoju. Organizacja gospodarowania przestrzenią}, editor= {Maciejewska, Alina}, language= {pl}"
+   "Jolanta Kwiatkowska-Malina",
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": "@incollection{Kwiatkowska-MalinaAnaliza2014, author= {Kwiatkowska-Malina, Jolanta and Borkowski, Andrzej Szymon}, title= {Analiza stanu wybranych zanieczyszczeń powietrza atmosferycznego na terenie Polski}, publisher= {Oficyna Wydawnicza Politechniki Warszawskiej}, year= {2014}, series= {Monografie Naukowe / Wydział Geodezji i Kartografii Politechniki Warszawskiej. Gospodarka Przestrzenna }, volume= {V}, pages= {94-106}, booktitle= {Współczesne uwarunkowania gospodarowania przestrzenią - szanse i zagrożenia dla zrównoważonego rozwoju. Organizacja gospodarowania przestrzenią}, editor= {Maciejewska, Alina}, language= {pl}}\n\n",
   "source": "ORCID"
