@@ -353,7 +353,8 @@ I18N = {
                lvl_any="BSc / MSc", lvl_phd="PhD", lvl_msc="MSc", lvl_beng="BSc",
                network="Collaboration network", coauthors="co-authors", coauth1="Co-author",
                net_hint="drag, zoom with the mouse wheel, click a person to see joint publications",
-               joint="joint publications", all_pubs="publications"),
+               joint="joint publications", all_pubs="publications",
+               net_hint_touch="tap a person to highlight, tap again to see joint publications"),
     "pl": dict(home="Strona główna", pubs="Publikacje", students="Studenci", projects="Projekty",
                service="Działalność", forstud="Dla studentów", interests="Zainteresowania badawcze", updated="Aktualizacja",
                search="Szukaj w tytułach, autorach, czasopismach…", all="Wszystkie typy",
@@ -371,7 +372,8 @@ I18N = {
                lvl_any="inż. / mgr", lvl_phd="doktorat", lvl_msc="mgr", lvl_beng="inż.",
                network="Sieć współpracy", coauthors="współautorów", coauth1="Współautor",
                net_hint="przeciągaj, przybliżaj kółkiem myszy, kliknij osobę, aby zobaczyć wspólne publikacje",
-               joint="wspólnych publikacji", all_pubs="publikacji"),
+               joint="wspólnych publikacji", all_pubs="publikacji",
+               net_hint_touch="dotknij osoby, aby ją podświetlić, dotknij ponownie, aby zobaczyć wspólne publikacje"),
 }
 LEVEL_NAMES = {"en": {"phd": "Doctoral candidates", "msc": "Master's theses", "beng": "Engineering theses", "intern": "Interns"},
                "pl": {"phd": "Doktoranci", "msc": "Prace magisterskie", "beng": "Prace inżynierskie", "intern": "Stażyści"}}
@@ -520,8 +522,10 @@ nav a.lang:hover{background:var(--white);color:var(--navy)}
 .cta.gold:hover{background:var(--white)}
 /* --- sieć współautorów --- */
 .net-sub{color:var(--muted);margin:-8px 0 14px;font-size:.95rem}
+.net-sub .touch{display:none}
+@media (hover:none){.net-sub .mouse{display:none}.net-sub .touch{display:inline}}
 .netbox{position:relative;background:var(--navy);border-radius:8px;box-shadow:var(--shadow);overflow:hidden;height:520px;border-top:4px solid var(--gold)}
-#net{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+#net{width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
 #net.dragging{cursor:grabbing}
 #net line{stroke:rgba(24,160,214,.35)}
 #net line.hl{stroke:rgba(232,168,56,.9)}
@@ -615,7 +619,8 @@ JS = """
   n.c=document.createElementNS(NS,'circle');n.c.setAttribute('r',n.r);
   n.c.setAttribute('fill',n.me?'#E8A838':n.st?'#18A0D6':'#0C5C8F');g.appendChild(n.c);
   n.t=document.createElementNS(NS,'text');n.t.textContent=n.me?'':n.name;
-  if(n.n>=2||n.st)n.t.classList.add('big');else n.t.style.opacity=0;
+  const minN=W<600?3:2;
+  if(n.n>=minN||n.st)n.t.classList.add('big');else n.t.style.opacity=0;
   g.appendChild(n.t);
  });
  let alpha=1,raf=null;
@@ -631,7 +636,15 @@ JS = """
   nodes.forEach(n=>{n.vx+=(W/2-n.x)*.004*k;n.vy+=(H/2-n.y)*.004*k;
    if(n.fx||n.drag){n.vx=n.vy=0;return;}n.vx*=.6;n.vy*=.6;n.x+=n.vx;n.y+=n.vy;});
   draw();alpha*=.985;
+  if(!userView)fit();
   raf=alpha>.02?requestAnimationFrame(tick):null;
+ }
+ let userView=false;
+ function fit(){   // dopasuj cały graf do okna (ważne na telefonie)
+  let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+  nodes.forEach(n=>{x0=Math.min(x0,n.x-n.r);y0=Math.min(y0,n.y-n.r);x1=Math.max(x1,n.x+n.r+(n.t.style.opacity==='0'?0:70));y1=Math.max(y1,n.y+n.r);});
+  const pad=24,bw=x1-x0+2*pad,bh=y1-y0+2*pad+30;
+  sc=Math.min(1,W/bw,H/bh);tx=(W-(x0+x1)*sc)/2;ty=(H-30-(y0+y1)*sc)/2;apply();
  }
  function draw(){
   links.forEach(l=>{l.el.setAttribute('x1',l.s.x);l.el.setAttribute('y1',l.s.y);l.el.setAttribute('x2',l.t.x);l.el.setAttribute('y2',l.t.y);});
@@ -641,16 +654,26 @@ JS = """
  // zoom / pan
  let sc=1,tx=0,ty=0;const apply=()=>g.setAttribute('transform',`translate(${tx},${ty}) scale(${sc})`);
  function pt(e){const r=svg.getBoundingClientRect();return{x:(e.clientX-r.left-tx)/sc,y:(e.clientY-r.top-ty)/sc,sx:e.clientX-r.left,sy:e.clientY-r.top};}
- svg.addEventListener('wheel',e=>{e.preventDefault();const p=pt(e),f=e.deltaY<0?1.12:1/1.12;const ns=Math.min(4,Math.max(.4,sc*f));
+ svg.addEventListener('wheel',e=>{e.preventDefault();userView=true;const p=pt(e),f=e.deltaY<0?1.12:1/1.12;const ns=Math.min(4,Math.max(.4,sc*f));
   tx=p.sx-p.x*ns;ty=p.sy-p.y*ns;sc=ns;apply();},{passive:false});
  let drag=null,pan=null,moved=false;
- svg.addEventListener('pointerdown',e=>{moved=false;const n=nodes.find(n=>n.c===e.target);svg.setPointerCapture(e.pointerId);svg.classList.add('dragging');
+ let focused=null;
+ svg.addEventListener('pointerdown',e=>{moved=false;const n=nodes.find(n=>n.c===e.target);
+  if(e.pointerType==='touch'){if(n){drag=n;}return;}   // dotyk: tło przewija stronę
+  svg.setPointerCapture(e.pointerId);svg.classList.add('dragging');
   if(n){drag=n;n.drag=true;}else{const p=pt(e);pan={x:p.sx-tx,y:p.sy-ty};}});
+ svg.addEventListener('pointercancel',()=>{if(drag)drag.drag=false;drag=null;pan=null;svg.classList.remove('dragging');});
  svg.addEventListener('pointermove',e=>{const p=pt(e);
+  if(e.pointerType==='touch')return;
   if(drag){moved=true;drag.x=p.x;drag.y=p.y;heat(.3);draw();}
-  else if(pan){moved=true;tx=p.sx-pan.x;ty=p.sy-pan.y;apply();}});
+  else if(pan){moved=true;userView=true;tx=p.sx-pan.x;ty=p.sy-pan.y;apply();}});
  svg.addEventListener('pointerup',e=>{svg.classList.remove('dragging');
-  if(drag){drag.drag=false;if(!moved&&!drag.me){const last=drag.name.split(' ').pop();location.href='publications.html#q='+encodeURIComponent(last);}}
+  if(drag){drag.drag=false;
+   if(!moved){
+    if(e.pointerType==='touch'&&focused!==drag){focused=drag;focus(drag);placeTip(drag);}
+    else if(!drag.me){const last=drag.name.split(' ').pop();location.href='publications.html#q='+encodeURIComponent(last);}
+   }}
+  else if(e.pointerType==='touch'){focused=null;blur();}
   drag=null;pan=null;});
  // podświetlenie i dymek
  function focus(n){
@@ -659,12 +682,15 @@ JS = """
   links.forEach(l=>{const on=l.s===n||l.t===n;l.el.classList.toggle('hl',on);l.el.classList.toggle('dim',!on);});
   tip.innerHTML='<b>'+n.name+'</b>'+n.n+' '+(n.me?box.dataset.all:box.dataset.joint);tip.style.opacity=1;
  }
- function blur(){nodes.forEach(m=>{m.c.classList.remove('dim');m.t.classList.remove('dim');if(!(m.n>=2||m.st))m.t.style.opacity=0;});
+ function blur(){nodes.forEach(m=>{m.c.classList.remove('dim');m.t.classList.remove('dim');if(!m.t.classList.contains('big'))m.t.style.opacity=0;});
   links.forEach(l=>l.el.classList.remove('hl','dim'));tip.style.opacity=0;}
- nodes.forEach(n=>{n.c.addEventListener('pointerenter',()=>focus(n));n.c.addEventListener('pointerleave',blur);});
- svg.addEventListener('pointermove',e=>{const r=box.getBoundingClientRect();let x=e.clientX-r.left+14,y=e.clientY-r.top+14;
+ nodes.forEach(n=>{n.c.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch')focus(n);});
+  n.c.addEventListener('pointerleave',e=>{if(e.pointerType!=='touch')blur();});});
+ function placeTip(n){const x=n.x*sc+tx,y=n.y*sc+ty;let lx=x+n.r+10;if(lx>box.clientWidth-210)lx=x-220;
+  tip.style.left=Math.max(6,lx)+'px';tip.style.top=Math.max(6,y-20)+'px';}
+ svg.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const r=box.getBoundingClientRect();let x=e.clientX-r.left+14,y=e.clientY-r.top+14;
   if(x>r.width-200)x-=220;tip.style.left=x+'px';tip.style.top=y+'px';});
- box.querySelector('.net-reset').addEventListener('click',()=>{sc=1;tx=0;ty=0;apply();heat(.6);});
+ box.querySelector('.net-reset').addEventListener('click',()=>{userView=false;heat(.6);});
  window.addEventListener('resize',()=>{W=box.clientWidth;H=box.clientHeight;me.x=W/2;me.y=H/2;heat(.3);});
  // startuj symulację, gdy sieć pojawi się na ekranie
  draw();
@@ -844,6 +870,10 @@ def make_og_image(cfg, path):
     return True
 
 
+import hashlib
+ASSET_V = ""  # ustawiane w build() – skrót treści CSS/JS, wymusza pobranie nowej wersji przez przeglądarki
+
+
 # ----------------------------------------------------------------- sieć współautorów
 def person_key(name):
     last, initials = _split(name)
@@ -924,13 +954,13 @@ def page(ctx, active, title, body, band=""):
 <title>{esc(title)} – {esc(cfg['name'])}</title>
 <meta name="description" content="{esc(desc)}">
 {og}
-<link rel="stylesheet" href="{base}style.css"></head><body>
+<link rel="stylesheet" href="{base}style.css?v={ASSET_V}"></head><body>
 <header class="site"><div class="wrap"><a class="brand" href="index.html">{esc(cfg['name'])}</a><nav>{nav}</nav></div></header>
 {band}
 <main><div class="wrap">{body}</div></main>
 <footer><div class="wrap"><span>© {date.today().year} {esc(cfg['name'])} · {esc(tr(cfg, 'affiliation', lang))}</span><span>{L['updated']}: {date.today().isoformat()}</span></div></footer>
 {cite_modal}
-<script src="{base}site.js"></script></body></html>"""
+<script src="{base}site.js?v={ASSET_V}"></script></body></html>"""
 
 
 def small_band(title, sub=""):
@@ -1035,7 +1065,7 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
         gj = json.dumps(g, ensure_ascii=False).replace("</", "<\\/")
         n_co = len(g["nodes"]) - 1
         net_html = f"""<h2>{L['network']}</h2>
-<p class="net-sub">{n_co} {L['coauthors']} · {L['net_hint']}</p>
+<p class="net-sub">{n_co} {L['coauthors']} · <span class="mouse">{L['net_hint']}</span><span class="touch">{L['net_hint_touch']}</span></p>
 <div class="netbox" id="netbox" data-joint="{L['joint']}" data-all="{L['all_pubs']}"><svg id="net" role="img" aria-label="{L['network']}"></svg>
 <div class="net-tip" id="nettip"></div>
 <div class="net-legend"><span><i class="me"></i>{esc(cfg['name'])}</span><span><i class="st"></i>{L['phd']}</span><span><i></i>{L['coauth1']}</span></div>
@@ -1160,6 +1190,8 @@ def build(demo=False, offline=False):
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
+    global ASSET_V
+    ASSET_V = hashlib.md5((CSS + JS).encode()).hexdigest()[:8]
     (OUT / "style.css").write_text(CSS, encoding="utf-8")
     (OUT / "site.js").write_text(JS, encoding="utf-8")
     if (ROOT / "assets").exists():
