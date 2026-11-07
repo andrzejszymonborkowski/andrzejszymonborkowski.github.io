@@ -98,6 +98,29 @@ def _v(obj, *keys):
     return obj
 
 
+def bib_authors(bib):
+    """Autorzy z pola author w BibTeX (także zapisanego w jednej linii)."""
+    m = re.search(r"author\s*=\s*\{((?:[^{}]|\{[^{}]*\})*)\}", bib or "", re.I) or \
+        re.search(r'author\s*=\s*"([^"]*)"', bib or "", re.I)
+    if not m:
+        return []
+    out = []
+    for a in re.split(r"\s+and\s+", m.group(1).replace("{", "").replace("}", "")):
+        a = a.strip()
+        if a:
+            out.append(" ".join(reversed([x.strip() for x in a.split(",", 1)])) if "," in a else a)
+    return out
+
+
+def clean_authors(p):
+    """Naprawa autorów w starszym cache (błędnie sparsowany BibTeX)."""
+    if any(("=" in a or "{" in a or "}" in a) for a in p.get("authors", [])):
+        p["authors"] = bib_authors(p.get("bibtex"))
+    p["authors"] = [" ".join(reversed([x.strip() for x in a.split(",", 1)])) if a.count(",") == 1 else a
+                    for a in p.get("authors", [])]
+    return p
+
+
 def parse_orcid_work(w):
     ext = _v(w, "external-ids", "external-id") or []
     doi = next((e.get("external-id-value") for e in ext
@@ -109,9 +132,7 @@ def parse_orcid_work(w):
     if _v(w, "citation", "citation-type") == "bibtex":
         bib = _v(w, "citation", "citation-value")
     if not authors and bib:
-        m = re.search(r"author\s*=\s*[{\"](.+?)[}\"]\s*,?\s*\n", bib, re.S)
-        if m:
-            authors = [a.strip() for a in m.group(1).split(" and ")]
+        authors = bib_authors(bib)
     return {
         "title": _v(w, "title", "title", "value") or "",
         "year": int(_v(w, "publication-date", "year", "value") or 0),
@@ -329,7 +350,10 @@ I18N = {
                serv_sub="Editorial work, committees and professional activity",
                fs_sub="Thesis topics, what I offer and how to get in touch",
                topics="Open thesis topics", offer="What I offer", howto="How to apply", write="Write to me",
-               lvl_any="BSc / MSc", lvl_phd="PhD", lvl_msc="MSc", lvl_beng="BSc"),
+               lvl_any="BSc / MSc", lvl_phd="PhD", lvl_msc="MSc", lvl_beng="BSc",
+               network="Collaboration network", coauthors="co-authors", coauth1="Co-author",
+               net_hint="drag, zoom with the mouse wheel, click a person to see joint publications",
+               joint="joint publications", all_pubs="publications"),
     "pl": dict(home="Strona główna", pubs="Publikacje", students="Studenci", projects="Projekty",
                service="Działalność", forstud="Dla studentów", interests="Zainteresowania badawcze", updated="Aktualizacja",
                search="Szukaj w tytułach, autorach, czasopismach…", all="Wszystkie typy",
@@ -344,7 +368,10 @@ I18N = {
                serv_sub="Redakcje, komitety i działalność organizacyjna",
                fs_sub="Tematy prac dyplomowych, co oferuję i jak się zgłosić",
                topics="Proponowane tematy prac", offer="Co oferuję", howto="Jak się zgłosić", write="Napisz do mnie",
-               lvl_any="inż. / mgr", lvl_phd="doktorat", lvl_msc="mgr", lvl_beng="inż."),
+               lvl_any="inż. / mgr", lvl_phd="doktorat", lvl_msc="mgr", lvl_beng="inż.",
+               network="Sieć współpracy", coauthors="współautorów", coauth1="Współautor",
+               net_hint="przeciągaj, przybliżaj kółkiem myszy, kliknij osobę, aby zobaczyć wspólne publikacje",
+               joint="wspólnych publikacji", all_pubs="publikacji"),
 }
 LEVEL_NAMES = {"en": {"phd": "Doctoral candidates", "msc": "Master's theses", "beng": "Engineering theses", "intern": "Interns"},
                "pl": {"phd": "Doktoranci", "msc": "Prace magisterskie", "beng": "Prace inżynierskie", "intern": "Stażyści"}}
@@ -491,6 +518,30 @@ nav a.lang:hover{background:var(--white);color:var(--navy)}
 .cta:hover{background:var(--accent);color:var(--white)}
 .cta.gold{background:var(--gold);color:var(--navy)}
 .cta.gold:hover{background:var(--white)}
+/* --- sieć współautorów --- */
+.net-sub{color:var(--muted);margin:-8px 0 14px;font-size:.95rem}
+.netbox{position:relative;background:var(--navy);border-radius:8px;box-shadow:var(--shadow);overflow:hidden;height:520px;border-top:4px solid var(--gold)}
+#net{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+#net.dragging{cursor:grabbing}
+#net line{stroke:rgba(24,160,214,.35)}
+#net line.hl{stroke:rgba(232,168,56,.9)}
+#net circle{stroke:rgba(255,255,255,.5);stroke-width:1;cursor:pointer;transition:opacity .2s}
+#net text{fill:var(--ltext);font:12px var(--sans);pointer-events:none;transition:opacity .2s}
+#net text.big{fill:var(--white);font-weight:700;font-size:13px}
+#net .dim{opacity:.15}
+.net-tip{position:absolute;pointer-events:none;background:var(--white);color:var(--navy);padding:6px 10px;border-radius:4px;font-size:.85rem;
+ box-shadow:0 6px 18px rgba(0,0,0,.3);opacity:0;transition:opacity .15s;white-space:nowrap;border-left:3px solid var(--gold)}
+.net-tip b{display:block}
+.net-legend{position:absolute;left:14px;bottom:12px;display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--ltext)}
+.net-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--primary);margin-right:6px;vertical-align:-1px;border:1px solid rgba(255,255,255,.5)}
+.net-legend i.me{background:var(--gold)}.net-legend i.st{background:var(--accent)}
+.net-reset{position:absolute;right:12px;top:12px;font:inherit;font-size:1.1rem;width:34px;height:34px;border-radius:50%;border:1px solid rgba(203,213,225,.4);
+ background:rgba(255,255,255,.06);color:var(--white);cursor:pointer}
+.net-reset:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:720px){.netbox{height:420px}}
+/* --- pojawianie się przy przewijaniu --- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
 /* --- dla studentów --- */
 .topic-card .lvl{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:3px;background:var(--accent);color:var(--white);margin-bottom:8px}
 .topic-card .lvl.phd{background:var(--navy)}
@@ -534,6 +585,91 @@ JS = """
   let t;window.addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>{init();draw();},150);});
  });
 })();
+/* ---- pojawianie się elementów przy przewijaniu ---- */
+(function(){
+ if(!('IntersectionObserver' in window))return;
+ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const sel='main h2, main .lead, .chips, .pub, .card, .offer>div, table.s tr, .netbox, .contact-band, .years, .toolbar';
+ const els=[...document.querySelectorAll(sel)].filter(el=>el.getBoundingClientRect().top>window.innerHeight*0.92);
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+   const el=e.target,sib=[...el.parentNode.children].filter(x=>x.classList.contains('rv')&&!x.classList.contains('in'));
+   el.style.transitionDelay=Math.min(sib.indexOf(el),5)*70+'ms';el.classList.add('in');io.unobserve(el);}}),{rootMargin:'0px 0px -8% 0px'});
+ els.forEach(el=>{el.classList.add('rv');io.observe(el);});
+})();
+/* ---- sieć współautorów ---- */
+(function(){
+ const svg=document.getElementById('net'),dataEl=document.getElementById('netdata');if(!svg||!dataEl)return;
+ const box=document.getElementById('netbox'),tip=document.getElementById('nettip'),NS='http://www.w3.org/2000/svg';
+ const D=JSON.parse(dataEl.textContent),nodes=D.nodes,byId={};nodes.forEach(n=>byId[n.id]=n);
+ const links=D.links.map(l=>({s:byId[l.s],t:byId[l.t],w:l.w,me:byId[l.s].me||byId[l.t].me}));
+ let W=box.clientWidth,H=box.clientHeight;
+ const me=nodes.find(n=>n.me);
+ const maxN=Math.max(...nodes.filter(n=>!n.me).map(n=>n.n),1);
+ nodes.forEach((n,i)=>{const a=i*2.399,r=60+Math.sqrt(i)*28;n.x=W/2+Math.cos(a)*r;n.y=H/2+Math.sin(a)*r;n.vx=0;n.vy=0;
+  n.r=n.me?20:5+9*Math.sqrt(n.n/maxN);});
+ me.x=W/2;me.y=H/2;me.fx=true;
+ const g=document.createElementNS(NS,'g');svg.appendChild(g);
+ const nb={};links.forEach(l=>{(nb[l.s.id]=nb[l.s.id]||new Set()).add(l.t.id);(nb[l.t.id]=nb[l.t.id]||new Set()).add(l.s.id);});
+ links.forEach(l=>{l.el=document.createElementNS(NS,'line');l.el.setAttribute('stroke-width',l.me?Math.min(1+l.w*.7,6):Math.min(.6+l.w*.4,3));g.appendChild(l.el);});
+ nodes.forEach(n=>{
+  n.c=document.createElementNS(NS,'circle');n.c.setAttribute('r',n.r);
+  n.c.setAttribute('fill',n.me?'#E8A838':n.st?'#18A0D6':'#0C5C8F');g.appendChild(n.c);
+  n.t=document.createElementNS(NS,'text');n.t.textContent=n.me?'':n.name;
+  if(n.n>=2||n.st)n.t.classList.add('big');else n.t.style.opacity=0;
+  g.appendChild(n.t);
+ });
+ let alpha=1,raf=null;
+ function tick(){
+  const k=alpha;
+  for(let i=0;i<nodes.length;i++){const a=nodes[i];
+   for(let j=i+1;j<nodes.length;j++){const b=nodes[j];let dx=b.x-a.x,dy=b.y-a.y,d2=dx*dx+dy*dy||1,d=Math.sqrt(d2);
+    const f=Math.min(1800/d2,4)*k,fx=dx/d*f,fy=dy/d*f;a.vx-=fx;a.vy-=fy;b.vx+=fx;b.vy+=fy;
+    const md=a.r+b.r+6;if(d<md){const p=(md-d)/d*.5;a.vx-=dx*p*.5;a.vy-=dy*p*.5;b.vx+=dx*p*.5;b.vy+=dy*p*.5;}}}
+  links.forEach(l=>{const dx=l.t.x-l.s.x,dy=l.t.y-l.s.y,d=Math.sqrt(dx*dx+dy*dy)||1;
+   const target=l.me?150-Math.min(l.w,8)*9:90,f=(d-target)/d*(l.me?.06:.02)*k;
+   l.s.vx+=dx*f;l.s.vy+=dy*f;l.t.vx-=dx*f;l.t.vy-=dy*f;});
+  nodes.forEach(n=>{n.vx+=(W/2-n.x)*.004*k;n.vy+=(H/2-n.y)*.004*k;
+   if(n.fx||n.drag){n.vx=n.vy=0;return;}n.vx*=.6;n.vy*=.6;n.x+=n.vx;n.y+=n.vy;});
+  draw();alpha*=.985;
+  raf=alpha>.02?requestAnimationFrame(tick):null;
+ }
+ function draw(){
+  links.forEach(l=>{l.el.setAttribute('x1',l.s.x);l.el.setAttribute('y1',l.s.y);l.el.setAttribute('x2',l.t.x);l.el.setAttribute('y2',l.t.y);});
+  nodes.forEach(n=>{n.c.setAttribute('cx',n.x);n.c.setAttribute('cy',n.y);n.t.setAttribute('x',n.x+n.r+4);n.t.setAttribute('y',n.y+4);});
+ }
+ function heat(a){alpha=Math.max(alpha,a);if(!raf)raf=requestAnimationFrame(tick);}
+ // zoom / pan
+ let sc=1,tx=0,ty=0;const apply=()=>g.setAttribute('transform',`translate(${tx},${ty}) scale(${sc})`);
+ function pt(e){const r=svg.getBoundingClientRect();return{x:(e.clientX-r.left-tx)/sc,y:(e.clientY-r.top-ty)/sc,sx:e.clientX-r.left,sy:e.clientY-r.top};}
+ svg.addEventListener('wheel',e=>{e.preventDefault();const p=pt(e),f=e.deltaY<0?1.12:1/1.12;const ns=Math.min(4,Math.max(.4,sc*f));
+  tx=p.sx-p.x*ns;ty=p.sy-p.y*ns;sc=ns;apply();},{passive:false});
+ let drag=null,pan=null,moved=false;
+ svg.addEventListener('pointerdown',e=>{moved=false;const n=nodes.find(n=>n.c===e.target);svg.setPointerCapture(e.pointerId);svg.classList.add('dragging');
+  if(n){drag=n;n.drag=true;}else{const p=pt(e);pan={x:p.sx-tx,y:p.sy-ty};}});
+ svg.addEventListener('pointermove',e=>{const p=pt(e);
+  if(drag){moved=true;drag.x=p.x;drag.y=p.y;heat(.3);draw();}
+  else if(pan){moved=true;tx=p.sx-pan.x;ty=p.sy-pan.y;apply();}});
+ svg.addEventListener('pointerup',e=>{svg.classList.remove('dragging');
+  if(drag){drag.drag=false;if(!moved&&!drag.me){const last=drag.name.split(' ').pop();location.href='publications.html#q='+encodeURIComponent(last);}}
+  drag=null;pan=null;});
+ // podświetlenie i dymek
+ function focus(n){
+  const ns=nb[n.id]||new Set();
+  nodes.forEach(m=>{const on=m===n||ns.has(m.id);m.c.classList.toggle('dim',!on);m.t.classList.toggle('dim',!on);if(on&&m!==n&&!m.me)m.t.style.opacity=1;});
+  links.forEach(l=>{const on=l.s===n||l.t===n;l.el.classList.toggle('hl',on);l.el.classList.toggle('dim',!on);});
+  tip.innerHTML='<b>'+n.name+'</b>'+n.n+' '+(n.me?box.dataset.all:box.dataset.joint);tip.style.opacity=1;
+ }
+ function blur(){nodes.forEach(m=>{m.c.classList.remove('dim');m.t.classList.remove('dim');if(!(m.n>=2||m.st))m.t.style.opacity=0;});
+  links.forEach(l=>l.el.classList.remove('hl','dim'));tip.style.opacity=0;}
+ nodes.forEach(n=>{n.c.addEventListener('pointerenter',()=>focus(n));n.c.addEventListener('pointerleave',blur);});
+ svg.addEventListener('pointermove',e=>{const r=box.getBoundingClientRect();let x=e.clientX-r.left+14,y=e.clientY-r.top+14;
+  if(x>r.width-200)x-=220;tip.style.left=x+'px';tip.style.top=y+'px';});
+ box.querySelector('.net-reset').addEventListener('click',()=>{sc=1;tx=0;ty=0;apply();heat(.6);});
+ window.addEventListener('resize',()=>{W=box.clientWidth;H=box.clientHeight;me.x=W/2;me.y=H/2;heat(.3);});
+ // startuj symulację, gdy sieć pojawi się na ekranie
+ draw();
+ if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){heat(1);io.disconnect();}});io.observe(box);}else heat(1);
+})();
 /* ---- animacja liczników ---- */
 (function(){
  const els=[...document.querySelectorAll('[data-count]')];
@@ -564,6 +700,7 @@ JS = """
   empty.style.display=n?'none':'block';
  }
  q.addEventListener('input',run);t.addEventListener('change',run);
+ const m=location.hash.match(/^#q=(.+)$/);if(m){q.value=decodeURIComponent(m[1]);run();window.scrollTo(0,0);}
 })();
 /* ---- okno Cite (APA / IEEE / BibTeX) ---- */
 (function(){
@@ -707,6 +844,45 @@ def make_og_image(cfg, path):
     return True
 
 
+# ----------------------------------------------------------------- sieć współautorów
+def person_key(name):
+    last, initials = _split(name)
+    k = f"{last}|{initials[:1]}".translate(str.maketrans("ŁłØøĐđ", "LlOoDd"))
+    k = unicodedata.normalize("NFKD", k).encode("ascii", "ignore").decode().lower()
+    return k
+
+
+def coauthor_graph(pubs, me_patterns, students):
+    from itertools import combinations
+    names, count, pairs = {}, {}, {}
+    student_keys = {person_key(re.sub(r",.*$", "", s.get("name", ""))) for s in students}
+    me_key = None
+    for p in pubs:
+        keys = []
+        for a in p.get("authors", []):
+            k = person_key(a)
+            if any(re.search(pat, a, re.I) for pat in me_patterns):
+                me_key = me_key or k
+                k = me_key
+            disp = " ".join(reversed([x.strip() for x in a.split(",", 1)])) if "," in a else a
+            if len(disp) > len(names.get(k, "")):
+                names[k] = disp
+            if k not in keys:
+                keys.append(k)
+        for k in keys:
+            count[k] = count.get(k, 0) + 1
+        for a, b in combinations(sorted(keys), 2):
+            pairs[(a, b)] = pairs.get((a, b), 0) + 1
+    if not me_key:
+        return None
+    nodes = [{"id": k, "name": names[k], "n": count[k] if k == me_key else pairs.get(tuple(sorted((k, me_key))), 0),
+              "me": k == me_key, "st": k in student_keys}
+             for k in count if k == me_key or pairs.get(tuple(sorted((k, me_key))), 0)]
+    ids = {n["id"] for n in nodes}
+    links = [{"s": a, "t": b, "w": w} for (a, b), w in pairs.items() if a in ids and b in ids]
+    return {"nodes": nodes, "links": links}
+
+
 # ----------------------------------------------------------------- szablon strony
 PAGES = ["index.html", "publications.html", "students.html", "projects.html", "service.html", "for-students.html"]
 
@@ -805,6 +981,7 @@ def collect(demo, offline, cfg):
             print(f"ORCID niedostępny ({e}) – używam cache", file=sys.stderr)
     if not orcid_pubs and cache.exists() and not demo:
         orcid_pubs = json.loads(cache.read_text(encoding="utf-8"))
+    orcid_pubs = [clean_authors(p) for p in orcid_pubs]
     person_cache = DATA / "orcid_person.json"
     if not demo and not offline and cfg.get("orcid"):
         try:
@@ -852,6 +1029,18 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
     featured = [q for q in pubs if q["type"] not in ("data", "preprint")][:5]
     recent = "".join(render_pub(p, f"h{i}", me, L, TL) for i, p in enumerate(featured))
     interests = "".join(f"<li>{esc(i)}</li>" for i in tr(cfg, "research_interests", lang, []))
+    g = coauthor_graph(pubs, me, students)
+    net_html = ""
+    if g and len(g["nodes"]) > 3:
+        gj = json.dumps(g, ensure_ascii=False).replace("</", "<\\/")
+        n_co = len(g["nodes"]) - 1
+        net_html = f"""<h2>{L['network']}</h2>
+<p class="net-sub">{n_co} {L['coauthors']} · {L['net_hint']}</p>
+<div class="netbox" id="netbox" data-joint="{L['joint']}" data-all="{L['all_pubs']}"><svg id="net" role="img" aria-label="{L['network']}"></svg>
+<div class="net-tip" id="nettip"></div>
+<div class="net-legend"><span><i class="me"></i>{esc(cfg['name'])}</span><span><i class="st"></i>{L['phd']}</span><span><i></i>{L['coauth1']}</span></div>
+<button class="net-reset" type="button">⟲</button></div>
+<script type="application/json" id="netdata">{gj}</script>"""
     hero = f"""<section class="band hero"><div class="wrap">{img}<div>
 <div class="goldbar"></div>
 <h1>{esc(cfg['name'])}</h1>
@@ -866,6 +1055,7 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
 <div class="stat"><b data-count="{n_proj}">{n_proj}</b><span>{L['projects'].lower()}</span></div></div>
 <h2>{L['about']}</h2><p class="lead">{esc(tr(cfg, 'bio', lang))}</p>
 <h2>{L['interests']}</h2><ul class="chips">{interests}</ul>
+{net_html}
 <h2>{L['recent']}<a class="more" href="publications.html">→ {L['allp']}</a></h2>{recent}
 <div class="empty"></div>"""
     W("index.html", page(ctx, "index.html", L["home"], home, hero))
