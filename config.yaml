@@ -2,10 +2,16 @@
 #  Ustawienia ogólne strony – edytuj śmiało, potem zapisz (commit).
 # ------------------------------------------------------------------
 name: "Andrzej Szymon Borkowski"
-title: "Assoc. Prof. DSc PhD Eng."
-position: "Associate Professor (prof. uczelni)"
+# Pola z końcówką _pl to wersja polska (strona /pl/); bez końcówki – angielska.
+title: "Assoc. Prof. DSc PhD Eng. · Associate Professor"
+title_pl: "dr hab. inż., profesor uczelni"
 affiliation: "Faculty of Geodesy and Cartography, Warsaw University of Technology"
+affiliation_pl: "Wydział Geodezji i Kartografii, Politechnika Warszawska"
 unit: "Department of Spatial Planning and Environmental Sciences"
+unit_pl: "Zakład Gospodarki Przestrzennej i Nauk o Środowisku Przyrodniczym"
+site_url: "https://andrzejszymonborkowski.github.io/"
+og_description: "BIM, BIM–GIS integration, formal ontologies and AI in AEC – publications, projects and thesis topics."
+og_description_pl: "BIM, integracja BIM–GIS, ontologie formalne i AI w budownictwie – publikacje, projekty i tematy prac dyplomowych."
 email: "andrzej.borkowski@pw.edu.pl"
 photo: "assets/photo.jpg"          # wgraj zdjęcie pod tą nazwą (opcjonalnie)
 
@@ -32,6 +38,19 @@ bio: >
   IFC standards and digital twins. I teach BIM at the graduate level and
   supervise doctoral, master's and engineering theses.
 
+bio_pl: >
+  Zajmuję się modelowaniem informacji o budynku (BIM), integracją BIM–GIS,
+  ontologiami formalnymi (DOLCE, OWL 2 DL), uczeniem maszynowym w budownictwie,
+  standardami IFC oraz cyfrowymi bliźniakami. Prowadzę zajęcia z BIM na studiach
+  magisterskich oraz opiekuję się pracami doktorskimi, magisterskimi i inżynierskimi.
+
+research_interests_pl:
+  - BIM i openBIM (IFC, IDS, BCF)
+  - Integracja BIM–GIS i kataster 3D
+  - Ontologie formalne w budownictwie (DOLCE, OWL 2 DL)
+  - Agenty AI i uczenie maszynowe w budownictwie
+  - Cyfrowe bliźniaki i HBIM
+
 research_interests:
   - BIM and openBIM (IFC, IDS, BCF)
   - BIM–GIS integration and 3D cadastre
@@ -39,5 +58,5 @@ research_interests:
   - AI agents and machine learning in AEC
   - Digital twins and HBIM
 
-# Język interfejsu strony: "en" albo "pl"
+# Język główny strony (pod adresem głównym): "en" albo "pl". Druga wersja jest w /pl/ lub /en/.
 lang: "en"

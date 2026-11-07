@@ -305,26 +305,62 @@ def make_bibtex(p):
 
 
 # ----------------------------------------------------------------- HTML
+TYPE_LABELS_PL = {
+    "journal": ("Artykuły w czasopismach", "Artykuł"),
+    "conference": ("Referaty konferencyjne", "Konferencja"),
+    "book": ("Książki", "Książka"),
+    "chapter": ("Rozdziały w monografiach", "Rozdział"),
+    "preprint": ("Preprinty", "Preprint"),
+    "data": ("Zbiory danych i oprogramowanie", "Dane"),
+    "other": ("Inne", "Inne"),
+}
+
 I18N = {
     "en": dict(home="Home", pubs="Publications", students="Students", projects="Projects",
-               service="Service", interests="Research interests", updated="Last updated",
+               service="Service", forstud="For students", interests="Research interests", updated="Last updated",
                search="Search titles, authors, venues…", all="All types", phd="Doctoral candidates",
                msc="Master's theses", beng="Engineering theses", intern="Interns",
                current="current", completed="completed", ongoing="Ongoing", done="Completed",
                role="Role", total="publications", source="Publication list synchronised daily with ORCID.",
-               copy="BibTeX", copied="Copied!", contact="Contact", nores="No matching publications.", peer="publications",
+               cite="Cite", copy="Copy", copied="Copied!", close="Close", contact="Contact",
+               nores="No matching publications.", peer="publications", about="About",
+               recent="Recent publications", allp="all", datasets="datasets & software", journals="journal articles",
                stud_sub="Doctoral candidates and thesis students", proj_sub="Research and development projects",
-               serv_sub="Editorial work, committees and professional activity"),
+               serv_sub="Editorial work, committees and professional activity",
+               fs_sub="Thesis topics, what I offer and how to get in touch",
+               topics="Open thesis topics", offer="What I offer", howto="How to apply", write="Write to me",
+               lvl_any="BSc / MSc", lvl_phd="PhD", lvl_msc="MSc", lvl_beng="BSc"),
     "pl": dict(home="Strona główna", pubs="Publikacje", students="Studenci", projects="Projekty",
-               service="Działalność", interests="Zainteresowania badawcze", updated="Aktualizacja",
+               service="Działalność", forstud="Dla studentów", interests="Zainteresowania badawcze", updated="Aktualizacja",
                search="Szukaj w tytułach, autorach, czasopismach…", all="Wszystkie typy",
                phd="Doktoranci", msc="Prace magisterskie", beng="Prace inżynierskie", intern="Stażyści",
                current="w toku", completed="zakończone", ongoing="W realizacji", done="Zakończone",
                role="Rola", total="publikacji", source="Lista publikacji synchronizowana codziennie z ORCID.",
-               copy="BibTeX", copied="Skopiowano!", contact="Kontakt", nores="Brak pasujących publikacji.", peer="publikacji",
+               cite="Cytuj", copy="Kopiuj", copied="Skopiowano!", close="Zamknij", contact="Kontakt",
+               nores="Brak pasujących publikacji.", peer="publikacji", about="O mnie",
+               recent="Najnowsze publikacje", allp="wszystkie", datasets="zbiorów danych i oprogramowania",
+               journals="artykułów w czasopismach",
                stud_sub="Doktoranci i dyplomanci", proj_sub="Projekty badawcze i rozwojowe",
-               serv_sub="Redakcje, komitety i działalność organizacyjna"),
+               serv_sub="Redakcje, komitety i działalność organizacyjna",
+               fs_sub="Tematy prac dyplomowych, co oferuję i jak się zgłosić",
+               topics="Proponowane tematy prac", offer="Co oferuję", howto="Jak się zgłosić", write="Napisz do mnie",
+               lvl_any="inż. / mgr", lvl_phd="doktorat", lvl_msc="mgr", lvl_beng="inż."),
 }
+LEVEL_NAMES = {"en": {"phd": "Doctoral candidates", "msc": "Master's theses", "beng": "Engineering theses", "intern": "Interns"},
+               "pl": {"phd": "Doktoranci", "msc": "Prace magisterskie", "beng": "Prace inżynierskie", "intern": "Stażyści"}}
+
+
+def tr(obj, key, lang, default=""):
+    """Wartość pola w danym języku: najpierw key_pl / key_en, potem key."""
+    if not isinstance(obj, dict):
+        return default
+    v = obj.get(f"{key}_{lang}")
+    return v if v not in (None, "") else obj.get(key, default)
+
+
+def tlabels(lang):
+    return TYPE_LABELS_PL if lang == "pl" else TYPE_LABELS
+
 
 CSS = """
 /* Styl spójny z prezentacjami konferencyjnymi: granat, błękit, złoto; Georgia + Calibri */
@@ -428,12 +464,78 @@ footer{background:var(--navy);color:var(--ltext);font-size:.85rem;padding:22px 0
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .demo{background:#FFF6E0;border:1px solid var(--gold);padding:10px 14px;border-radius:6px;font-size:.9rem;margin-bottom:24px}
 @media (max-width:720px){.hero .wrap{grid-template-columns:1fr;gap:24px;padding-top:36px}.hero img,.hero .ph{width:140px;height:170px}
-.hero h1{font-size:1.9rem}nav{gap:4px 16px}.band.small h1{font-size:1.8rem}.toolbar{top:0;position:static}}
+.hero h1{font-size:1.9rem}nav{gap:4px 16px}header.site{position:static}.band.small h1{font-size:1.8rem}.toolbar{top:0;position:static}}
+"""
+
+CSS += """
+/* --- animowana sieć w tle ciemnych pasów --- */
+.band canvas.net{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+/* --- przełącznik języka --- */
+nav a.lang{margin-left:6px;font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--navy);background:var(--gold);
+ padding:4px 10px;line-height:1.2;border-radius:3px;border-bottom:none;align-self:center}
+nav a.lang:hover{background:var(--white);color:var(--navy)}
+/* --- okno Cite --- */
+.modal{position:fixed;inset:0;background:rgba(26,31,54,.62);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+.modal.open{display:flex}
+.modal .box{background:var(--white);border-radius:8px;max-width:720px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.35);border-top:5px solid var(--gold);overflow:hidden}
+.modal .hd{display:flex;align-items:center;justify-content:space-between;padding:16px 22px 0}
+.modal .hd h3{margin:0;font-size:1.25rem}
+.modal .x{font:inherit;font-size:1.6rem;line-height:1;border:none;background:none;color:var(--muted);cursor:pointer}
+.tabs{display:flex;gap:4px;padding:14px 22px 0;border-bottom:1px solid var(--line)}
+.tabs button{font:inherit;font-size:.92rem;font-weight:700;border:none;background:none;color:var(--muted);padding:8px 14px;cursor:pointer;border-bottom:3px solid transparent}
+.tabs button.on{color:var(--primary);border-bottom-color:var(--accent)}
+.modal pre{margin:0;padding:18px 22px;white-space:pre-wrap;font:15px/1.55 var(--sans);color:var(--text);min-height:90px;max-height:50vh;overflow:auto}
+.modal pre.code{font:13px/1.5 ui-monospace,Consolas,monospace;background:var(--light)}
+.modal .ft{display:flex;justify-content:flex-end;gap:10px;padding:0 22px 18px}
+.cta{font:inherit;font-weight:700;font-size:.95rem;border:none;border-radius:4px;padding:10px 20px;cursor:pointer;background:var(--primary);color:var(--white);display:inline-block}
+.cta:hover{background:var(--accent);color:var(--white)}
+.cta.gold{background:var(--gold);color:var(--navy)}
+.cta.gold:hover{background:var(--white)}
+/* --- dla studentów --- */
+.topic-card .lvl{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:3px;background:var(--accent);color:var(--white);margin-bottom:8px}
+.topic-card .lvl.phd{background:var(--navy)}
+.topic-card .kw{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.topic-card .kw span{font-size:.78rem;background:var(--light);color:var(--primary);padding:2px 8px;border-radius:3px}
+.offer{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.offer div{background:var(--white);box-shadow:var(--shadow);border-radius:6px;padding:18px 20px;border-left:4px solid var(--gold)}
+.offer b{display:block;font-family:var(--serif);color:var(--navy);font-size:1.05rem;margin-bottom:4px}
+.contact-band{background:var(--navy);color:var(--ltext);border-radius:8px;padding:30px 32px;margin-top:48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-left:6px solid var(--gold)}
+.contact-band h3{color:var(--white);margin:0 0 6px;font-size:1.4rem}
+.contact-band p{margin:0;max-width:560px}
 """
 
 JS = """
+/* ---- animowana sieć (węzły i krawędzie) w ciemnych pasach ---- */
 (function(){
- /* animacja liczników: od 0 do wartości docelowej, gdy karta pojawi się na ekranie */
+ const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ document.querySelectorAll('.band').forEach(band=>{
+  const c=document.createElement('canvas');c.className='net';band.prepend(c);
+  const ctx=c.getContext('2d');let W,H,pts=[],raf=null,visible=true;
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  function init(){
+   W=band.clientWidth;H=band.clientHeight;c.width=W*dpr;c.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+   const n=Math.min(80,Math.round(W*H/16000));pts=[];
+   for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,
+    r:Math.random()<.12?2.6:1.6,g:Math.random()<.12});
+  }
+  function draw(){
+   ctx.clearRect(0,0,W,H);const D=130;
+   for(let i=0;i<pts.length;i++){const a=pts[i];
+    for(let j=i+1;j<pts.length;j++){const b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+     if(d<D){ctx.strokeStyle=`rgba(24,160,214,${(1-d/D)*.28})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}}
+   pts.forEach(p=>{ctx.fillStyle=p.g?'rgba(232,168,56,.85)':'rgba(24,160,214,.65)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill();});
+  }
+  function step(){pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;});
+   draw();raf=visible?requestAnimationFrame(step):null;}
+  init();draw();
+  if(reduce)return;
+  if('IntersectionObserver' in window){new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible&&!raf)raf=requestAnimationFrame(step);}).observe(band);}
+  else raf=requestAnimationFrame(step);
+  let t;window.addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>{init();draw();},150);});
+ });
+})();
+/* ---- animacja liczników ---- */
+(function(){
  const els=[...document.querySelectorAll('[data-count]')];
  if(!els.length)return;
  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
@@ -450,6 +552,7 @@ JS = """
   els.forEach(el=>io.observe(el));
  } else els.forEach(run);
 })();
+/* ---- wyszukiwarka publikacji ---- */
 (function(){
  const q=document.getElementById('q'),t=document.getElementById('t');
  if(!q)return;
@@ -461,38 +564,202 @@ JS = """
   empty.style.display=n?'none':'block';
  }
  q.addEventListener('input',run);t.addEventListener('change',run);
+})();
+/* ---- okno Cite (APA / IEEE / BibTeX) ---- */
+(function(){
+ const m=document.getElementById('cite');if(!m)return;
+ const pre=m.querySelector('pre'),tabs=[...m.querySelectorAll('.tabs button')],copy=m.querySelector('.copy');
+ let cur=null,fmt='apa';
+ function show(){pre.textContent=cur?cur[fmt]:'';pre.classList.toggle('code',fmt==='bib');tabs.forEach(b=>b.classList.toggle('on',b.dataset.f===fmt));}
+ function open(i){const el=document.getElementById('c'+i);if(!el)return;cur=JSON.parse(el.textContent);m.classList.add('open');show();}
+ function close(){m.classList.remove('open');}
  document.addEventListener('click',e=>{
-  const b=e.target.closest('.btn[data-bib]');if(!b)return;
-  const pre=document.getElementById(b.dataset.bib);pre.classList.toggle('open');
-  if(pre.classList.contains('open')&&navigator.clipboard){navigator.clipboard.writeText(pre.textContent).then(()=>{const o=b.textContent;b.textContent=b.dataset.ok;setTimeout(()=>b.textContent=o,1200);}).catch(()=>{});}
+  const b=e.target.closest('[data-cite]');if(b){open(b.dataset.cite);return;}
+  const tb=e.target.closest('.tabs button');if(tb){fmt=tb.dataset.f;show();return;}
+  if(e.target===m||e.target.closest('.x'))close();
+ });
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+ copy.addEventListener('click',()=>{
+  const txt=pre.textContent,o=copy.textContent;
+  const done=()=>{copy.textContent=copy.dataset.ok;setTimeout(()=>copy.textContent=o,1300);};
+  if(navigator.clipboard)navigator.clipboard.writeText(txt).then(done).catch(()=>{});
  });
 })();
 """
 
 
-def page(cfg, L, active, title, body, demo=False, band=""):
+# ----------------------------------------------------------------- cytowania
+def _split(name):
+    name = name.strip()
+    if "," in name:
+        last, first = [x.strip() for x in name.split(",", 1)]
+    else:
+        parts = name.split()
+        last, first = parts[-1], " ".join(parts[:-1])
+    initials = " ".join(f"{w[0]}." for w in re.split(r"[\s\-]+", first) if w and w[0].isalpha())
+    return last, initials
+
+
+def cite_apa(p):
+    names = [f"{l}, {i}".strip(", ") for l, i in map(_split, p["authors"])]
+    if len(names) > 20:
+        names = names[:19] + ["… " + names[-1]]
+    if len(names) <= 1:
+        au = "".join(names)
+    elif len(names) == 2:
+        au = f"{names[0]}, & {names[1]}"
+    else:
+        au = ", ".join(names[:-1]) + f", & {names[-1]}"
+    s = f"{au} ({p['year'] or 'n.d.'}). {p['title'].rstrip('.')}."
+    if p.get("venue"):
+        s += f" {p['venue']}."
+    if p.get("doi"):
+        s += f" https://doi.org/{p['doi']}"
+    return s.strip()
+
+
+def cite_ieee(p):
+    names = [f"{i} {l}".strip() for l, i in map(_split, p["authors"])]
+    if len(names) > 6:
+        au = names[0] + " et al."
+    elif len(names) <= 2:
+        au = " and ".join(names)
+    else:
+        au = ", ".join(names[:-1]) + ", and " + names[-1]
+    s = f"{au}, “{p['title'].rstrip('.')},”"
+    if p.get("venue"):
+        s += f" {p['venue']},"
+    s += f" {p['year']}" if p.get("year") else ""
+    s += f", doi: {p['doi']}." if p.get("doi") else "."
+    return s.strip()
+
+
+# ----------------------------------------------------------------- obraz do podglądu w social mediach
+def make_og_image(cfg, path):
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        return False
+    import random
+    W, H = 1200, 630
+    img = Image.new("RGB", (W, H), (26, 31, 54))
+    d = ImageDraw.Draw(img, "RGBA")
+    rnd = random.Random(7)
+    pts = [(rnd.randint(560, 1200), rnd.randint(0, 630)) for _ in range(46)]
+    for i, a in enumerate(pts):
+        for b in pts[i + 1:]:
+            dist = ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** .5
+            if dist < 150:
+                d.line([a, b], fill=(24, 160, 214, int(90 * (1 - dist / 150))), width=1)
+    for k, (x, y) in enumerate(pts):
+        r = 4 if k % 8 == 0 else 2.5
+        d.ellipse([x - r, y - r, x + r, y + r], fill=(232, 168, 56, 230) if k % 8 == 0 else (24, 160, 214, 200))
+    d.rectangle([0, 0, W, 8], fill=(24, 160, 214))
+    d.rectangle([0, H - 8, W, H], fill=(232, 168, 56))
+
+    def font(names, size):
+        for n in names:
+            for base in ("/usr/share/fonts/truetype/dejavu/", "/usr/share/fonts/truetype/crosextra/",
+                         "/usr/share/fonts/truetype/liberation/", ""):
+                try:
+                    return ImageFont.truetype(base + n, size)
+                except OSError:
+                    pass
+        return ImageFont.load_default()
+    serif = font(["DejaVuSerif-Bold.ttf", "LiberationSerif-Bold.ttf"], 62)
+    sans = font(["Carlito-Regular.ttf", "LiberationSans-Regular.ttf", "DejaVuSans.ttf"], 30)
+    sans_i = font(["Carlito-Italic.ttf", "LiberationSans-Italic.ttf", "DejaVuSans-Oblique.ttf"], 32)
+    x = 80
+    photo = cfg.get("photo")
+    if photo and (ROOT / photo).exists():
+        ph = Image.open(ROOT / photo).convert("RGB")
+        ph_w, ph_h = 230, 280
+        sc = max(ph_w / ph.width, ph_h / ph.height)
+        ph = ph.resize((int(ph.width * sc) + 1, int(ph.height * sc) + 1))
+        ph = ph.crop(((ph.width - ph_w) // 2, (ph.height - ph_h) // 2, (ph.width - ph_w) // 2 + ph_w, (ph.height - ph_h) // 2 + ph_h))
+        d.rectangle([x - 5, 170, x + ph_w + 5, 170 + ph_h + 10], fill=(232, 168, 56))
+        img.paste(ph, (x, 175))
+        x += ph_w + 60
+    d.rectangle([x, 175, x + 90, 181], fill=(232, 168, 56))
+    words, lines, cur = cfg["name"].split(), [], ""
+    for w in words:
+        test = (cur + " " + w).strip()
+        if d.textlength(test, font=serif) > W - x - 60 and cur:
+            lines.append(cur); cur = w
+        else:
+            cur = test
+    lines.append(cur)
+    y = 205
+    for ln in lines:
+        d.text((x, y), ln, font=serif, fill=(255, 255, 255)); y += 74
+    d.text((x, y + 8), cfg.get("title", ""), font=sans_i, fill=(24, 160, 214)); y += 60
+    for ln in (cfg.get("affiliation", ""),):
+        d.text((x, y), ln, font=sans, fill=(203, 213, 225)); y += 40
+    kw = ""
+    for it in cfg.get("research_interests", []):
+        test = (kw + " · " + it) if kw else it
+        if d.textlength(test, font=sans) > W - 160:
+            break
+        kw = test
+    d.text((80, H - 80), kw, font=sans, fill=(232, 168, 56))
+    path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(path, optimize=True)
+    return True
+
+
+# ----------------------------------------------------------------- szablon strony
+PAGES = ["index.html", "publications.html", "students.html", "projects.html", "service.html", "for-students.html"]
+
+
+def page(ctx, active, title, body, band=""):
+    cfg, L, lang, base = ctx["cfg"], ctx["L"], ctx["lang"], ctx["base"]
     tabs = [("index.html", L["home"]), ("publications.html", L["pubs"]),
             ("students.html", L["students"]), ("projects.html", L["projects"]),
             ("service.html", L["service"])]
+    if ctx["fs_show"]:
+        tabs.append(("for-students.html", L["forstud"]))
     nav = "".join(f'<a href="{h}"{" class=active" if h == active else ""}>{esc(n)}</a>' for h, n in tabs)
-    banner = ('<div class="demo">Podgląd z <b>przykładowymi</b> publikacjami – po pierwszym '
-              'uruchomieniu na GitHubie lista zostanie pobrana z ORCID.</div>') if demo else ""
+    other = ctx["other_lang"]
+    nav += f'<a class="lang" href="{ctx["other_prefix"]}{active}" hreflang="{other}" lang="{other}">{other.upper()}</a>'
+    site = (cfg.get("site_url") or "").rstrip("/") + "/"
+    url = site + ctx["prefix"] + ("" if active == "index.html" else active)
+    desc = tr(cfg, "og_description", lang) or f"{cfg['name']} – {tr(cfg, 'affiliation', lang)}"
+    og = f"""<meta property="og:type" content="website">
+<meta property="og:title" content="{esc(cfg['name'])} – {esc(title)}">
+<meta property="og:description" content="{esc(desc)}">
+<meta property="og:url" content="{esc(url)}">
+<meta property="og:image" content="{esc(site)}assets/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="{'pl_PL' if lang == 'pl' else 'en_GB'}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{esc(site)}assets/og.png">
+<link rel="canonical" href="{esc(url)}">
+<link rel="alternate" hreflang="{lang}" href="{esc(url)}">
+<link rel="alternate" hreflang="{other}" href="{esc(site + ctx['other_site_prefix'] + ('' if active == 'index.html' else active))}">"""
+    cite_modal = ""
+    if "data-cite" in body:
+        cite_modal = f"""<div class="modal" id="cite" role="dialog" aria-modal="true"><div class="box">
+<div class="hd"><h3>{L['cite']}</h3><button class="x" aria-label="{L['close']}">×</button></div>
+<div class="tabs"><button data-f="apa" class="on">APA</button><button data-f="ieee">IEEE</button><button data-f="bib">BibTeX</button></div>
+<pre></pre><div class="ft"><button class="cta copy" data-ok="{L['copied']}">{L['copy']}</button></div></div></div>"""
     return f"""<!DOCTYPE html>
-<html lang="{cfg.get('lang','en')}"><head><meta charset="utf-8">
+<html lang="{lang}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)} – {esc(cfg['name'])}</title>
-<meta name="description" content="{esc(cfg['name'])}, {esc(cfg.get('affiliation',''))}">
-<link rel="stylesheet" href="style.css"></head><body>
+<meta name="description" content="{esc(desc)}">
+{og}
+<link rel="stylesheet" href="{base}style.css"></head><body>
 <header class="site"><div class="wrap"><a class="brand" href="index.html">{esc(cfg['name'])}</a><nav>{nav}</nav></div></header>
 {band}
-<main><div class="wrap">{banner}{body}</div></main>
-<footer><div class="wrap"><span>© {date.today().year} {esc(cfg['name'])} · {esc(cfg.get('affiliation',''))}</span><span>{L['updated']}: {date.today().isoformat()}</span></div></footer>
-<script src="site.js"></script></body></html>"""
+<main><div class="wrap">{body}</div></main>
+<footer><div class="wrap"><span>© {date.today().year} {esc(cfg['name'])} · {esc(tr(cfg, 'affiliation', lang))}</span><span>{L['updated']}: {date.today().isoformat()}</span></div></footer>
+{cite_modal}
+<script src="{base}site.js"></script></body></html>"""
 
 
 def small_band(title, sub=""):
     return (f'<section class="band small"><div class="wrap"><div class="goldbar"></div><h1>{esc(title)}</h1>'
-            + (f'<p>{sub}</p>' if sub else "") + '</div></section>')
+            + (f'<p>{esc(sub)}</p>' if sub else "") + '</div></section>')
 
 
 def fmt_authors(authors, me_patterns):
@@ -505,33 +772,26 @@ def fmt_authors(authors, me_patterns):
     return ", ".join(out)
 
 
-def render_pub(p, idx, me, L):
+def render_pub(p, idx, me, L, TL):
     links = []
     if p.get("doi"):
         links.append(f'<a href="https://doi.org/{esc(p["doi"])}">DOI</a>')
     elif p.get("url"):
         links.append(f'<a href="{esc(p["url"])}">Link</a>')
-    bid = f"bib{idx}"
     search = " ".join([p["title"], " ".join(p["authors"]), p.get("venue", ""), str(p["year"])]).lower()
+    cdata = json.dumps({"apa": cite_apa(p), "ieee": cite_ieee(p), "bib": make_bibtex(p)}, ensure_ascii=False).replace("</", "<\\/")
     return f"""<div class="pub" data-y="{p['year']}" data-t="{p['type']}" data-s="{esc(search)}">
 <div class="t">{esc(p['title'])}</div>
 <div class="a">{fmt_authors(p['authors'], me)}</div>
 {f'<div class="v">{esc(p["venue"])}</div>' if p.get('venue') else ''}
-<div class="m"><span class="badge {p['type']}">{TYPE_LABELS[p['type']][1]}</span>{' '.join(links)}
-<button class="btn" data-bib="{bid}" data-ok="{L['copied']}">{L['copy']}</button></div>
-<pre class="bib" id="{bid}">{esc(make_bibtex(p))}</pre></div>"""
+<div class="m"><span class="badge {p['type']}">{TL[p['type']][1]}</span>{' '.join(links)}
+<button class="btn" data-cite="{idx}">“” {L['cite']}</button></div>
+<script type="application/json" id="c{idx}">{cdata}</script></div>"""
 
 
-def build(demo=False, offline=False):
-    cfg = load_yaml("config.yaml", {})
-    L = I18N.get(cfg.get("lang", "en"), I18N["en"])
-    students = load_yaml("data/students.yaml", []) or []
-    projects = load_yaml("data/projects.yaml", []) or []
-    service = load_yaml("data/service.yaml", []) or []
+# ----------------------------------------------------------------- budowanie
+def collect(demo, offline, cfg):
     overrides = load_yaml("data/publications_overrides.yaml", {}) or {}
-    me = cfg.get("highlight_name_patterns") or [r"Borkowski"]
-
-    # ---- publikacje
     cache = DATA / "orcid_cache.json"
     orcid_pubs = []
     if demo:
@@ -552,7 +812,6 @@ def build(demo=False, offline=False):
         except Exception as e:
             print(f"ORCID person niedostępny ({e})", file=sys.stderr)
     auto_links = json.loads(person_cache.read_text(encoding="utf-8")) if person_cache.exists() else []
-
     bib_pubs = []
     bibfile = DATA / "extra.bib"
     if bibfile.exists():
@@ -560,17 +819,21 @@ def build(demo=False, offline=False):
         print(f"BibTeX: {len(bib_pubs)} pozycji")
     pubs = apply_overrides(merge(orcid_pubs, bib_pubs), overrides)
     pubs.sort(key=lambda p: (-(p.get("year") or 0), TYPE_RANK.index(p["type"]), p["title"].lower()))
+    return pubs, auto_links
 
-    OUT.mkdir(exist_ok=True)
-    (OUT / "style.css").write_text(CSS, encoding="utf-8")
-    (OUT / "site.js").write_text(JS, encoding="utf-8")
-    if (ROOT / "assets").exists():
-        shutil.copytree(ROOT / "assets", OUT / "assets", dirs_exist_ok=True)
+
+def build_lang(ctx, pubs, auto_links, data, outdir):
+    cfg, L, lang = ctx["cfg"], ctx["L"], ctx["lang"]
+    TL = tlabels(lang)
+    students, projects, service, fs = data["students"], data["projects"], data["service"], data["fs"]
+    me = cfg.get("highlight_name_patterns") or [r"Borkowski"]
+    outdir.mkdir(parents=True, exist_ok=True)
+    W = lambda name, html_: (outdir / name).write_text(html_, encoding="utf-8")
 
     # ---- strona główna
     photo = cfg.get("photo")
     if photo and (ROOT / photo).exists():
-        img = f'<img src="{esc(photo)}" alt="{esc(cfg["name"])}">'
+        img = f'<img src="{ctx["base"]}{esc(photo)}" alt="{esc(cfg["name"])}">'
     else:
         initials = "".join(w[0] for w in cfg["name"].split()[::2])[:2]
         img = f'<div class="ph">{esc(initials)}</div>'
@@ -586,42 +849,43 @@ def build(demo=False, offline=False):
     n_data = sum(1 for p in pubs if p["type"] == "data")
     n_phd = sum(1 for s in students if s.get("level") == "phd")
     n_proj = len(projects)
-    recent = "".join(render_pub(p, f"h{i}", me, L) for i, p in enumerate([q for q in pubs if q["type"] not in ("data", "preprint")][:5]))
-    interests = "".join(f"<li>{esc(i)}</li>" for i in cfg.get("research_interests", []))
+    featured = [q for q in pubs if q["type"] not in ("data", "preprint")][:5]
+    recent = "".join(render_pub(p, f"h{i}", me, L, TL) for i, p in enumerate(featured))
+    interests = "".join(f"<li>{esc(i)}</li>" for i in tr(cfg, "research_interests", lang, []))
     hero = f"""<section class="band hero"><div class="wrap">{img}<div>
 <div class="goldbar"></div>
 <h1>{esc(cfg['name'])}</h1>
-<p class="title">{esc(cfg.get('title',''))} · {esc(cfg.get('position',''))}</p>
-<p class="aff">{esc(cfg.get('unit',''))}<br>{esc(cfg.get('affiliation',''))}</p>
+<p class="title">{esc(tr(cfg, 'title', lang))}</p>
+<p class="aff">{esc(tr(cfg, 'unit', lang))}<br>{esc(tr(cfg, 'affiliation', lang))}</p>
 <div class="links">{links}</div>
 </div></div></section>"""
     home = f"""<div class="stats"><div class="stat"><b data-count="{n_pub}">{n_pub}</b><span>{L['peer']}</span></div>
-<div class="stat"><b data-count="{n_j}">{n_j}</b><span>{TYPE_LABELS['journal'][0].lower()}</span></div>
-<div class="stat"><b data-count="{n_data}">{n_data}</b><span>{TYPE_LABELS['data'][0].lower()}</span></div>
+<div class="stat"><b data-count="{n_j}">{n_j}</b><span>{L['journals']}</span></div>
+<div class="stat"><b data-count="{n_data}">{n_data}</b><span>{L['datasets']}</span></div>
 <div class="stat"><b data-count="{n_phd}">{n_phd}</b><span>{L['phd'].lower()}</span></div>
 <div class="stat"><b data-count="{n_proj}">{n_proj}</b><span>{L['projects'].lower()}</span></div></div>
-<h2>About</h2><p class="lead">{esc(cfg.get('bio',''))}</p>
+<h2>{L['about']}</h2><p class="lead">{esc(tr(cfg, 'bio', lang))}</p>
 <h2>{L['interests']}</h2><ul class="chips">{interests}</ul>
-<h2>Recent {L['pubs'].lower()}<a class="more" href="publications.html">→ all</a></h2>{recent}
+<h2>{L['recent']}<a class="more" href="publications.html">→ {L['allp']}</a></h2>{recent}
 <div class="empty"></div>"""
-    (OUT / "index.html").write_text(page(cfg, L, "index.html", L["home"], home, demo, hero), encoding="utf-8")
+    W("index.html", page(ctx, "index.html", L["home"], home, hero))
 
     # ---- publikacje
     years = sorted({p["year"] for p in pubs}, reverse=True)
-    types_present = [k for k in TYPE_LABELS if any(p["type"] == k for p in pubs)]
+    types_present = [k for k in TL if any(p["type"] == k for p in pubs)]
     opts = f'<option value="">{L["all"]}</option>' + "".join(
-        f'<option value="{k}">{TYPE_LABELS[k][0]} ({sum(1 for p in pubs if p["type"]==k)})</option>' for k in types_present)
+        f'<option value="{k}">{TL[k][0]} ({sum(1 for p in pubs if p["type"]==k)})</option>' for k in types_present)
     ylinks = "".join(f'<a href="#y{y}">{y or "n.d."}</a>' for y in years)
     blocks, idx = [], 0
     for y in years:
         blocks.append(f'<h2 class="year-h" id="y{y}" data-y="{y}">{y or "n.d."}</h2>')
         for p in (p for p in pubs if p["year"] == y):
-            blocks.append(render_pub(p, idx, me, L)); idx += 1
+            blocks.append(render_pub(p, idx, me, L, TL)); idx += 1
     pubs_html = f"""<div class="years">{ylinks}</div>
 <div class="toolbar"><input id="q" type="search" placeholder="{L['search']}"><select id="t">{opts}</select></div>
 {''.join(blocks)}<div class="empty">{L['nores']}</div>"""
-    (OUT / "publications.html").write_text(page(cfg, L, "publications.html", L["pubs"], pubs_html, demo,
-         small_band(L["pubs"], f"{len(pubs)} {L['total']} · {L['source']}")), encoding="utf-8")
+    W("publications.html", page(ctx, "publications.html", L["pubs"], pubs_html,
+                                small_band(L["pubs"], f"{len(pubs)} {L['total']} · {L['source']}")))
 
     # ---- studenci
     sh = []
@@ -630,17 +894,18 @@ def build(demo=False, offline=False):
         if not group:
             continue
         group.sort(key=lambda s: (s.get("status") != "current", -(s.get("year") or 9999)))
-        sh.append(f"<h2>{L[lvl]}</h2><div class='cards'>")
+        sh.append(f"<h2>{LEVEL_NAMES[lang][lvl]}</h2><div class='cards'>")
         for s in group:
             st = s.get("status", "current")
             pill = f'<span class="pill{" on" if st=="current" else ""}">{L[st]}{(" " + str(s["year"])) if s.get("year") else ""}</span>'
-            name = f'<a href="{esc(s["url"])}">{esc(s["name"])}</a>' if s.get("url") else esc(s["name"])
+            nm = tr(s, "name", lang)
+            name = f'<a href="{esc(s["url"])}">{esc(nm)}</a>' if s.get("url") else esc(nm)
             sh.append(f'<div class="card{"" if st=="current" else " done"}"><div class="t">{name}</div>'
-                      + (f'<div class="topic">{esc(s["topic"])}</div>' if s.get("topic") else "")
-                      + (f'<div class="meta">{L["role"]}: {esc(s["role"])}</div>' if s.get("role") else "")
+                      + (f'<div class="topic">{esc(tr(s, "topic", lang))}</div>' if tr(s, "topic", lang) else "")
+                      + (f'<div class="meta">{L["role"]}: {esc(tr(s, "role", lang))}</div>' if s.get("role") else "")
                       + pill + "</div>")
         sh.append("</div>")
-    (OUT / "students.html").write_text(page(cfg, L, "students.html", L["students"], "".join(sh), demo, small_band(L["students"], L["stud_sub"])), encoding="utf-8")
+    W("students.html", page(ctx, "students.html", L["students"], "".join(sh), small_band(L["students"], L["stud_sub"])))
 
     # ---- projekty
     ph = []
@@ -650,25 +915,81 @@ def build(demo=False, offline=False):
             continue
         ph.append(f"<h2>{label}</h2><div class='cards'>")
         for p in group:
-            t = f'<a href="{esc(p["url"])}">{esc(p["title"])}</a>' if p.get("url") else esc(p["title"])
-            meta = " · ".join(esc(x) for x in (p.get("funder"), p.get("years"),
-                              f'{L["role"]}: {p["role"]}' if p.get("role") else None, p.get("partners")) if x)
+            ttl = tr(p, "title", lang)
+            t = f'<a href="{esc(p["url"])}">{esc(ttl)}</a>' if p.get("url") else esc(ttl)
+            meta = " · ".join(esc(x) for x in (tr(p, "funder", lang), p.get("years"),
+                              f'{L["role"]}: {tr(p, "role", lang)}' if p.get("role") else None, p.get("partners")) if x)
             ph.append(f'<div class="card{"" if st=="ongoing" else " done"}"><div class="t">{t}</div><div class="meta">{meta}</div>'
-                      + (f'<p style="margin:8px 0 0">{esc(p["description"])}</p>' if p.get("description") else "")
+                      + (f'<p style="margin:8px 0 0">{esc(tr(p, "description", lang))}</p>' if tr(p, "description", lang) else "")
                       + "</div>")
         ph.append("</div>")
-    (OUT / "projects.html").write_text(page(cfg, L, "projects.html", L["projects"], "".join(ph), demo, small_band(L["projects"], L["proj_sub"])), encoding="utf-8")
+    W("projects.html", page(ctx, "projects.html", L["projects"], "".join(ph), small_band(L["projects"], L["proj_sub"])))
 
     # ---- działalność
     vh = []
     for g in service:
-        vh.append(f"<h2>{esc(g['category'])}</h2><table class='s'>")
+        vh.append(f"<h2>{esc(tr(g, 'category', lang))}</h2><table class='s'>")
         for it in g.get("items", []):
-            vh.append(f"<tr><td>{esc(it['text'])}</td><td>{esc(it.get('years',''))}</td></tr>")
+            vh.append(f"<tr><td>{esc(tr(it, 'text', lang))}</td><td>{esc(it.get('years',''))}</td></tr>")
         vh.append("</table>")
-    (OUT / "service.html").write_text(page(cfg, L, "service.html", L["service"], "".join(vh), demo, small_band(L["service"], L["serv_sub"])), encoding="utf-8")
+    W("service.html", page(ctx, "service.html", L["service"], "".join(vh), small_band(L["service"], L["serv_sub"])))
 
-    print(f"Gotowe: {len(pubs)} publikacji → {OUT}/")
+    # ---- dla studentów
+    fh = []
+    if tr(fs, "intro", lang):
+        fh.append(f'<p class="lead">{esc(tr(fs, "intro", lang))}</p>')
+    if fs.get("topics"):
+        fh.append(f"<h2>{L['topics']}</h2><div class='cards'>")
+        for t in fs["topics"]:
+            lv = t.get("level", "any")
+            kws = "".join(f"<span>{esc(k)}</span>" for k in tr(t, "keywords", lang, []))
+            fh.append(f'<div class="card topic-card"><span class="lvl {lv}">{L.get("lvl_" + lv, lv)}</span>'
+                      f'<div class="t">{esc(tr(t, "title", lang))}</div>'
+                      + (f'<p style="margin:8px 0 0">{esc(tr(t, "description", lang))}</p>' if tr(t, "description", lang) else "")
+                      + (f'<div class="kw">{kws}</div>' if kws else "") + "</div>")
+        fh.append("</div>")
+    if fs.get("offer"):
+        fh.append(f"<h2>{L['offer']}</h2><div class='offer'>")
+        for o in fs["offer"]:
+            fh.append(f'<div><b>{esc(tr(o, "title", lang))}</b>{esc(tr(o, "text", lang))}</div>')
+        fh.append("</div>")
+    mail = cfg.get("email", "")
+    fh.append(f"""<div class="contact-band"><div><h3>{L['howto']}</h3><p>{esc(tr(fs, 'howto', lang))}</p></div>
+<a class="cta gold" href="mailto:{esc(mail)}">{L['write']}: {esc(mail)}</a></div>""")
+    W("for-students.html", page(ctx, "for-students.html", L["forstud"], "".join(fh), small_band(L["forstud"], L["fs_sub"])))
+
+
+def build(demo=False, offline=False):
+    cfg = load_yaml("config.yaml", {})
+    data = {"students": load_yaml("data/students.yaml", []) or [],
+            "projects": load_yaml("data/projects.yaml", []) or [],
+            "service": load_yaml("data/service.yaml", []) or [],
+            "fs": load_yaml("data/for_students.yaml", {}) or {}}
+    pubs, auto_links = collect(demo, offline, cfg)
+
+    if OUT.exists():
+        shutil.rmtree(OUT)
+    OUT.mkdir()
+    (OUT / "style.css").write_text(CSS, encoding="utf-8")
+    (OUT / "site.js").write_text(JS, encoding="utf-8")
+    if (ROOT / "assets").exists():
+        shutil.copytree(ROOT / "assets", OUT / "assets", dirs_exist_ok=True)
+    if not make_og_image(cfg, OUT / "assets" / "og.png"):
+        print("Pillow niedostępny – używam assets/og.png z repozytorium", file=sys.stderr)
+    (OUT / ".nojekyll").write_text("")
+
+    main_lang = cfg.get("lang", "en")
+    second = "pl" if main_lang == "en" else "en"
+    fs_show = bool(data["fs"].get("show"))
+    for lang, prefix in ((main_lang, ""), (second, second + "/")):
+        other = second if lang == main_lang else main_lang
+        ctx = {"cfg": cfg, "L": I18N[lang], "lang": lang, "prefix": prefix,
+               "base": "" if not prefix else "../", "other_lang": other,
+               "other_prefix": (second + "/") if not prefix else "../",
+               "other_site_prefix": "" if prefix else second + "/", "fs_show": fs_show}
+        build_lang(ctx, pubs, auto_links, data, OUT / prefix if prefix else OUT)
+
+    print(f"Gotowe: {len(pubs)} publikacji, wersje {main_lang}+{second} → {OUT}/")
 
 
 if __name__ == "__main__":

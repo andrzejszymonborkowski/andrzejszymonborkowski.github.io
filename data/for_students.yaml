@@ -1,0 +1,87 @@
+# ------------------------------------------------------------------
+#  ZAKŁADKA „DLA STUDENTÓW” / "FOR STUDENTS"
+#
+#  show: false  → strona istnieje (…/for-students.html), ale NIE ma jej w menu.
+#  show: true   → zakładka pojawia się w menu.
+#
+#  UWAGA: tematy poniżej to SZKIC przygotowany na podstawie Twoich kierunków
+#  badań – sprawdź, popraw lub usuń, zanim ustawisz show: true.
+#  level: beng | msc | any | phd
+# ------------------------------------------------------------------
+show: false
+
+intro: >
+  I supervise engineering, master's and doctoral theses in BIM, openBIM and
+  BIM–GIS integration. Many of my students' theses turn into joint journal
+  publications, and some students represent the university in national and
+  international competitions.
+intro_pl: >
+  Prowadzę prace inżynierskie, magisterskie i doktorskie z zakresu BIM, openBIM
+  oraz integracji BIM–GIS. Wiele prac dyplomowych moich studentów kończy się
+  wspólną publikacją w czasopiśmie naukowym, a część studentów reprezentuje
+  uczelnię w konkursach krajowych i międzynarodowych.
+
+topics:
+  - title: "Automated validation of IFC models against IDS requirements"
+    title_pl: "Automatyczna weryfikacja modeli IFC względem wymagań IDS"
+    level: any
+    description: "Define information requirements in IDS, check real project models and report issues in BCF."
+    description_pl: "Zdefiniowanie wymagań informacyjnych w IDS, sprawdzenie rzeczywistych modeli i raportowanie błędów w BCF."
+    keywords: ["IFC", "IDS", "BCF", "Python"]
+
+  - title: "Digital product passports for building materials and BIM"
+    title_pl: "Cyfrowe paszporty produktów budowlanych a BIM"
+    level: msc
+    description: "How data required by the new Construction Products Regulation can be carried in IFC models."
+    description_pl: "Jak dane wymagane przez nowe rozporządzenie o wyrobach budowlanych przenosić w modelach IFC."
+    keywords: ["DPP", "CPR", "IFC", "bSDD"]
+    keywords_pl: ["DPP", "CPR", "IFC", "bSDD"]
+
+  - title: "From a design-stage BIM model to a 3D cadastre"
+    title_pl: "Od modelu BIM na etapie projektu do katastru 3D"
+    level: msc
+    description: "Mapping IFC spaces and elements to LADM and testing the result on a real building."
+    description_pl: "Odwzorowanie przestrzeni i elementów IFC w modelu LADM i weryfikacja na rzeczywistym budynku."
+    keywords: ["BIM–GIS", "LADM", "3D cadastre"]
+    keywords_pl: ["BIM–GIS", "LADM", "kataster 3D"]
+
+  - title: "AI agents supporting BIM coordination"
+    title_pl: "Agenty AI wspierające koordynację BIM"
+    level: any
+    description: "Large language models that read IFC data, detect issues and propose BCF topics."
+    description_pl: "Duże modele językowe, które odczytują dane IFC, wykrywają problemy i proponują zgłoszenia BCF."
+    keywords: ["LLM", "BCF", "IFC", "automation"]
+    keywords_pl: ["LLM", "BCF", "IFC", "automatyzacja"]
+
+  - title: "HBIM documentation of a historic building or small architecture"
+    title_pl: "Dokumentacja HBIM obiektu zabytkowego lub małej architektury"
+    level: beng
+    description: "Laser scanning or photogrammetry, scan-to-BIM modelling and enrichment with heritage information."
+    description_pl: "Skaning laserowy lub fotogrametria, modelowanie scan-to-BIM i wzbogacenie modelu o informacje konserwatorskie."
+    keywords: ["HBIM", "point cloud", "Revit"]
+    keywords_pl: ["HBIM", "chmura punktów", "Revit"]
+
+offer:
+  - title: "Publication"
+    title_pl: "Publikacja"
+    text: "Good theses are developed into co-authored journal articles."
+    text_pl: "Dobre prace rozwijamy we wspólne artykuły naukowe."
+  - title: "Real tools"
+    title_pl: "Prawdziwe narzędzia"
+    text: "Revit, IFC, IDS, BCF, QGIS and Python – skills used in industry."
+    text_pl: "Revit, IFC, IDS, BCF, QGIS i Python – umiejętności, których szuka branża."
+  - title: "Competitions"
+    title_pl: "Konkursy"
+    text: "Support in preparing for SkillsPoland / WorldSkills and student awards."
+    text_pl: "Wsparcie w przygotowaniu do SkillsPoland / WorldSkills i konkursów studenckich."
+  - title: "Industry contacts"
+    title_pl: "Kontakty z branżą"
+    text: "Cooperation with companies and internships with structured BIM/GIS tasks."
+    text_pl: "Współpraca z firmami i staże z konkretnymi zadaniami BIM/GIS."
+
+howto: >
+  Send me a short e-mail with the topic you are interested in (or your own idea),
+  your study programme and, if you have one, a link to your portfolio.
+howto_pl: >
+  Napisz krótkiego maila: który temat Cię interesuje (albo Twój własny pomysł),
+  kierunek i rok studiów oraz – jeśli masz – link do portfolio.

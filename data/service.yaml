@@ -1,19 +1,27 @@
 # ------------------------------------------------------------------
-#  FUNKCJE, REDAKCJE, KOMITETY, NAGRODY STUDENTÓW itp.
-#  Każda grupa (category) to osobny nagłówek na stronie "Service".
+#  FUNKCJE, REDAKCJE, KOMITETY itp. – każda grupa (category) to osobny nagłówek.
+#  Wersje polskie: category_pl, text_pl.
 # ------------------------------------------------------------------
 - category: "Editorial"
+  category_pl: "Działalność redakcyjna"
   items:
     - text: "Guest Editor, Budownictwo i Architektura"
+      text_pl: "Redaktor gościnny, Budownictwo i Architektura"
       years: "2026–"
     - text: "Guest Editor (with M. Karabin), Special Issue “BIM-GIS Integration for 3D Land Administration”, Land (MDPI)"
+      text_pl: "Redaktor gościnny (z M. Karabinem) numeru specjalnego „BIM-GIS Integration for 3D Land Administration”, Land (MDPI)"
       years: "2026–"
 
 - category: "Committees"
+  category_pl: "Komitety i komisje"
   items:
     - text: "Member, Polish Committee for Standardization (PKN), Technical Committee KT 232"
+      text_pl: "Członek Komitetu Technicznego KT 232 Polskiego Komitetu Normalizacyjnego (PKN)"
     - text: "Chair, Dean's Commission for Digitalization, Faculty of Geodesy and Cartography, WUT"
+      text_pl: "Przewodniczący Dziekańskiej Komisji ds. Cyfryzacji, Wydział Geodezji i Kartografii PW"
 
 - category: "Other"
+  category_pl: "Inne"
   items:
     - text: "Certified Autodesk Instructor"
+      text_pl: "Certyfikowany instruktor Autodesk"

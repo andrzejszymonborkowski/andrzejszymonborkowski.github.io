@@ -4,23 +4,30 @@
 #  status: current | completed
 #  role:   np. "Supervisor", "Auxiliary supervisor", "Co-supervisor"
 #  Pola year, topic, url są opcjonalne (można je pominąć).
+#  Wersje polskie: name_pl, role_pl, topic_pl.
 # ------------------------------------------------------------------
 - name: "Magdalena Kładź, MSc Eng."
+  name_pl: "mgr inż. Magdalena Kładź"
   level: phd
   status: current
   role: "Supervisor"
+  role_pl: "Promotor"
   # topic: "Temat rozprawy"
 
 - name: "Gabriela Buniewicz, MSc Eng."
+  name_pl: "mgr inż. Gabriela Buniewicz"
   level: phd
   status: current
   role: "Supervisor"
+  role_pl: "Promotor"
   # topic: "Temat rozprawy"
 
 - name: "Emilia Dudzińska, PhD Eng."
+  name_pl: "dr inż. Emilia Dudzińska"
   level: phd
   status: completed
   role: "Auxiliary supervisor"
+  role_pl: "Promotor pomocniczy"
   # topic: "Temat rozprawy"
   # year: 2025
 
@@ -29,5 +36,6 @@
 #   level: msc
 #   status: completed
 #   role: "Supervisor"
+  role_pl: "Promotor"
 #   topic: "Tytuł pracy"
 #   year: 2026

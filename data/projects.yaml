@@ -3,10 +3,12 @@
 #  role:   PI | Contractor | Co-investigator | Coordinator
 #  status: ongoing | completed
 #  Pola funder, years, partners, url, description są opcjonalne.
+#  Wersje polskie: title_pl, funder_pl, role_pl, description_pl.
 # ------------------------------------------------------------------
 - title: "PRZYKŁAD – wpisz nazwę projektu NCBiR"
   funder: "NCBR"
   role: "Contractor"
+  role_pl: "Wykonawca"
   years: "2020–2023"
   status: completed
   description: "Krótki opis projektu (1–2 zdania)."
@@ -14,10 +16,14 @@
 - title: "PRZYKŁAD – wpisz nazwę grantu wewnętrznego PW"
   funder: "Warsaw University of Technology"
   role: "PI"
+  role_pl: "Kierownik projektu"
   years: "2024–2025"
   status: completed
 
 - title: "BIM–GIS research cooperation"
+  title_pl: "Współpraca badawcza BIM–GIS"
   funder: "Industry collaboration – Bimetria Sp. z o.o."
+  funder_pl: "Współpraca z przemysłem – Bimetria Sp. z o.o."
   role: "Coordinator"
+  role_pl: "Koordynator"
   status: ongoing
