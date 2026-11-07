@@ -143,6 +143,28 @@ def fetch_orcid(orcid):
     return works
 
 
+def fetch_orcid_person(orcid):
+    """Linki z profilu ORCID: strony WWW (np. ResearchGate) i identyfikatory (Scopus, ResearcherID)."""
+    person = http_json(f"{ORCID_API}/{orcid}/person")
+    links = []
+    for u in _v(person, "researcher-urls", "researcher-url") or []:
+        links.append({"label": _v(u, "url-name") or "", "url": _v(u, "url", "value") or ""})
+    for e in _v(person, "external-identifiers", "external-identifier") or []:
+        links.append({"label": e.get("external-id-type") or "", "url": _v(e, "external-id-url", "value") or "",
+                      "value": e.get("external-id-value")})
+    return [l for l in links if l["url"]]
+
+
+LINK_NAMES = [("researchgate", "ResearchGate"), ("scopus", "Scopus"), ("researcherid", "Web of Science"),
+              ("webofscience", "Web of Science"), ("publons", "Web of Science"), ("wikipedia", "Wikipedia"),
+              ("scholar.google", "Google Scholar"), ("linkedin", "LinkedIn")]
+
+
+def nice_label(l):
+    probe = (l.get("url", "") + " " + l.get("label", "")).lower().replace(" ", "")
+    return next((n for k, n in LINK_NAMES if k in probe), l.get("label") or l["url"])
+
+
 # ----------------------------------------------------------------- BibTeX
 def parse_bibtex(text):
     entries = []
@@ -451,6 +473,14 @@ def build(demo=False, offline=False):
             print(f"ORCID niedostępny ({e}) – używam cache", file=sys.stderr)
     if not orcid_pubs and cache.exists() and not demo:
         orcid_pubs = json.loads(cache.read_text(encoding="utf-8"))
+    person_cache = DATA / "orcid_person.json"
+    if not demo and not offline and cfg.get("orcid"):
+        try:
+            person_cache.write_text(json.dumps(fetch_orcid_person(cfg["orcid"]), ensure_ascii=False, indent=1), encoding="utf-8")
+        except Exception as e:
+            print(f"ORCID person niedostępny ({e})", file=sys.stderr)
+    auto_links = json.loads(person_cache.read_text(encoding="utf-8")) if person_cache.exists() else []
+
     bib_pubs = []
     bibfile = DATA / "extra.bib"
     if bibfile.exists():
@@ -472,7 +502,12 @@ def build(demo=False, offline=False):
     else:
         initials = "".join(w[0] for w in cfg["name"].split()[::2])[:2]
         img = f'<div class="ph">{esc(initials)}</div>'
-    links = "".join(f'<a href="{esc(l["url"])}">{esc(l["label"])}</a>' for l in cfg.get("links", []))
+    all_links, seen_l = [], set()
+    for l in list(cfg.get("links", [])) + [dict(l, label=nice_label(l)) for l in auto_links]:
+        key = l["url"].rstrip("/").lower()
+        if key not in seen_l and l["label"] not in [x["label"] for x in all_links]:
+            seen_l.add(key); all_links.append(l)
+    links = "".join(f'<a href="{esc(l["url"])}">{esc(l["label"])}</a>' for l in all_links)
     links += f'<a href="mailto:{esc(cfg.get("email"))}">{esc(cfg.get("email"))}</a>' if cfg.get("email") else ""
     n_j = sum(1 for p in pubs if p["type"] == "journal")
     n_pub = sum(1 for p in pubs if p["type"] not in ("data", "preprint", "other"))

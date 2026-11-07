@@ -26,7 +26,7 @@ jobs:
         run: |
           git config user.name "site-bot"
           git config user.email "site-bot@users.noreply.github.com"
-          git add data/orcid_cache.json || true
+          git add data/orcid_cache.json data/orcid_person.json || true
           git diff --cached --quiet || git commit -m "Aktualizacja cache ORCID" && git push || true
       - uses: actions/upload-pages-artifact@v3
         with:
