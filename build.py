@@ -32,13 +32,25 @@ TYPE_LABELS = {
     "conference": ("Conference papers", "Conference"),
     "book": ("Books", "Book"),
     "chapter": ("Book chapters", "Chapter"),
+    "preprint": ("Preprints", "Preprint"),
+    "data": ("Datasets & software", "Data"),
     "other": ("Other", "Other"),
 }
+# kolejność ważności przy scalaniu duplikatów (np. preprint + artykuł)
+TYPE_RANK = ["journal", "conference", "chapter", "book", "preprint", "data", "other"]
+PREPRINT_DOI = ("10.20944/", "10.2139/ssrn", "10.36227/techrxiv", "10.31124/advance",
+                "10.48550/arxiv", "10.21203/rs", "10.31219/osf", "10.1101/")
+DATA_DOI = ("10.5281/zenodo", "10.71724/", "10.18150/", "10.6084/m9.figshare")
+PREPRINT_NAMES = {"10.20944/": "Preprints.org", "10.2139/ssrn": "SSRN",
+                  "10.36227/techrxiv": "TechRxiv", "10.31124/advance": "Advance (SAGE)",
+                  "10.48550/arxiv": "arXiv", "10.21203/rs": "Research Square"}
 ORCID_TYPES = {
     "journal-article": "journal", "journal-issue": "journal", "review": "journal",
     "conference-paper": "conference", "conference-abstract": "conference",
     "conference-poster": "conference", "conference-presentation": "conference",
     "book": "book", "edited-book": "book", "book-chapter": "chapter",
+    "preprint": "preprint", "working-paper": "preprint",
+    "data-set": "data", "software": "data", "research-tool": "data",
 }
 BIB_TYPES = {
     "article": "journal", "inproceedings": "conference", "conference": "conference",
@@ -104,6 +116,7 @@ def parse_orcid_work(w):
         "title": _v(w, "title", "title", "value") or "",
         "year": int(_v(w, "publication-date", "year", "value") or 0),
         "type": ORCID_TYPES.get(w.get("type"), "other"),
+        "orcid_type": w.get("type"),
         "venue": _v(w, "journal-title", "value") or "",
         "doi": norm_doi(doi),
         "url": _v(w, "url", "value") or "",
@@ -178,15 +191,46 @@ def parse_bibtex(text):
 
 
 # ----------------------------------------------------------------- merge
+def classify(p):
+    """Doprecyzowuje typ na podstawie prefiksu DOI (preprinty, repozytoria danych)."""
+    d = p.get("doi") or ""
+    if p["type"] in ("other", "journal", "preprint") and d.startswith(PREPRINT_DOI):
+        p["type"] = "preprint"
+        name = next((n for k, n in PREPRINT_NAMES.items() if d.startswith(k)), "")
+        if name:
+            p["venue"] = name
+    elif p["type"] == "other" and d.startswith(DATA_DOI):
+        p["type"] = "data"
+        if d.startswith("10.71724/"):
+            p["venue"] = "RepOD / Warsaw University of Technology"
+    return p
+
+
+def _similar(a, b):
+    import difflib
+    return difflib.SequenceMatcher(None, a, b).ratio() > 0.9
+
+
 def merge(*lists):
     seen, out = {}, []
     for lst in lists:
         for p in lst:
             if not p.get("title"):
                 continue
+            p = classify(dict(p))
             keys = [k for k in (("doi:" + p["doi"]) if p.get("doi") else None,
                                 "t:" + norm_title(p["title"])) if k]
             hit = next((seen[k] for k in keys if k in seen), None)
+            if hit is None:  # podobny tytuł (±1 rok) = ta sama praca w innej wersji
+                nt = norm_title(p["title"])
+                hit = next((q for q in out if abs((q.get("year") or 0) - (p.get("year") or 0)) <= 1
+                            and q["type"] != "data" and p["type"] != "data"
+                            and _similar(norm_title(q["title"]), nt)), None)
+                if hit is not None and TYPE_RANK.index(p["type"]) < TYPE_RANK.index(hit["type"]):
+                    # nowsza/ważniejsza wersja (np. artykuł zamiast preprintu) wygrywa
+                    for f in ("title", "type", "venue", "doi", "url", "year", "bibtex"):
+                        if p.get(f):
+                            hit[f] = p[f]
             if hit is None:
                 out.append(p)
                 for k in keys:
@@ -246,14 +290,14 @@ I18N = {
                msc="Master's theses", beng="Engineering theses", intern="Interns",
                current="current", completed="completed", ongoing="Ongoing", done="Completed",
                role="Role", total="publications", source="Publication list synchronised daily with ORCID.",
-               copy="BibTeX", copied="Copied!", contact="Contact", nores="No matching publications."),
+               copy="BibTeX", copied="Copied!", contact="Contact", nores="No matching publications.", peer="publications"),
     "pl": dict(home="Strona główna", pubs="Publikacje", students="Studenci", projects="Projekty",
                service="Działalność", interests="Zainteresowania badawcze", updated="Aktualizacja",
                search="Szukaj w tytułach, autorach, czasopismach…", all="Wszystkie typy",
                phd="Doktoranci", msc="Prace magisterskie", beng="Prace inżynierskie", intern="Stażyści",
                current="w toku", completed="zakończone", ongoing="W realizacji", done="Zakończone",
                role="Rola", total="publikacji", source="Lista publikacji synchronizowana codziennie z ORCID.",
-               copy="BibTeX", copied="Skopiowano!", contact="Kontakt", nores="Brak pasujących publikacji."),
+               copy="BibTeX", copied="Skopiowano!", contact="Kontakt", nores="Brak pasujących publikacji.", peer="publikacji"),
 }
 
 CSS = """
@@ -413,7 +457,7 @@ def build(demo=False, offline=False):
         bib_pubs = parse_bibtex(bibfile.read_text(encoding="utf-8", errors="replace"))
         print(f"BibTeX: {len(bib_pubs)} pozycji")
     pubs = apply_overrides(merge(orcid_pubs, bib_pubs), overrides)
-    pubs.sort(key=lambda p: (-(p.get("year") or 0), p["title"].lower()))
+    pubs.sort(key=lambda p: (-(p.get("year") or 0), TYPE_RANK.index(p["type"]), p["title"].lower()))
 
     OUT.mkdir(exist_ok=True)
     (OUT / "style.css").write_text(CSS, encoding="utf-8")
@@ -431,17 +475,20 @@ def build(demo=False, offline=False):
     links = "".join(f'<a href="{esc(l["url"])}">{esc(l["label"])}</a>' for l in cfg.get("links", []))
     links += f'<a href="mailto:{esc(cfg.get("email"))}">{esc(cfg.get("email"))}</a>' if cfg.get("email") else ""
     n_j = sum(1 for p in pubs if p["type"] == "journal")
+    n_pub = sum(1 for p in pubs if p["type"] not in ("data", "preprint", "other"))
+    n_data = sum(1 for p in pubs if p["type"] == "data")
     n_phd = sum(1 for s in students if s.get("level") == "phd")
     n_proj = len(projects)
-    recent = "".join(render_pub(p, f"h{i}", me, L) for i, p in enumerate(pubs[:5]))
+    recent = "".join(render_pub(p, f"h{i}", me, L) for i, p in enumerate([q for q in pubs if q["type"] not in ("data", "preprint")][:5]))
     interests = "".join(f"<li>{esc(i)}</li>" for i in cfg.get("research_interests", []))
     home = f"""<section class="hero">{img}<div>
 <h1>{esc(cfg.get('title',''))} {esc(cfg['name'])}</h1>
 <p class="sub">{esc(cfg.get('position',''))}</p>
 <p class="sub">{esc(cfg.get('unit',''))}<br>{esc(cfg.get('affiliation',''))}</p>
 <div class="links">{links}</div>
-<div class="stats"><div class="stat"><b>{len(pubs)}</b><span>{L['total']}</span></div>
+<div class="stats"><div class="stat"><b>{n_pub}</b><span>{L['peer']}</span></div>
 <div class="stat"><b>{n_j}</b><span>{TYPE_LABELS['journal'][0].lower()}</span></div>
+<div class="stat"><b>{n_data}</b><span>{TYPE_LABELS['data'][0].lower()}</span></div>
 <div class="stat"><b>{n_phd}</b><span>{L['phd'].lower()}</span></div>
 <div class="stat"><b>{n_proj}</b><span>{L['projects'].lower()}</span></div></div>
 </div></section>
