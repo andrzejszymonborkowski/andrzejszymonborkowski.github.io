@@ -312,75 +312,123 @@ I18N = {
                msc="Master's theses", beng="Engineering theses", intern="Interns",
                current="current", completed="completed", ongoing="Ongoing", done="Completed",
                role="Role", total="publications", source="Publication list synchronised daily with ORCID.",
-               copy="BibTeX", copied="Copied!", contact="Contact", nores="No matching publications.", peer="publications"),
+               copy="BibTeX", copied="Copied!", contact="Contact", nores="No matching publications.", peer="publications",
+               stud_sub="Doctoral candidates and thesis students", proj_sub="Research and development projects",
+               serv_sub="Editorial work, committees and professional activity"),
     "pl": dict(home="Strona główna", pubs="Publikacje", students="Studenci", projects="Projekty",
                service="Działalność", interests="Zainteresowania badawcze", updated="Aktualizacja",
                search="Szukaj w tytułach, autorach, czasopismach…", all="Wszystkie typy",
                phd="Doktoranci", msc="Prace magisterskie", beng="Prace inżynierskie", intern="Stażyści",
                current="w toku", completed="zakończone", ongoing="W realizacji", done="Zakończone",
                role="Rola", total="publikacji", source="Lista publikacji synchronizowana codziennie z ORCID.",
-               copy="BibTeX", copied="Skopiowano!", contact="Kontakt", nores="Brak pasujących publikacji.", peer="publikacji"),
+               copy="BibTeX", copied="Skopiowano!", contact="Kontakt", nores="Brak pasujących publikacji.", peer="publikacji",
+               stud_sub="Doktoranci i dyplomanci", proj_sub="Projekty badawcze i rozwojowe",
+               serv_sub="Redakcje, komitety i działalność organizacyjna"),
 }
 
 CSS = """
-:root{--ink:#1d2433;--muted:#5d6676;--line:#e4e1da;--bg:#fbfaf7;--card:#fff;--accent:#8a1c2b;--accent-soft:#f4e7e8;--mark:#fff3c4}
+/* Styl spójny z prezentacjami konferencyjnymi: granat, błękit, złoto; Georgia + Calibri */
+:root{--navy:#1A1F36;--primary:#0C5C8F;--accent:#18A0D6;--gold:#E8A838;--light:#F0F4F8;--white:#fff;
+--muted:#6B7B8D;--text:#1E293B;--ltext:#CBD5E1;--line:#DCE3EA;--teal:#2A9D8F;
+--shadow:0 3px 14px rgba(0,0,0,.08);--shadow-h:0 8px 24px rgba(12,92,143,.16);
+--serif:Georgia,"Times New Roman",serif;--sans:Calibri,Carlito,"Segoe UI",system-ui,-apple-system,sans-serif}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
-.wrap{max-width:960px;margin:0 auto;padding:0 24px}
-header.site{border-bottom:1px solid var(--line);background:var(--card)}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px}
-.brand{font-family:Charter,"Iowan Old Style","Source Serif Pro",Georgia,serif;font-size:1.15rem;font-weight:600;color:var(--ink);text-decoration:none}
-nav{display:flex;flex-wrap:wrap;gap:4px 20px}
-nav a{color:var(--muted);text-decoration:none;font-size:.95rem;padding:4px 0;border-bottom:2px solid transparent}
-nav a:hover{color:var(--ink)}
-nav a.active{color:var(--ink);border-bottom-color:var(--accent)}
-main{padding:44px 0 64px}
-h1,h2,h3{font-family:Charter,"Iowan Old Style","Source Serif Pro",Georgia,serif;font-weight:600;line-height:1.25}
-h1{font-size:2rem;margin:0 0 6px}
-h2{font-size:1.35rem;margin:40px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--line)}
-h3{font-size:1.05rem;margin:26px 0 8px;color:var(--muted)}
-.hero{display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:start}
-.hero img{width:150px;height:180px;object-fit:cover;border-radius:4px;background:var(--line)}
-.ph{width:150px;height:180px;border-radius:4px;background:var(--line);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:2.4rem;color:var(--muted)}
-.sub{color:var(--muted);margin:0}
-.links{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
-.links a{font-size:.88rem;border:1px solid var(--line);background:var(--card);padding:4px 12px;border-radius:999px;text-decoration:none;color:var(--ink)}
-.links a:hover{border-color:var(--accent);color:var(--accent)}
-.stats{display:flex;gap:28px;margin:28px 0 0;flex-wrap:wrap}
-.stat b{display:block;font-family:Georgia,serif;font-size:1.6rem;color:var(--ink)}
-.stat span{color:var(--muted);font-size:.85rem}
-ul.plain{padding-left:20px}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 6px;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:2;border-bottom:1px solid var(--line)}
-.toolbar input,.toolbar select{font:inherit;font-size:.95rem;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--light);color:var(--text);font:17px/1.6 var(--sans)}
+a{color:var(--primary);text-decoration:none}
+a:hover{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.2;color:var(--navy)}
+/* --- nagłówek --- */
+header.site{background:var(--navy);border-top:5px solid var(--accent);position:sticky;top:0;z-index:10;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.brand{font-family:var(--serif);font-size:1.12rem;font-weight:700;color:var(--white)}
+.brand:hover{color:var(--white)}
+.brand span{color:var(--gold)}
+nav{display:flex;flex-wrap:wrap;gap:4px 26px}
+nav a{color:var(--ltext);font-size:.98rem;padding:4px 0;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+nav a:hover{color:var(--white)}
+nav a.active{color:var(--white);border-bottom-color:var(--gold)}
+/* --- ciemny pas (jak slajd tytułowy) --- */
+.band{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+ background:radial-gradient(circle,rgba(24,160,214,.22),rgba(24,160,214,0) 70%);pointer-events:none}
+.band .wrap{position:relative;z-index:1}
+.goldbar{width:72px;height:4px;background:var(--gold);margin:0 0 18px}
+.band.small .wrap{padding-top:44px;padding-bottom:40px}
+.band.small h1{color:var(--white);font-size:2.3rem;margin:0}
+.band.small p{color:var(--accent);font-style:italic;margin:8px 0 0;font-size:1.05rem}
+.hero .wrap{display:grid;grid-template-columns:190px 1fr;gap:44px;align-items:center;padding-top:56px;padding-bottom:96px}
+.hero img,.hero .ph{width:190px;height:230px;object-fit:cover;border-radius:6px;border:3px solid var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.hero .ph{display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:3.2rem;color:var(--gold);background:#232A47}
+.hero h1{color:var(--white);font-size:2.5rem;margin:0}
+.hero .title{color:var(--accent);font-style:italic;font-size:1.15rem;margin:8px 0 14px}
+.hero .aff{color:var(--ltext);margin:0;line-height:1.5}
+.links{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap}
+.links a{font-size:.88rem;color:var(--white);border:1px solid rgba(203,213,225,.35);background:rgba(255,255,255,.05);padding:5px 14px;border-radius:999px;transition:all .15s}
+.links a:hover{border-color:var(--gold);color:var(--gold);background:rgba(232,168,56,.08)}
+/* --- statystyki (karty z kolorowym paskiem) --- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:-58px 0 8px;position:relative;z-index:2}
+.stat{background:var(--white);border-radius:6px;box-shadow:var(--shadow);padding:18px 18px 16px;border-top:4px solid var(--primary)}
+.stat:nth-child(2){border-top-color:var(--accent)}.stat:nth-child(3){border-top-color:var(--gold)}
+.stat:nth-child(4){border-top-color:var(--teal)}.stat:nth-child(5){border-top-color:var(--navy)}
+.stat b{display:block;font-family:var(--serif);font-size:2.1rem;color:var(--navy);line-height:1.1}
+.stat span{color:var(--muted);font-size:.9rem}
+body{min-height:100vh;display:flex;flex-direction:column}
+main{padding:40px 0 72px;flex:1}
+h2{font-size:1.55rem;margin:48px 0 20px}
+h2::after{content:"";display:block;width:56px;height:4px;background:var(--gold);margin-top:10px}
+.lead{font-size:1.08rem;max-width:780px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:0}
+.chips li{background:var(--white);box-shadow:var(--shadow);border-left:4px solid var(--accent);padding:9px 16px;border-radius:4px;font-size:.97rem}
+.more{font-family:var(--sans);font-size:.95rem;font-weight:400;margin-left:10px}
+/* --- publikacje --- */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 6px;position:sticky;top:64px;background:var(--light);padding:14px 0;z-index:5}
+.toolbar input,.toolbar select{font:inherit;font-size:.97rem;padding:10px 14px;border:1px solid var(--line);border-radius:6px;background:var(--white);color:var(--text);box-shadow:var(--shadow)}
+.toolbar input:focus,.toolbar select:focus{outline:2px solid var(--accent);outline-offset:1px}
 .toolbar input{flex:1;min-width:220px}
-.years{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0;font-size:.85rem}
-.years a{color:var(--muted);text-decoration:none;padding:1px 6px;border-radius:4px}
-.years a:hover{background:var(--accent-soft);color:var(--accent)}
-.pub{padding:12px 0;border-bottom:1px dashed var(--line)}
-.pub .t{font-weight:600}
-.pub .a{color:var(--ink);font-size:.93rem}
-.pub .a .me{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
-.pub .v{color:var(--muted);font-size:.9rem;font-style:italic}
-.pub .m{margin-top:4px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.82rem}
-.badge{font-size:.72rem;letter-spacing:.03em;text-transform:uppercase;padding:1px 7px;border-radius:3px;background:var(--accent-soft);color:var(--accent)}
-.btn{font:inherit;font-size:.82rem;border:none;background:none;color:var(--accent);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:2px}
-pre.bib{display:none;background:#f3f1ec;padding:10px 12px;border-radius:6px;font-size:.78rem;overflow:auto;white-space:pre-wrap;margin:8px 0 0}
+.years{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 6px}
+.years a{color:var(--primary);background:var(--white);box-shadow:var(--shadow);padding:3px 11px;border-radius:999px;font-size:.88rem}
+.years a:hover{background:var(--gold);color:var(--navy)}
+.pub{background:var(--white);border-radius:6px;box-shadow:var(--shadow);padding:16px 20px 14px;margin:0 0 12px;border-left:4px solid var(--primary);transition:box-shadow .15s,transform .15s}
+.pub:hover{box-shadow:var(--shadow-h);transform:translateY(-1px)}
+.pub[data-t=conference]{border-left-color:var(--accent)}
+.pub[data-t=chapter],.pub[data-t=book]{border-left-color:var(--gold)}
+.pub[data-t=preprint]{border-left-color:var(--muted)}
+.pub[data-t=data]{border-left-color:var(--teal)}
+.pub .t{font-weight:700;color:var(--navy);font-size:1.03rem;line-height:1.35}
+.pub .a{font-size:.95rem;margin-top:3px}
+.pub .a .me{font-weight:700;color:var(--primary)}
+.pub .v{color:var(--muted);font-size:.93rem;font-style:italic}
+.pub .m{margin-top:8px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.85rem}
+.badge{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:3px;background:var(--primary);color:var(--white)}
+.badge.conference{background:var(--accent)}.badge.chapter,.badge.book{background:var(--gold);color:var(--navy)}
+.badge.preprint{background:var(--muted)}.badge.data{background:var(--teal)}
+.m a{font-weight:700}
+.btn{font:inherit;font-size:.85rem;font-weight:700;border:none;background:none;color:var(--muted);cursor:pointer;padding:0}
+.btn:hover{color:var(--accent)}
+pre.bib{display:none;background:var(--navy);color:var(--ltext);padding:12px 14px;border-radius:6px;font-size:.78rem;overflow:auto;white-space:pre-wrap;margin:10px 0 0}
 pre.bib.open{display:block}
-.year-h{scroll-margin-top:70px}
+.year-h{scroll-margin-top:150px}
 .empty{color:var(--muted);display:none;padding:20px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:0 0 12px}
-.card .t{font-weight:600}
-.card .meta{color:var(--muted);font-size:.9rem}
-.pill{font-size:.75rem;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin-left:6px;white-space:nowrap}
-.pill.on{border-color:#2f7a4f;color:#2f7a4f}
-table.s{width:100%;border-collapse:collapse;font-size:.95rem}
-table.s td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-table.s td:last-child{color:var(--muted);white-space:nowrap;text-align:right}
-footer{border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;padding:22px 0 40px}
-.demo{background:var(--mark);border:1px solid #e9d68a;padding:10px 14px;border-radius:6px;font-size:.9rem;margin-bottom:24px}
-@media (max-width:640px){.hero{grid-template-columns:1fr}.hero img,.ph{width:120px;height:144px}nav{gap:4px 14px}h1{font-size:1.6rem}}
+/* --- karty (studenci, projekty) --- */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--white);border-radius:6px;box-shadow:var(--shadow);padding:18px 20px;border-top:4px solid var(--primary)}
+.card.done{border-top-color:var(--gold)}
+.card .t{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:1.1rem;line-height:1.3}
+.card .topic{margin-top:6px}
+.card .meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.pill{display:inline-block;font-family:var(--sans);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 9px;border-radius:3px;background:var(--light);color:var(--muted);margin-top:8px}
+.pill.on{background:var(--accent);color:var(--white)}
+table.s{width:100%;border-collapse:separate;border-spacing:0 8px}
+table.s td{background:var(--white);padding:13px 18px;vertical-align:top;box-shadow:var(--shadow)}
+table.s td:first-child{border-left:4px solid var(--gold);border-radius:6px 0 0 6px}
+table.s td:last-child{color:var(--muted);white-space:nowrap;text-align:right;border-radius:0 6px 6px 0}
+footer{background:var(--navy);color:var(--ltext);font-size:.85rem;padding:22px 0;border-top:4px solid var(--gold)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.demo{background:#FFF6E0;border:1px solid var(--gold);padding:10px 14px;border-radius:6px;font-size:.9rem;margin-bottom:24px}
+@media (max-width:720px){.hero .wrap{grid-template-columns:1fr;gap:24px;padding-top:36px}.hero img,.hero .ph{width:140px;height:170px}
+.hero h1{font-size:1.9rem}nav{gap:4px 16px}.band.small h1{font-size:1.8rem}.toolbar{top:0;position:static}}
 """
 
 JS = """
@@ -404,7 +452,7 @@ JS = """
 """
 
 
-def page(cfg, L, active, title, body, demo=False):
+def page(cfg, L, active, title, body, demo=False, band=""):
     tabs = [("index.html", L["home"]), ("publications.html", L["pubs"]),
             ("students.html", L["students"]), ("projects.html", L["projects"]),
             ("service.html", L["service"])]
@@ -418,9 +466,15 @@ def page(cfg, L, active, title, body, demo=False):
 <meta name="description" content="{esc(cfg['name'])}, {esc(cfg.get('affiliation',''))}">
 <link rel="stylesheet" href="style.css"></head><body>
 <header class="site"><div class="wrap"><a class="brand" href="index.html">{esc(cfg['name'])}</a><nav>{nav}</nav></div></header>
+{band}
 <main><div class="wrap">{banner}{body}</div></main>
-<footer><div class="wrap">© {date.today().year} {esc(cfg['name'])} · {esc(cfg.get('affiliation',''))} · {L['updated']}: {date.today().isoformat()}</div></footer>
+<footer><div class="wrap"><span>© {date.today().year} {esc(cfg['name'])} · {esc(cfg.get('affiliation',''))}</span><span>{L['updated']}: {date.today().isoformat()}</span></div></footer>
 <script src="site.js"></script></body></html>"""
+
+
+def small_band(title, sub=""):
+    return (f'<section class="band small"><div class="wrap"><div class="goldbar"></div><h1>{esc(title)}</h1>'
+            + (f'<p>{sub}</p>' if sub else "") + '</div></section>')
 
 
 def fmt_authors(authors, me_patterns):
@@ -445,7 +499,7 @@ def render_pub(p, idx, me, L):
 <div class="t">{esc(p['title'])}</div>
 <div class="a">{fmt_authors(p['authors'], me)}</div>
 {f'<div class="v">{esc(p["venue"])}</div>' if p.get('venue') else ''}
-<div class="m"><span class="badge">{TYPE_LABELS[p['type']][1]}</span>{' '.join(links)}
+<div class="m"><span class="badge {p['type']}">{TYPE_LABELS[p['type']][1]}</span>{' '.join(links)}
 <button class="btn" data-bib="{bid}" data-ok="{L['copied']}">{L['copy']}</button></div>
 <pre class="bib" id="{bid}">{esc(make_bibtex(p))}</pre></div>"""
 
@@ -516,22 +570,23 @@ def build(demo=False, offline=False):
     n_proj = len(projects)
     recent = "".join(render_pub(p, f"h{i}", me, L) for i, p in enumerate([q for q in pubs if q["type"] not in ("data", "preprint")][:5]))
     interests = "".join(f"<li>{esc(i)}</li>" for i in cfg.get("research_interests", []))
-    home = f"""<section class="hero">{img}<div>
-<h1>{esc(cfg.get('title',''))} {esc(cfg['name'])}</h1>
-<p class="sub">{esc(cfg.get('position',''))}</p>
-<p class="sub">{esc(cfg.get('unit',''))}<br>{esc(cfg.get('affiliation',''))}</p>
+    hero = f"""<section class="band hero"><div class="wrap">{img}<div>
+<div class="goldbar"></div>
+<h1>{esc(cfg['name'])}</h1>
+<p class="title">{esc(cfg.get('title',''))} · {esc(cfg.get('position',''))}</p>
+<p class="aff">{esc(cfg.get('unit',''))}<br>{esc(cfg.get('affiliation',''))}</p>
 <div class="links">{links}</div>
-<div class="stats"><div class="stat"><b>{n_pub}</b><span>{L['peer']}</span></div>
+</div></div></section>"""
+    home = f"""<div class="stats"><div class="stat"><b>{n_pub}</b><span>{L['peer']}</span></div>
 <div class="stat"><b>{n_j}</b><span>{TYPE_LABELS['journal'][0].lower()}</span></div>
 <div class="stat"><b>{n_data}</b><span>{TYPE_LABELS['data'][0].lower()}</span></div>
 <div class="stat"><b>{n_phd}</b><span>{L['phd'].lower()}</span></div>
 <div class="stat"><b>{n_proj}</b><span>{L['projects'].lower()}</span></div></div>
-</div></section>
-<p style="margin-top:28px">{esc(cfg.get('bio',''))}</p>
-<h2>{L['interests']}</h2><ul class="plain">{interests}</ul>
-<h2>{L['pubs']} <a href="publications.html" style="font-size:.85rem;font-family:system-ui">→</a></h2>{recent}
+<h2>About</h2><p class="lead">{esc(cfg.get('bio',''))}</p>
+<h2>{L['interests']}</h2><ul class="chips">{interests}</ul>
+<h2>Recent {L['pubs'].lower()}<a class="more" href="publications.html">→ all</a></h2>{recent}
 <div class="empty"></div>"""
-    (OUT / "index.html").write_text(page(cfg, L, "index.html", L["home"], home, demo), encoding="utf-8")
+    (OUT / "index.html").write_text(page(cfg, L, "index.html", L["home"], home, demo, hero), encoding="utf-8")
 
     # ---- publikacje
     years = sorted({p["year"] for p in pubs}, reverse=True)
@@ -544,54 +599,56 @@ def build(demo=False, offline=False):
         blocks.append(f'<h2 class="year-h" id="y{y}" data-y="{y}">{y or "n.d."}</h2>')
         for p in (p for p in pubs if p["year"] == y):
             blocks.append(render_pub(p, idx, me, L)); idx += 1
-    pubs_html = f"""<h1>{L['pubs']}</h1><p class="sub">{len(pubs)} {L['total']} · {L['source']}</p>
-<div class="years">{ylinks}</div>
+    pubs_html = f"""<div class="years">{ylinks}</div>
 <div class="toolbar"><input id="q" type="search" placeholder="{L['search']}"><select id="t">{opts}</select></div>
 {''.join(blocks)}<div class="empty">{L['nores']}</div>"""
-    (OUT / "publications.html").write_text(page(cfg, L, "publications.html", L["pubs"], pubs_html, demo), encoding="utf-8")
+    (OUT / "publications.html").write_text(page(cfg, L, "publications.html", L["pubs"], pubs_html, demo,
+         small_band(L["pubs"], f"{len(pubs)} {L['total']} · {L['source']}")), encoding="utf-8")
 
     # ---- studenci
-    sh = [f"<h1>{L['students']}</h1>"]
+    sh = []
     for lvl in ("phd", "msc", "beng", "intern"):
         group = [s for s in students if s.get("level") == lvl]
         if not group:
             continue
         group.sort(key=lambda s: (s.get("status") != "current", -(s.get("year") or 9999)))
-        sh.append(f"<h2>{L[lvl]}</h2>")
+        sh.append(f"<h2>{L[lvl]}</h2><div class='cards'>")
         for s in group:
             st = s.get("status", "current")
             pill = f'<span class="pill{" on" if st=="current" else ""}">{L[st]}{(" " + str(s["year"])) if s.get("year") else ""}</span>'
             name = f'<a href="{esc(s["url"])}">{esc(s["name"])}</a>' if s.get("url") else esc(s["name"])
-            sh.append(f'<div class="card"><div class="t">{name}{pill}</div>'
-                      + (f'<div>{esc(s["topic"])}</div>' if s.get("topic") else "")
+            sh.append(f'<div class="card{"" if st=="current" else " done"}"><div class="t">{name}</div>'
+                      + (f'<div class="topic">{esc(s["topic"])}</div>' if s.get("topic") else "")
                       + (f'<div class="meta">{L["role"]}: {esc(s["role"])}</div>' if s.get("role") else "")
-                      + "</div>")
-    (OUT / "students.html").write_text(page(cfg, L, "students.html", L["students"], "".join(sh), demo), encoding="utf-8")
+                      + pill + "</div>")
+        sh.append("</div>")
+    (OUT / "students.html").write_text(page(cfg, L, "students.html", L["students"], "".join(sh), demo, small_band(L["students"], L["stud_sub"])), encoding="utf-8")
 
     # ---- projekty
-    ph = [f"<h1>{L['projects']}</h1>"]
+    ph = []
     for st, label in (("ongoing", L["ongoing"]), ("completed", L["done"])):
         group = [p for p in projects if p.get("status", "completed") == st]
         if not group:
             continue
-        ph.append(f"<h2>{label}</h2>")
+        ph.append(f"<h2>{label}</h2><div class='cards'>")
         for p in group:
             t = f'<a href="{esc(p["url"])}">{esc(p["title"])}</a>' if p.get("url") else esc(p["title"])
             meta = " · ".join(esc(x) for x in (p.get("funder"), p.get("years"),
                               f'{L["role"]}: {p["role"]}' if p.get("role") else None, p.get("partners")) if x)
-            ph.append(f'<div class="card"><div class="t">{t}</div><div class="meta">{meta}</div>'
-                      + (f'<p style="margin:6px 0 0">{esc(p["description"])}</p>' if p.get("description") else "")
+            ph.append(f'<div class="card{"" if st=="ongoing" else " done"}"><div class="t">{t}</div><div class="meta">{meta}</div>'
+                      + (f'<p style="margin:8px 0 0">{esc(p["description"])}</p>' if p.get("description") else "")
                       + "</div>")
-    (OUT / "projects.html").write_text(page(cfg, L, "projects.html", L["projects"], "".join(ph), demo), encoding="utf-8")
+        ph.append("</div>")
+    (OUT / "projects.html").write_text(page(cfg, L, "projects.html", L["projects"], "".join(ph), demo, small_band(L["projects"], L["proj_sub"])), encoding="utf-8")
 
     # ---- działalność
-    vh = [f"<h1>{L['service']}</h1>"]
+    vh = []
     for g in service:
         vh.append(f"<h2>{esc(g['category'])}</h2><table class='s'>")
         for it in g.get("items", []):
             vh.append(f"<tr><td>{esc(it['text'])}</td><td>{esc(it.get('years',''))}</td></tr>")
         vh.append("</table>")
-    (OUT / "service.html").write_text(page(cfg, L, "service.html", L["service"], "".join(vh), demo), encoding="utf-8")
+    (OUT / "service.html").write_text(page(cfg, L, "service.html", L["service"], "".join(vh), demo, small_band(L["service"], L["serv_sub"])), encoding="utf-8")
 
     print(f"Gotowe: {len(pubs)} publikacji → {OUT}/")
 
