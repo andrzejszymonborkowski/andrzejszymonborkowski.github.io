@@ -17,13 +17,14 @@ links:
     url: "https://repo.pw.edu.pl/info.seam?id=WUT479e5ee7f79641299fa7dc2627064178&affil=&lang=pl"
   - label: "Scopus"
     url: "https://www.scopus.com/authid/detail.uri?authorId=56950213000"
-  # Usuń # i wklej adres, gdy będzie gotowy:
-  # - label: "Web of Science"
-  #   url: "https://www.webofscience.com/wos/author/record/XXXXXXX"
-  # - label: "ResearchGate"
-  #   url: "https://www.researchgate.net/profile/XXXXXXX"
-  # - label: "Wikipedia"
-  #   url: "https://pl.wikipedia.org/wiki/XXXXXXX"
+  - label: "Web of Science"
+    url: "https://www.webofscience.com/wos/author/record/JEP-5409-2023"
+  - label: "Google Scholar"
+    url: "https://scholar.google.pl/citations?user=sc8yVs8AAAAJ"
+  - label: "ResearchGate"
+    url: "https://www.researchgate.net/profile/Andrzej-Borkowski-5"
+  - label: "Wikipedia"
+    url: "https://pl.wikipedia.org/wiki/Andrzej_Szymon_Borkowski"
 
 bio: >
   My research focuses on Building Information Modelling (BIM), BIM–GIS
