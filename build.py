@@ -433,6 +433,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 JS = """
 (function(){
+ /* animacja liczników: od 0 do wartości docelowej, gdy karta pojawi się na ekranie */
+ const els=[...document.querySelectorAll('[data-count]')];
+ if(!els.length)return;
+ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const ease=t=>1-Math.pow(1-t,3);
+ function run(el,i){
+  const target=+el.dataset.count,dur=1400+i*150;let t0=null;
+  function step(ts){if(!t0)t0=ts;const k=Math.min((ts-t0)/dur,1);
+   el.textContent=Math.round(target*ease(k));if(k<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);
+ }
+ els.forEach(el=>el.textContent='0');
+ if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){run(e.target,els.indexOf(e.target));io.unobserve(e.target);}}),{threshold:.4});
+  els.forEach(el=>io.observe(el));
+ } else els.forEach(run);
+})();
+(function(){
  const q=document.getElementById('q'),t=document.getElementById('t');
  if(!q)return;
  const items=[...document.querySelectorAll('.pub')],heads=[...document.querySelectorAll('.year-h')],empty=document.querySelector('.empty');
@@ -577,11 +595,11 @@ def build(demo=False, offline=False):
 <p class="aff">{esc(cfg.get('unit',''))}<br>{esc(cfg.get('affiliation',''))}</p>
 <div class="links">{links}</div>
 </div></div></section>"""
-    home = f"""<div class="stats"><div class="stat"><b>{n_pub}</b><span>{L['peer']}</span></div>
-<div class="stat"><b>{n_j}</b><span>{TYPE_LABELS['journal'][0].lower()}</span></div>
-<div class="stat"><b>{n_data}</b><span>{TYPE_LABELS['data'][0].lower()}</span></div>
-<div class="stat"><b>{n_phd}</b><span>{L['phd'].lower()}</span></div>
-<div class="stat"><b>{n_proj}</b><span>{L['projects'].lower()}</span></div></div>
+    home = f"""<div class="stats"><div class="stat"><b data-count="{n_pub}">{n_pub}</b><span>{L['peer']}</span></div>
+<div class="stat"><b data-count="{n_j}">{n_j}</b><span>{TYPE_LABELS['journal'][0].lower()}</span></div>
+<div class="stat"><b data-count="{n_data}">{n_data}</b><span>{TYPE_LABELS['data'][0].lower()}</span></div>
+<div class="stat"><b data-count="{n_phd}">{n_phd}</b><span>{L['phd'].lower()}</span></div>
+<div class="stat"><b data-count="{n_proj}">{n_proj}</b><span>{L['projects'].lower()}</span></div></div>
 <h2>About</h2><p class="lead">{esc(cfg.get('bio',''))}</p>
 <h2>{L['interests']}</h2><ul class="chips">{interests}</ul>
 <h2>Recent {L['pubs'].lower()}<a class="more" href="publications.html">→ all</a></h2>{recent}
