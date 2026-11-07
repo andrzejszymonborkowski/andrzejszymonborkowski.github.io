@@ -1,0 +1,18 @@
+# ------------------------------------------------------------------
+#  Ręczne poprawki listy publikacji (opcjonalne)
+#
+#  hide:   publikacje do ukrycia – wpisz DOI albo fragment tytułu
+#  manual: publikacje, których nie ma w ORCID ani w extra.bib
+#          type: journal | conference | book | chapter | other
+# ------------------------------------------------------------------
+hide: []
+#  - "10.1234/przyklad.doi"
+#  - "fragment tytułu do ukrycia"
+
+manual: []
+#  - title: "Tytuł publikacji"
+#    authors: "A. S. Borkowski, J. Kowalski"
+#    year: 2026
+#    type: journal
+#    venue: "Nazwa czasopisma"
+#    doi: "10.xxxx/xxxxx"

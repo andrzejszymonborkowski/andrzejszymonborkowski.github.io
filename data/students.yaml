@@ -1,0 +1,33 @@
+# ------------------------------------------------------------------
+#  STUDENCI – dopisz nową osobę, kopiując blok zaczynający się od "- name:".
+#  level:  phd | msc | beng | intern
+#  status: current | completed
+#  role:   np. "Supervisor", "Auxiliary supervisor", "Co-supervisor"
+#  Pola year, topic, url są opcjonalne (można je pominąć).
+# ------------------------------------------------------------------
+- name: "Magdalena Kładź, MSc Eng."
+  level: phd
+  status: current
+  role: "Supervisor"
+  # topic: "Temat rozprawy"
+
+- name: "Gabriela Buniewicz, MSc Eng."
+  level: phd
+  status: current
+  role: "Supervisor"
+  # topic: "Temat rozprawy"
+
+- name: "Emilia Dudzińska, PhD Eng."
+  level: phd
+  status: completed
+  role: "Auxiliary supervisor"
+  # topic: "Temat rozprawy"
+  # year: 2025
+
+# Przykład pracy magisterskiej (usuń znaki # z początku linii, aby włączyć):
+# - name: "Imię Nazwisko"
+#   level: msc
+#   status: completed
+#   role: "Supervisor"
+#   topic: "Tytuł pracy"
+#   year: 2026

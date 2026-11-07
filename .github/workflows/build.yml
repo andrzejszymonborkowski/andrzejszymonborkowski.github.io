@@ -1,0 +1,43 @@
+name: Buduj i publikuj stronę
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 4 * * *"      # codziennie ok. 5:17 czasu PL – świeże publikacje z ORCID
+  workflow_dispatch:           # przycisk "Run workflow" do ręcznego odświeżenia
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python build.py
+      - name: Zapisz cache ORCID (zapas na wypadek awarii API)
+        run: |
+          git config user.name "site-bot"
+          git config user.email "site-bot@users.noreply.github.com"
+          git add data/orcid_cache.json || true
+          git diff --cached --quiet || git commit -m "Aktualizacja cache ORCID" && git push || true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

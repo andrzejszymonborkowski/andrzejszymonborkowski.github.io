@@ -1,0 +1,23 @@
+# ------------------------------------------------------------------
+#  PROJEKTY / GRANTY – dopisz nowy, kopiując blok "- title:".
+#  role:   PI | Contractor | Co-investigator | Coordinator
+#  status: ongoing | completed
+#  Pola funder, years, partners, url, description są opcjonalne.
+# ------------------------------------------------------------------
+- title: "PRZYKŁAD – wpisz nazwę projektu NCBiR"
+  funder: "NCBR"
+  role: "Contractor"
+  years: "2020–2023"
+  status: completed
+  description: "Krótki opis projektu (1–2 zdania)."
+
+- title: "PRZYKŁAD – wpisz nazwę grantu wewnętrznego PW"
+  funder: "Warsaw University of Technology"
+  role: "PI"
+  years: "2024–2025"
+  status: completed
+
+- title: "BIM–GIS research cooperation"
+  funder: "Industry collaboration – Bimetria Sp. z o.o."
+  role: "Coordinator"
+  status: ongoing

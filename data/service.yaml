@@ -1,0 +1,19 @@
+# ------------------------------------------------------------------
+#  FUNKCJE, REDAKCJE, KOMITETY, NAGRODY STUDENTÓW itp.
+#  Każda grupa (category) to osobny nagłówek na stronie "Service".
+# ------------------------------------------------------------------
+- category: "Editorial"
+  items:
+    - text: "Guest Editor, Budownictwo i Architektura"
+      years: "2026–"
+    - text: "Guest Editor (with M. Karabin), Special Issue “BIM-GIS Integration for 3D Land Administration”, Land (MDPI)"
+      years: "2026–"
+
+- category: "Committees"
+  items:
+    - text: "Member, Polish Committee for Standardization (PKN), Technical Committee KT 232"
+    - text: "Chair, Dean's Commission for Digitalization, Faculty of Geodesy and Cartography, WUT"
+
+- category: "Other"
+  items:
+    - text: "Certified Autodesk Instructor"

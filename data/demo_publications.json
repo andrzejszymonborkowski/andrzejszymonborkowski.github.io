@@ -1,0 +1,205 @@
+[
+ {
+  "title": "Example publication title on IFC data validation (demo)",
+  "year": 2026,
+  "type": "journal",
+  "venue": "Example Journal of Construction Informatics",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "P. Coauthor",
+   "A. S. Borkowski",
+   "K. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on BIM\u2013GIS integration (demo)",
+  "year": 2026,
+  "type": "journal",
+  "venue": "Example Journal of Construction Informatics",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "A. S. Borkowski",
+   "J. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on ontology-based phase modelling (demo)",
+  "year": 2026,
+  "type": "conference",
+  "venue": "Proceedings of an Example Conference",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "P. Coauthor",
+   "A. S. Borkowski",
+   "K. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on digital twins of buildings (demo)",
+  "year": 2025,
+  "type": "journal",
+  "venue": "Example Journal of Construction Informatics",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "A. S. Borkowski",
+   "J. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on HBIM documentation (demo)",
+  "year": 2025,
+  "type": "chapter",
+  "venue": "Example Edited Volume",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "P. Coauthor",
+   "A. S. Borkowski",
+   "K. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on AI agents in Revit (demo)",
+  "year": 2025,
+  "type": "journal",
+  "venue": "Example Journal of Construction Informatics",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "A. S. Borkowski",
+   "J. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on BCF issue management (demo)",
+  "year": 2024,
+  "type": "conference",
+  "venue": "Proceedings of an Example Conference",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "P. Coauthor",
+   "A. S. Borkowski",
+   "K. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on 3D cadastre and IFC (demo)",
+  "year": 2024,
+  "type": "journal",
+  "venue": "Example Journal of Construction Informatics",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "A. S. Borkowski",
+   "J. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on BIM education (demo)",
+  "year": 2023,
+  "type": "book",
+  "venue": "Example Publisher",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "P. Coauthor",
+   "A. S. Borkowski",
+   "K. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on LOD compliance (demo)",
+  "year": 2023,
+  "type": "journal",
+  "venue": "Example Journal of Construction Informatics",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "A. S. Borkowski",
+   "J. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on openBIM information flow (demo)",
+  "year": 2022,
+  "type": "conference",
+  "venue": "Proceedings of an Example Conference",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "P. Coauthor",
+   "A. S. Borkowski",
+   "K. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on point clouds to BIM (demo)",
+  "year": 2021,
+  "type": "journal",
+  "venue": "Example Journal of Construction Informatics",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "A. S. Borkowski",
+   "J. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on IfcGUID persistence (demo)",
+  "year": 2020,
+  "type": "journal",
+  "venue": "Example Journal of Construction Informatics",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "P. Coauthor",
+   "A. S. Borkowski",
+   "K. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ },
+ {
+  "title": "Example publication title on BIM standards review (demo)",
+  "year": 2019,
+  "type": "other",
+  "venue": "Example Report Series",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "A. S. Borkowski",
+   "J. Example"
+  ],
+  "bibtex": null,
+  "source": "demo"
+ }
+]

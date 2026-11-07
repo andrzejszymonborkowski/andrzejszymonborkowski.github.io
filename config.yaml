@@ -1,0 +1,33 @@
+# ------------------------------------------------------------------
+#  Ustawienia ogólne strony – edytuj śmiało, potem zapisz (commit).
+# ------------------------------------------------------------------
+name: "Andrzej Szymon Borkowski"
+title: "Assoc. Prof. DSc PhD Eng."
+position: "Associate Professor (prof. uczelni)"
+affiliation: "Faculty of Geodesy and Cartography, Warsaw University of Technology"
+unit: "Department of Spatial Planning and Environmental Sciences"
+email: "andrzej.borkowski@pw.edu.pl"
+photo: "assets/photo.jpg"          # wgraj zdjęcie pod tą nazwą (opcjonalnie)
+
+orcid: "0000-0002-7013-670X"
+links:
+  - label: "ORCID"
+    url: "https://orcid.org/0000-0002-7013-670X"
+  - label: "Baza Wiedzy PW"
+    url: "https://repo.pw.edu.pl/info.seam?id=WUT479e5ee7f79641299fa7dc2627064178&affil=&lang=pl"
+
+bio: >
+  My research focuses on Building Information Modelling (BIM), BIM–GIS
+  integration, formal ontologies (DOLCE, OWL 2 DL), machine learning in AEC,
+  IFC standards and digital twins. I teach BIM at the graduate level and
+  supervise doctoral, master's and engineering theses.
+
+research_interests:
+  - BIM and openBIM (IFC, IDS, BCF)
+  - BIM–GIS integration and 3D cadastre
+  - Formal ontologies in AEC (DOLCE, OWL 2 DL)
+  - AI agents and machine learning in AEC
+  - Digital twins and HBIM
+
+# Język interfejsu strony: "en" albo "pl"
+lang: "en"
