@@ -6,7 +6,8 @@ Generator osobistej strony naukowej.
   1. ORCID public API  – pobierane automatycznie przy każdym budowaniu
                           (cache w data/orcid_cache.json, gdy API nie odpowiada)
   2. data/extra.bib    – opcjonalny eksport BibTeX z Bazy Wiedzy PW
-  3. data/publications_overrides.yaml – ręczne ukrywanie / dopisywanie
+  3. data/publications_list.yaml – pełny dorobek z wykazu osiągnięć (ma pierwszeństwo)
+  4. data/publications_overrides.yaml – ręczne ukrywanie / dopisywanie
 
 Dane ręczne: config.yaml, data/students.yaml, data/projects.yaml, data/service.yaml
 Wynik: katalog public/  (gotowy do GitHub Pages)
@@ -254,6 +255,14 @@ def _similar(a, b):
     return difflib.SequenceMatcher(None, a, b).ratio() > 0.9
 
 
+def _similar_lo(a, b):
+    import difflib
+    return difflib.SequenceMatcher(None, a, b).ratio() > 0.72
+
+
+TALK_TYPES = ("conference-poster", "conference-abstract", "conference-presentation", "lecture-speech")
+
+
 def merge(*lists):
     seen, out = {}, []
     for lst in lists:
@@ -280,6 +289,8 @@ def merge(*lists):
                     seen[k] = p
             else:  # uzupełnij brakujące pola z drugiego źródła
                 for f in ("authors", "venue", "doi", "url", "bibtex", "year"):
+                    if f == "bibtex" and hit.get("source") == "list":
+                        continue  # dla pozycji z listy BibTeX generujemy z poprawnych danych
                     if not hit.get(f) and p.get(f):
                         hit[f] = p[f]
                 if len(p.get("authors", [])) > len(hit.get("authors", [])):
@@ -346,6 +357,13 @@ I18N = {
                cite="Cite", copy="Copy", copied="Copied!", close="Close", contact="Contact",
                nores="No matching publications.", peer="publications", about="About",
                recent="Recent publications", allp="all", datasets="datasets & software", journals="journal articles",
+               talks="Talks", coop="Cooperation", awards="Awards", highlights="Highlights",
+               talks_sub="Invited and plenary lectures, conference presentations and posters",
+               coop_sub="Industry cooperation, implemented results and academic partners",
+               awards_sub="Awards, distinctions and recognition",
+               talks_note="Conference presentations and posters are listed in the language in which they were given.",
+               superv="Thesis supervision", sv_phd="doctoral (auxiliary supervisor)", sv_msc="master's theses",
+               sv_beng="engineering theses", sv_all="theses supervised",
                stud_sub="Doctoral candidates and thesis students", proj_sub="Research and development projects",
                serv_sub="Editorial work, committees and professional activity",
                fs_sub="Thesis topics, what I offer and how to get in touch",
@@ -365,6 +383,13 @@ I18N = {
                nores="Brak pasujących publikacji.", peer="publikacji", about="O mnie",
                recent="Najnowsze publikacje", allp="wszystkie", datasets="zbiorów danych i oprogramowania",
                journals="artykułów w czasopismach",
+               talks="Wystąpienia", coop="Współpraca", awards="Nagrody", highlights="Najważniejsze osiągnięcia",
+               talks_sub="Wykłady na zaproszenie i plenarne, referaty konferencyjne i postery",
+               coop_sub="Współpraca z przemysłem, wdrożenia i partnerzy naukowi",
+               awards_sub="Nagrody, wyróżnienia i odznaczenia",
+               talks_note="Referaty i postery podano w języku, w którym zostały wygłoszone.",
+               superv="Promotorstwo prac dyplomowych", sv_phd="doktorat (promotor pomocniczy)", sv_msc="prac magisterskich",
+               sv_beng="prac inżynierskich", sv_all="wypromowanych prac",
                stud_sub="Doktoranci i dyplomanci", proj_sub="Projekty badawcze i rozwojowe",
                serv_sub="Redakcje, komitety i działalność organizacyjna",
                fs_sub="Tematy prac dyplomowych, co oferuję i jak się zgłosić",
@@ -375,8 +400,10 @@ I18N = {
                joint="wspólnych publikacji", all_pubs="publikacji",
                net_hint_touch="dotknij osoby, aby ją podświetlić, dotknij ponownie, aby zobaczyć wspólne publikacje"),
 }
-LEVEL_NAMES = {"en": {"phd": "Doctoral candidates", "msc": "Master's theses", "beng": "Engineering theses", "intern": "Interns"},
-               "pl": {"phd": "Doktoranci", "msc": "Prace magisterskie", "beng": "Prace inżynierskie", "intern": "Stażyści"}}
+LEVEL_NAMES = {"en": {"phd": "Doctoral candidates", "ips": "Individual study programmes (IPS / ID)", "msc": "Master's theses",
+                      "beng": "Engineering theses", "intern": "Interns"},
+               "pl": {"phd": "Doktoranci", "ips": "Indywidualne programy studiów (IPS / ID)", "msc": "Prace magisterskie",
+                      "beng": "Prace inżynierskie", "intern": "Stażyści"}}
 
 
 def tr(obj, key, lang, default=""):
@@ -436,7 +463,13 @@ nav a.active{color:var(--white);border-bottom-color:var(--gold)}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:-58px 0 8px;position:relative;z-index:2}
 .stat{background:var(--white);border-radius:6px;box-shadow:var(--shadow);padding:18px 18px 16px;border-top:4px solid var(--primary)}
 .stat:nth-child(2){border-top-color:var(--accent)}.stat:nth-child(3){border-top-color:var(--gold)}
-.stat:nth-child(4){border-top-color:var(--teal)}.stat:nth-child(5){border-top-color:var(--navy)}
+.stat:nth-child(4){border-top-color:var(--teal)}.stat:nth-child(5){border-top-color:var(--navy)}.stat:nth-child(6){border-top-color:var(--gold)}
+h2 .cnt{font-family:var(--sans);font-size:.95rem;font-weight:700;color:var(--white);background:var(--primary);border-radius:20px;padding:2px 10px;margin-left:10px;vertical-align:middle}
+ul.hl{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px 22px}
+ul.hl li{position:relative;padding:4px 0 4px 22px;line-height:1.4}
+ul.hl li:before{content:"";position:absolute;left:0;top:11px;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+.note{color:var(--muted);font-size:.92rem;margin:18px 0 0}
+.stats.inpage{margin:28px 0 8px}
 .stat b{display:block;font-family:var(--serif);font-size:2.1rem;color:var(--navy);line-height:1.1}
 .stat span{color:var(--muted);font-size:.9rem}
 body{min-height:100vh;display:flex;flex-direction:column}
@@ -914,14 +947,15 @@ def coauthor_graph(pubs, me_patterns, students):
 
 
 # ----------------------------------------------------------------- szablon strony
-PAGES = ["index.html", "publications.html", "students.html", "projects.html", "service.html", "for-students.html"]
+PAGES = ["index.html", "publications.html", "projects.html", "cooperation.html", "talks.html", "students.html",
+         "service.html", "awards.html", "for-students.html"]
 
 
 def page(ctx, active, title, body, band=""):
     cfg, L, lang, base = ctx["cfg"], ctx["L"], ctx["lang"], ctx["base"]
-    tabs = [("index.html", L["home"]), ("publications.html", L["pubs"]),
-            ("students.html", L["students"]), ("projects.html", L["projects"]),
-            ("service.html", L["service"])]
+    tabs = [("index.html", L["home"]), ("publications.html", L["pubs"]), ("projects.html", L["projects"]),
+            ("cooperation.html", L["coop"]), ("talks.html", L["talks"]), ("students.html", L["students"]),
+            ("service.html", L["service"]), ("awards.html", L["awards"])]
     if ctx["fs_show"]:
         tabs.append(("for-students.html", L["forstud"]))
     nav = "".join(f'<a href="{h}"{" class=active" if h == active else ""}>{esc(n)}</a>' for h, n in tabs)
@@ -968,6 +1002,24 @@ def small_band(title, sub=""):
             + (f'<p>{esc(sub)}</p>' if sub else "") + '</div></section>')
 
 
+def sections_html(groups, lang):
+    """Grupy {category, items:[{text, years}]} jako tabele – Działalność, Wystąpienia, Współpraca, Nagrody."""
+    out = []
+    for g in groups or []:
+        items = g.get("items", []) or []
+        cnt = f' <span class="cnt">{len(items)}</span>' if g.get("count") else ""
+        out.append(f"<h2>{esc(tr(g, 'category', lang))}{cnt}</h2><table class='s'>")
+        for it in items:
+            out.append(f"<tr><td>{esc(tr(it, 'text', lang))}</td><td>{esc(str(it.get('years', '')))}</td></tr>")
+        out.append("</table>")
+    return "".join(out)
+
+
+def stats_html(items, cls=""):
+    return (f'<div class="stats{cls}">' + "".join(
+        f'<div class="stat"><b data-count="{v}">{v}</b><span>{esc(lbl)}</span></div>' for v, lbl in items) + "</div>")
+
+
 def fmt_authors(authors, me_patterns):
     out = []
     for a in authors:
@@ -1012,6 +1064,9 @@ def collect(demo, offline, cfg):
     if not orcid_pubs and cache.exists() and not demo:
         orcid_pubs = json.loads(cache.read_text(encoding="utf-8"))
     orcid_pubs = [clean_authors(p) for p in orcid_pubs]
+    # wystąpienia (postery, abstrakty, referaty bez publikacji) są w zakładce „Wystąpienia”, nie w publikacjach
+    orcid_pubs = [p for p in orcid_pubs if p.get("orcid_type") not in TALK_TYPES
+                  and not (p.get("orcid_type") == "conference-paper" and not p.get("venue") and not p.get("doi"))]
     person_cache = DATA / "orcid_person.json"
     if not demo and not offline and cfg.get("orcid"):
         try:
@@ -1024,7 +1079,19 @@ def collect(demo, offline, cfg):
     if bibfile.exists():
         bib_pubs = parse_bibtex(bibfile.read_text(encoding="utf-8", errors="replace"))
         print(f"BibTeX: {len(bib_pubs)} pozycji")
-    pubs = apply_overrides(merge(orcid_pubs, bib_pubs), overrides)
+    list_pubs = []
+    for m in load_yaml("data/publications_list.yaml", []) or []:
+        m = dict(m, source="list", doi=norm_doi(m.get("doi")), url=m.get("url", ""))
+        if isinstance(m.get("authors"), str):
+            m["authors"] = [a.strip() for a in m["authors"].split(",")]
+        m.setdefault("authors", []); m.setdefault("venue", ""); m["year"] = int(m.get("year") or 0)
+        list_pubs.append(m)
+    # lista z wykazu pierwsza – jej tytuły/czasopisma wygrywają; ORCID dopisuje braki
+    pubs = apply_overrides(merge(list_pubs, orcid_pubs, bib_pubs), overrides)
+    # preprint, który ma już wersję opublikowaną w czasopiśmie, nie jest pokazywany osobno
+    publ = [(norm_title(q["title"]), q["year"]) for q in pubs if q["type"] in ("journal", "conference", "chapter")]
+    pubs = [p for p in pubs if p["type"] != "preprint" or not any(
+        abs(y - p["year"]) <= 1 and _similar_lo(t, norm_title(p["title"])) for t, y in publ)]
     pubs.sort(key=lambda p: (-(p.get("year") or 0), TYPE_RANK.index(p["type"]), p["title"].lower()))
     return pubs, auto_links
 
@@ -1078,13 +1145,20 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
 <p class="aff">{esc(tr(cfg, 'unit', lang))}<br>{esc(tr(cfg, 'affiliation', lang))}</p>
 <div class="links">{links}</div>
 </div></div></section>"""
-    home = f"""<div class="stats"><div class="stat"><b data-count="{n_pub}">{n_pub}</b><span>{L['peer']}</span></div>
-<div class="stat"><b data-count="{n_j}">{n_j}</b><span>{L['journals']}</span></div>
-<div class="stat"><b data-count="{n_data}">{n_data}</b><span>{L['datasets']}</span></div>
-<div class="stat"><b data-count="{n_phd}">{n_phd}</b><span>{L['phd'].lower()}</span></div>
-<div class="stat"><b data-count="{n_proj}">{n_proj}</b><span>{L['projects'].lower()}</span></div></div>
+    auto = {"pubs": (n_pub, L["peer"]), "journals": (n_j, L["journals"]), "data": (n_data, L["datasets"]),
+            "phd": (n_phd, L["phd"].lower()), "projects": (n_proj, L["projects"].lower())}
+    st = []
+    for s_ in cfg.get("stats") or [{"auto": k} for k in auto]:
+        if s_.get("auto") in auto:
+            v, lbl = auto[s_["auto"]]
+            st.append((v, tr(s_, "label", lang) or lbl))
+        else:
+            st.append((s_.get("value"), tr(s_, "label", lang)))
+    hl = [tr(h, "text", lang) for h in cfg.get("highlights") or []]
+    hl_html = (f"<h2>{L['highlights']}</h2><ul class='hl'>" + "".join(f"<li>{esc(x)}</li>" for x in hl) + "</ul>") if hl else ""
+    home = stats_html(st) + f"""
 <h2>{L['about']}</h2><p class="lead">{esc(tr(cfg, 'bio', lang))}</p>
-<h2>{L['interests']}</h2><ul class="chips">{interests}</ul>
+{hl_html}<h2>{L['interests']}</h2><ul class="chips">{interests}</ul>
 {net_html}
 <h2>{L['recent']}<a class="more" href="publications.html">→ {L['allp']}</a></h2>{recent}
 <div class="empty"></div>"""
@@ -1109,11 +1183,16 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
 
     # ---- studenci
     sh = []
-    for lvl in ("phd", "msc", "beng", "intern"):
+    sv = cfg.get("supervision") or {}
+    if sv:
+        tot = sum(int(sv.get(k) or 0) for k in ("phd", "msc", "beng"))
+        sh.append(stats_html([(tot, L["sv_all"]), (sv.get("msc", 0), L["sv_msc"]), (sv.get("beng", 0), L["sv_beng"]),
+                              (sv.get("phd", 0), L["sv_phd"])], " inpage"))
+    for lvl in ("phd", "ips", "msc", "beng", "intern"):
         group = [s for s in students if s.get("level") == lvl]
         if not group:
             continue
-        group.sort(key=lambda s: (s.get("status") != "current", -(s.get("year") or 9999)))
+        group.sort(key=lambda s: s.get("status") != "current")
         sh.append(f"<h2>{LEVEL_NAMES[lang][lvl]}</h2><div class='cards'>")
         for s in group:
             st = s.get("status", "current")
@@ -1146,13 +1225,17 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
     W("projects.html", page(ctx, "projects.html", L["projects"], "".join(ph), small_band(L["projects"], L["proj_sub"])))
 
     # ---- działalność
-    vh = []
-    for g in service:
-        vh.append(f"<h2>{esc(tr(g, 'category', lang))}</h2><table class='s'>")
-        for it in g.get("items", []):
-            vh.append(f"<tr><td>{esc(tr(it, 'text', lang))}</td><td>{esc(it.get('years',''))}</td></tr>")
-        vh.append("</table>")
-    W("service.html", page(ctx, "service.html", L["service"], "".join(vh), small_band(L["service"], L["serv_sub"])))
+    W("service.html", page(ctx, "service.html", L["service"], sections_html(service, lang),
+                           small_band(L["service"], L["serv_sub"])))
+
+    # ---- wystąpienia, współpraca, nagrody
+    W("talks.html", page(ctx, "talks.html", L["talks"],
+                         sections_html(data["talks"], lang) + f'<p class="note">{L["talks_note"]}</p>',
+                         small_band(L["talks"], L["talks_sub"])))
+    W("cooperation.html", page(ctx, "cooperation.html", L["coop"], sections_html(data["coop"], lang),
+                               small_band(L["coop"], L["coop_sub"])))
+    W("awards.html", page(ctx, "awards.html", L["awards"], sections_html(data["awards"], lang),
+                          small_band(L["awards"], L["awards_sub"])))
 
     # ---- dla studentów
     fh = []
@@ -1184,7 +1267,10 @@ def build(demo=False, offline=False):
     data = {"students": load_yaml("data/students.yaml", []) or [],
             "projects": load_yaml("data/projects.yaml", []) or [],
             "service": load_yaml("data/service.yaml", []) or [],
-            "fs": load_yaml("data/for_students.yaml", {}) or {}}
+            "fs": load_yaml("data/for_students.yaml", {}) or {},
+            "talks": load_yaml("data/talks.yaml", []) or [],
+            "coop": load_yaml("data/cooperation.yaml", []) or [],
+            "awards": load_yaml("data/awards.yaml", []) or []}
     pubs, auto_links = collect(demo, offline, cfg)
 
     if OUT.exists():

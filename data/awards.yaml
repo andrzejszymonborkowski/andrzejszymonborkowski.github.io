@@ -1,0 +1,61 @@
+# ------------------------------------------------------------------
+#  NAGRODY, WYRÓŻNIENIA, ODZNACZENIA – każda grupa to osobny nagłówek.
+#  Źródło: Wykaz osiągnięć, pkt 2.19–2.21 i 4.4 (stan na 09.11.2026).
+# ------------------------------------------------------------------
+- category: "Awards and distinctions"
+  category_pl: "Nagrody i wyróżnienia"
+  items:
+    - text: "Rector's Award of WUT (2nd degree, individual) for scientific achievements in 2023–2024 – for a significant contribution to the development of BIM"
+      text_pl: "Nagroda indywidualna II stopnia JM Rektora PW za osiągnięcia naukowe w latach 2023–2024 – za znaczny wkład w rozwój BIM"
+      years: "2025"
+    - text: "Laureate of the “Ideatorki i Ideatorzy” competition for innovative university teaching"
+      text_pl: "Laureat Konkursu na Ideatorki i Ideatorów"
+      years: "2024"
+    - text: "Rector's Award of WUT (3rd degree, individual) for scientific achievements in 2021–2022 – for a series of BIM publications"
+      text_pl: "Nagroda indywidualna III stopnia JM Rektora PW za osiągnięcia naukowe w latach 2021–2022 – za cykl publikacji BIM"
+      years: "2023"
+    - text: "Dean's distinction for teaching in 2022/2023 – “Information Technologies” (rated 4.96/5) and “Building Information Modelling (BIM)” (rated 4.99/5)"
+      text_pl: "Wyróżnienie Dziekana WGiK PW za zajęcia dydaktyczne w r. ak. 2022/2023 – „Technologie informacyjne” (ocena 4,96/5) i „Modelowanie informacji o budynku (BIM)” (ocena 4,99/5)"
+      years: "2023"
+    - text: "Audience Award for the best scientific poster (with N. Osińska and N. Szymańska), 1st Young Scientists Gala, WUT – “Energy analyses in 6D BIM models”"
+      text_pl: "Nagroda Publiczności na Najlepszy Poster Naukowy (z N. Osińską i N. Szymańską), I Gala Młodych Naukowców PW – „Analizy energetyczne w modelach BIM 6D”"
+      years: "2023"
+    - text: "Rector's Award of WUT (2nd degree, individual) for organisational achievements in 2020/2021 – Task 41 of the NERW PW project"
+      text_pl: "Nagroda indywidualna II stopnia JM Rektora PW za osiągnięcia organizacyjne w r. ak. 2020/2021 – realizacja Zadania 41 projektu NERW PW"
+      years: "2022"
+    - text: "Rector's Award of WUT (3rd degree, team, with I. Jankowska and W. Krupowicz) for organisational achievements in 2018/2019 – Task 41 of the NERW PW project"
+      text_pl: "Nagroda zespołowa III stopnia JM Rektora PW (z I. Jankowską i W. Krupowiczem) za osiągnięcia organizacyjne w r. ak. 2018/2019 – realizacja Zadania 41 projektu NERW PW"
+      years: "2020"
+    - text: "Best ECDL CAD examiner in Poland in 2016 – award of the Polish Information Processing Society and the Polish ECDL Office"
+      text_pl: "Najlepszy egzaminator ECDL CAD w Polsce w roku 2016 – nagroda Polskiego Towarzystwa Informatycznego i Polskiego Biura ECDL"
+      years: "2017"
+
+- category: "State decorations"
+  category_pl: "Odznaczenia państwowe"
+  items:
+    - text: "Bronze Medal for Long Service, awarded by the President of the Republic of Poland"
+      text_pl: "Medal Brązowy za Długoletnią Służbę, nadany przez Prezydenta RP"
+      years: "2025"
+
+- category: "Other recognition"
+  category_pl: "Inne osiągnięcia"
+  items:
+    - text: "Highly Cited Paper Certificate 2023–2024, Journal of Sensor and Actuator Networks"
+      text_pl: "Certyfikat Highly Cited Paper 2023–2024, Journal of Sensor and Actuator Networks"
+      years: "2025"
+    - text: "Cover of Inżynier Budownictwa (issue 10/2025)"
+      text_pl: "Okładka czasopisma Inżynier Budownictwa (nr 10/2025)"
+      years: "2025"
+    - text: "Journal cover: “Low-Cost Internet of Things Solution for Building Information Modeling Level 3B” (J. Sens. Actuator Netw. 13(2))"
+      text_pl: "Okładka czasopisma: „Low-Cost Internet of Things Solution for Building Information Modeling Level 3B” (J. Sens. Actuator Netw. 13(2))"
+      years: "2024"
+
+- category: "Students' awards"
+  category_pl: "Nagrody studentów"
+  items:
+    - text: "Paulina Jarema and Anna Pieńkowska – finalists of SkillsPoland (WorldSkills)"
+      text_pl: "Paulina Jarema i Anna Pieńkowska – finalistki SkillsPoland (WorldSkills)"
+      years: "2026"
+    - text: "Paulina Jarema – “Srebrny Sukces” award in the Science category"
+      text_pl: "Paulina Jarema – nagroda „Srebrny Sukces” w kategorii „Nauka”"
+      years: "2026"

@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------
 #  STUDENCI – dopisz nową osobę, kopiując blok zaczynający się od "- name:".
-#  level:  phd | msc | beng | intern
+#  level:  phd | ips | msc | beng | intern   (ips = IPS / studia ID)
 #  status: current | completed
 #  role:   np. "Supervisor", "Auxiliary supervisor", "Co-supervisor"
 #  Pola year, topic, url są opcjonalne (można je pominąć).
@@ -31,11 +31,35 @@
   # topic: "Temat rozprawy"
   # year: 2025
 
+- name: "Paulina Jarema"
+  level: ips
+  status: current
+  role: "Supervisor, Individual Study Programme (IPS)"
+  role_pl: "Opiekun naukowy, Indywidualny Program Studiów (IPS)"
+  topic: "SkillsPoland (WorldSkills) finalist; “Srebrny Sukces” award in the Science category (2026)"
+  topic_pl: "Finalistka SkillsPoland (WorldSkills); nagroda „Srebrny Sukces” w kategorii „Nauka” (2026)"
+  year: "2024–2026"
+
+- name: "Michał Łukasik"
+  level: ips
+  status: current
+  role: "Supervisor, Individual Study Programme (IPS)"
+  role_pl: "Opiekun naukowy, Indywidualny Program Studiów (IPS)"
+  year: "2025–2027"
+
+- name: "Julia Czapp, BEng"
+  name_pl: "inż. Julia Czapp"
+  level: ips
+  status: current
+  role: "Supervisor, interdisciplinary studies (ID)"
+  role_pl: "Opiekun naukowy, studia interdyscyplinarne (ID)"
+  year: "2025–2027"
+
 # Przykład pracy magisterskiej (usuń znaki # z początku linii, aby włączyć):
 # - name: "Imię Nazwisko"
 #   level: msc
 #   status: completed
 #   role: "Supervisor"
-  role_pl: "Promotor"
+#   role_pl: "Promotor"
 #   topic: "Tytuł pracy"
 #   year: 2026

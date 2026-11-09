@@ -1,0 +1,205 @@
+# ------------------------------------------------------------------
+#  WYSTĄPIENIA – wykłady na zaproszenie, plenarne, referaty, postery.
+#  Każda grupa (category) to osobny nagłówek; nowe pozycje dopisuj na górze grupy.
+#  count: true  → przy nagłówku pokazuje się liczba pozycji.
+#  Referaty i postery podane są w języku wystąpienia (jedno pole text).
+# ------------------------------------------------------------------
+- category: Invited lectures
+  category_pl: Wykłady na zaproszenie
+  items:
+  - text: '“From data to intelligence: the extended DIKW pyramid as a map of professional thinking” – open lecture at the invitation of Dr Eng. Dariusz Tomaszewicz (International Academy of Applied Sciences in Łomża), Warsaw'
+    text_pl: '„Od danych do inteligencji: rozszerzona piramida DIKW jako mapa myślenia zawodowego” – wykład otwarty na zaproszenie dra inż. Dariusza Tomaszewicza (Międzynarodowa Akademia Nauk Stosowanych w Łomży), Warszawa'
+    years: 6.06.2026
+  - text: “BIM–GIS integration” – lecture at the invitation of Dr Eng. Jarosław Chudzicki, Assoc. Prof. (Faculty of Building Services, Hydro and Environmental Engineering, WUT), Warsaw
+    text_pl: „Integracja BIM-GIS” – wykład na zaproszenie dra inż. Jarosława Chudzickiego, prof. uczelni (Wydział Inżynierii Środowiska PW), Warszawa
+    years: 2.12.2025
+  - text: '“Neurodidactic foundations of learning: from black pedagogy to the discovery of mirror neurons” – lecture at the invitation of the Rector of Rzeszów University of Technology'
+    text_pl: '„Neurodydaktyczne podstawy procesu uczenia się: od czarnej pedagogiki po odkrycia neuronów lustrzanych” – wykład na zaproszenie JM Rektora Politechniki Rzeszowskiej'
+    years: 18.10.2024
+  - text: “Architectural modelling and BIM implementation at company level” – lecture at the invitation of Wojciech Ciepłucha, MSc Eng. (Faculty of Architecture, Cracow University of Technology), Kraków
+    text_pl: „Modelowanie architektoniczne i wdrożenie BIM na poziomie przedsiębiorstw” – wykład na zaproszenie mgr. inż. Wojciecha Ciepłuchy (Wydział Architektury Politechniki Krakowskiej), Kraków
+    years: 23.05.2024
+- category: Plenary lectures
+  category_pl: Wykłady plenarne
+  items:
+  - text: '“A critical analysis of BIM development: from CAD through file-based approaches and SaaS to granular data” – General Assembly of the Geoinformatics Commission, Polish Academy of Arts and Sciences (PAU), online'
+    text_pl: '„Krytyczna analiza rozwoju BIM: od CAD, poprzez podejście plikowe, SaaS, po dane granularne” – Zebranie Ogólne Komisji Geoinformatyki Polskiej Akademii Umiejętności, online'
+    years: 8.10.2025
+  - text: '“BIM as the main component of digitalising the construction investment process: national implementation, company adoption and engineering education” – General Assembly of the Masovian Chamber of Civil Engineers on its 20th anniversary, Płock'
+    text_pl: '„BIM jako główny komponent cyfryzacji procesu inwestycyjno-budowlanego: implementacja na poziomie krajowym, adopcja na poziomie przedsiębiorstw oraz edukacja inżynierów” – Zgromadzenie Ogólne Mazowieckiej Izby Inżynierów Budownictwa z okazji 20-lecia MOIIB, Płock'
+    years: 30.06.2023
+- category: Opening lectures
+  category_pl: Wykłady otwarcia
+  items:
+  - text: '“Evolution of convolutional and recurrent artificial neural networks in the context of BIM: deep insight and the new Bimetria tool” – ArchReSci (Architecture-Research-Science) 2026, Poznań/online'
+    text_pl: '„Ewolucja konwolucyjnych i rekurencyjnych sztucznych sieci neuronowych w kontekście BIM: głęboki wgląd i nowe narzędzie Bimetria” – konferencja ArchReSci (Architecture-Research-Science) 2026, Poznań/online'
+    years: 23.04.2026
+  - text: “New professions and challenges related to the BIM methodology” – inauguration of the postgraduate programme “BIM in the Investment Life Cycle”, University of Gdańsk
+    text_pl: „Nowe zawody i wyzwania związane z metodyką BIM” – inauguracja I edycji studiów podyplomowych „BIM w Cyklu Życia Inwestycji”, Uniwersytet Gdański
+    years: 4.10.2025
+- category: Conference presentations
+  category_pl: Referaty konferencyjne
+  count: true
+  items:
+  - text: 'Borkowski A.S., Jarema P., Pilna potrzeba przeprowadzenia przeglądu zbiorczego w badaniach nad BIM: krytyczna ocena przeglądów systematycznych z wykorzystaniem narzędzia AMSTAR 2, XXXIII Konferencja Polskiego Towarzystwa Informacji Przestrzennej "Geoinformacja w systemie bezpieczeństwa narodowego", 28-29.10.2026 r., Wojskowa Akademia Techniczna, Warszawa'
+    years: '2026'
+  - text: 'Borkowski A.S., Jarema P., Aydin M. Agent oparty na sztucznej inteligencji, który weryfikuje i rozwiązuje problemy związane z koordynacją BCF w zaktualizowanym modelu IFC: studium przypadku, Konferencja naukowa „Łączy Nas Nauka 2”, 22-23.10.2026 r., Politechnika Wrocławska, Wrocław'
+    years: '2026'
+  - text: 'Borkowski A.S., Ciemny wykład jako innowacyjna metoda nauczania oparta na odkrywaniu własnej niewiedzy przez ekspertów: studium przypadku w zakresie kształcenia inżynierów BIM, VI Konferencja Dydaktyczna "Nauczanie Przedmiotów Ścisłych i Technicznych, 20-21.10.2026 r. online'
+    years: '2026'
+  - text: Markiewicz M., Borkowski A.S., Ciemny Wykład, VI Konferencja Ars Docendi "Dydaktyka akademicka w świecie wartości", 17-18.10.2026 r., Uniwersytet Jagielloński, Kraków
+    years: '2026'
+  - text: Borkowski A.S., Jarema P., Wykorzystanie formatu IFC jako standardu pośredniego w integracji danych BIM i GIS w środowisku QGIS na przykładzie transformacji modeli do formatu GeoPackage, V Spotkanie Użytkowników QGIS, 23-25.06.2026, Politechnika Łódzka, Łódź
+    years: '2026'
+  - text: Kładź M., Borkowski A.S., BCF jako przykład reifikacji i serializacji w BIM, Konferencja BIM Days 2026, 20-22.05.2026 r., Warszawa/online
+    years: '2026'
+  - text: 'Borkowski A.S., Modele informacyjne obiektów budowlanych (BIM) jako narzędzie do projektowania i kontroli: mechanizmy praktyczne ontologii formalnej, Międzynarodowe Sympozjum "Kultura Bezpieczeństwa Ludności w XXI Wieku", 22.05.2026 r. Wielkopolski Oddział PAN, Poznań'
+    years: '2026'
+  - text: Borkowski A.S., Jarema P., Health Checker – narzędzie do automatycznej kontroli jakości danych w modelach BIM, XX Ogólnopolska Konferencja Studentów Geodezji, 27-28.04.2026, Politechnika Gdańska, Gdańsk
+    years: '2026'
+  - text: 'Borkowski A.S., Ewolucja konwolucyjnych i rekurencyjnych sztucznych sieci neuronowych w kontekście BIM: głęboki wgląd i nowe narzędzie Bimetria, ArchReSci (Architecture-Research-Science) 2026, 23-25.04.2026, Poznań/online'
+    years: '2026'
+  - text: 'Borkowski A.S., Kubrat A., Inteligentna koordynacja projektów: Jak AI zmienia podejście do detekcji kolizji w BIM?, BIM4industry 2026 praktyka i trendy, 5.03.2026, Kraków/online'
+    years: '2026'
+  - text: Borkowski A.S., Buniewicz G., Standardisation of BIM Data in Cross-Border Cooperation – From Design to Operation, International Academic and Practitioner Conference „Cross-border cooperation in the era of challenges and transformation – space, energy, climate, culture”, 4.03.2026, Wrocław
+    years: '2026'
+  - text: Borkowski A.S., Ewolucja konwolucyjnych i rekurencyjnych sztucznych sieci neuronowych w kontekście BIM, VI Webinarium Budowlane PSRiBS pt. "Inżynieria w Naukach Stosowanych", 26.02.2026, Łomża/online
+    years: '2026'
+  - text: 'Borkowski A.S., W drodze do cyfrowego bliźniaka: ograniczenia i wyzwania w zakresie modelowania informacji o obiekcie budowlanym (BIM), II Kongres Geoinformacyjny „Rola technologii geoinformacyjnych w nauce, gospodarce i administracji”, 23-24.10.2025, Park Technologii Kosmicznych, Zielona Góra'
+    years: '2025'
+  - text: 'Borkowski A.S., Jak publikować ze studentami? Praktyczne wskazówki, V Konferencja Dydaktyczna pt.: "Nauczanie przedmiotów ścisłych i technicznych”, 15-16.10.2025, Politechnika Częstochowska/online'
+    years: '2025'
+  - text: 'Borkowski A.S., Buniewicz G., Wdrożenie elementów BIM w wydawaniu pozwoleń na budowę w projektach koncepcyjnych metra: studium przypadku fragmentu 4 linii metra w Warszawie, XI Międzynarodowa Konferencja Naukowo-Techniczna ARCHBUD 2025 pt. Problemy współczesnej architektury i budownictwa, 20-23.09.2025, Kołobrzeg'
+    years: '2025'
+  - text: Borkowski A.S., Buniewicz G., Standard IFC jako repozytorium stanów przeszłych, teraźniejszych i przyszłych w całym cyklu życia obiektu budowlanego, 7 Forum Budowlane "Budownictwo Zrównoważone", 4-5.07.2025, Płock
+    years: '2025'
+  - text: 'Borkowski A.S., Model HBIM jako przykład źródła w procesie rekonstrukcji obiektu dziedzictwa kulturowego: studia przypadków, CAA POLAND Wrocław, 5-7.06.2025, Wrocław'
+    years: '2025'
+  - text: 'Borkowski A.S., Symulacje ewakuacji i zagrożenia pożarowego na podstawie modelu BIM z wykorzystaniem symulacji agentowych w środowisku NetLogo, Smart City Forum - III Konferencja Naukowo-Techniczna pt.: "Zarządzanie Bezpieczeństwem Pracy w Budownictwie”, 4-6.06.2025, Muszyna'
+    years: '2025'
+  - text: Borkowski A.S., Integracja technologii modelowania informacji o obiekcie budowlanym (BIM) oraz internetu rzeczy (IoT) dla zrównoważonego budownictwa, Smart City Forum - X Konferencja Naukowa Science 2 Business „Mieszkanie prawem człowieka”, 17.04.2025, Politechnika Częstochowska, Częstochowa
+    years: '2025'
+  - text: 'Borkowski A.S., Kawka M., Markowska K., Molak Z. Integracja BIM i GIS w przewidywaniu szkód powodziowych w budynkach historycznych: przypadek obozu zagłady Auschwitz I, VIII Konferencja Naukowo-techniczna pn. „Kierunki rozwoju i innowacje w geodezji i kartografii”, 14-16.05.2025, Janów Lubelski'
+    years: '2025'
+  - text: Borkowski A.S., Buniewicz G. Dobre praktyki w zakresie modelowania obiektów bibliotecznych BIM z branży teletechnicznej i telekomunikacyjnej, II Konferencja Naukowa Budownictwa, Architektury i Techniki, 25.04.2025, UTH, Warszawa
+    years: '2025'
+  - text: Borkowski A.S., Dobre praktyki w modelowaniu i zarządzaniu informacją o obiekcie budowlanym (BIM), Międzynarodowa Konferencja Naukowa pt. 'Innowacje na rzecz zrównoważonej przyszłości – podejście holistyczne', 17.04.2025, ATANS, Warszawa
+    years: '2025'
+  - text: Borkowski A.S., Modelowanie i zarządzanie informacją o obiekcie budowlanym (BIM) w procesie inwestycyjnym, I Międzynarodowa Konferencja Naukowo-Techniczna PSRiBS „Architekt, inżynier budownictwa, rzeczoznawca budowlany w procesie realizacji inwestycji związanych z budową obiektów cywilnych oraz obiektów specjalnych”, 21.03.2025, IBiB PAN, Warszawa
+    years: '2025'
+  - text: Buniewicz G., Borkowski A.S., Model HBIM willi profesora Hilarego Koprowskiego w Celestynowie jako przykład źródła w procesie rekonstrukcji obiektu dziedzictwa kulturowego, Międzynarodowa Konferencja Naukowa M Ia S To – Model Idea Struktura Tożsamość, 17-19.03.2025, Politechnika Krakowska, Kraków/online
+    years: '2025'
+  - text: Borkowski A.S., Winiarska W., Modelowanie informacji o obiekcie budowlanym (BIM) w planowaniu przestrzennym i katastrze nieruchomości, Międzynarodowa konferencja naukowo-techniczna "Rewitalizacja i zagospodarowanie obszarów poprzemysłowych oraz zdegradowanych”, 6-7.02.2025, Warszawa
+    years: '2025'
+  - text: Borkowski A.S., Wzbogacanie semantyczne w dane niegraficzne modelu BIM budynku użyteczności publicznej w Autodesk Revit, Konferencja BIM Days 2024 "Cyfrowe szanse", 27.11.2024, Warszawa/online
+    years: '2024'
+  - text: Borkowski A.S., Problematyka obliczania śladu węglowego w zakresie 3 z wykorzystaniem BIM w kontekście ESG, Konferencja Polskiego Klastra Budowlanego "ESG jako fundament przyszłości branży budowlanej", 25.09.2024, Hotel Four Points by Sheraton, Warszawa
+    years: '2024'
+  - text: Borkowski A.S., Problematyka wdrożenia BIM na poziomach krajowym i przedsiębiorstw, Konferencja pt. „Eliminacja błędów projektowych i wykonawczych w budownictwie”, 22.06.2024, Hotel Qubus, Kraków
+    years: '2024'
+  - text: Borkowski A.S., Historia ewolucji od systemów CAD do BIM i aktualne zastosowanie, Konferencja pt. „Eliminacja błędów projektowych i wykonawczych w budownictwie”, 21.06.2024, Hotel Qubus, Kraków
+    years: '2024'
+  - text: Borkowski A.S., BIM jako podstawa cyfryzacji procesów planistycznych i inwestycyjno-budowlanych w drodze ku idei gospodarki cyrkularnej, XXX Jubileuszowa Międzynarodowa Konferencja Naukowa „Infrastruktura i środowisko w gospodarce o obiegu zamkniętym - infrastructure and environment in circular economy”, 19.06.2024, Hotel Grand Stasinda, Bukowina Tarzańska
+    years: '2024'
+  - text: Borkowski A.S., Uczenie się przez dociekanie na przykładzie interdyscyplinarnego przedmiotu BIM, 2024, IX Ogólnopolska Konferencja Dydaktyki Akademickiej „Ideatorium” 8.06.2024, Politechnika Gdańska, Gdańsk
+    years: '2024'
+  - text: Borkowski A.S., Przyszłość BIM – przegląd systematyczny z wykorzystaniem sztucznej inteligencji, 2024, VII Konferencja Naukowo-Techniczna "Kierunki rozwoju i innowacje w geodezji i kartografii", 13-15.05.2024, Hotel Arłamów, Arłamów
+    years: '2024'
+  - text: Borkowski A.S., Nowoczesne materiały i technologie Keramikplatte zastosowane w autonomicznej wiosce podmiejskiej z wykorzystaniem BIM, 2024, I Konferencja Naukowa Budownictwa Architektury i Techniki, 10.05.2024, UTH, Warszawa
+    years: '2024'
+  - text: Borkowski A.S., A blended approach on inquiry-based learning using the example of the interdisciplinary course of BIM in spatial management studies, 2024, Konferencja „Architecture-Research-Science 2024”, 18-20.04.2024, Politechnika Wrocławska, Wrocław/online
+    years: '2024'
+  - text: Borkowski A.S., BIM jako podstawa idei cyfrowych bliźniaków i koncepcji gospodarki cyrkularnej, 2024, Konferencja „Termomodernizacja i naprawa budynków istniejących w Polsce”, 22-24.03.2024, IBiB PAN, Warszawa
+    years: '2024'
+  - text: Borkowski A.S., Maroń M., Olszewska P., Wójcik K., Problems of calculating the carbon footprint in scope 3 using BIM, International Scientific Conference "Common Tomorrow". Architecture environment in the face of contemporary challenges 2024, 11-12.03.2024, Politechnika Świętokrzyska, Kielce
+    years: '2024'
+  - text: Borkowski A.S., Georeferencja modeli BIM w środowisku GIS, Kongres GIS 2023 „Zmień Perspektywę”, 25-26.10.2023, Żnin
+    years: '2023'
+  - text: Borkowski A.S., Edukacja BIM - czego uczyć i jak uczyć studentów?, VI Forum Budowlane "Budownictwo zrównoważone" 2023, 30.06.2023, Płock Płock
+    years: '2023'
+  - text: 'Borkowski A.S., Periodyzacja BIM: epistemologia, geneza i podział na okresy, InfraBIM 2023 Expo & Multi-Conference 2023, 25.05.2023, Kraków'
+    years: '2023'
+  - text: Borkowski A.S., Praca z mapą do celów projektowych w Autodesk Revit, InfraBIM 2023 Expo & Multi-Conference 2023, 23.05.2023, Kraków
+    years: '2023'
+  - text: Borkowski A.S., Ekologia narzędzi BIM - georeferencja modeli obiektów budowlanych z wykorzystaniem CDE, 2023, VII Konferencja Naukowo-Techniczna "Aktualne Problemy w Budownictwie Ogólnym i Inżynierii Przedsięwzięć Budowlanych" 30-31.03.2023 r., Szklarska Poręba
+    years: '2023'
+  - text: Borkowski A.S., Teoria BIM niezbędna do federowanej pracy w Autodesk Revit, Konferencja BEST Design Week”, 18.11.2022 r., Politechnika Warszawska, Warszawa
+    years: '2022'
+  - text: Borkowski A.S., Higiena i ograniczenia modeli BIM w planowaniu przestrzennym, Konferencja pn. „Karta Warszawska”, 30.05.2019 r., Wydział Geodezji i Kartografii, Politechnika Warszawska, Warszawa
+    years: '2019'
+  - text: Borkowski A.S., Projektowanie elementów planu sytuacyjnego z wykorzystaniem technologii BIM, VIII edycja Konferencji pn. „Dzień Budowlańca”, 10.05.2019 r., Centrum Wodne, Szkoła Gospodarstwa Wiejskiego, Warszawa
+    years: '2019'
+  - text: Borkowski A.S., Modelowanie geostatystyczne w badaniach środowiska przyrodniczego, Seminarium „Zasoby informacji geologicznej i baza danych o źródłach i skutkach antropopresji jako ważny element w decyzjach planistycznych”, 06.07.2016 r., Ośrodek Naukowo-Dydaktyczny w Józefosławiu, Ogrodowa 2, Józefosław
+    years: '2016'
+  - text: Borkowski A.S., Kwiatkowska-Malina J., Geochemical cartography as a tool for assessing the degree of soil contamination with heavy metals in Poland, 2016, European Geosciences Union General Assembly 2016, Vienna - Austria 2016
+    years: '2016'
+  - text: Borkowski A.S., Narzędzia optymalizacji, tolerancja geometryczna, hiperłącza, tabele stylów wydruku w projektowaniu CAD, V Ogólnopolska Konferencja Studentów Budownictwa, 14.04.2016 r., Centrum Wodne, ul. Ciszewskiego 6, Szkoła Główna Gospodarstwa Wiejskiego, Warszawa
+    years: '2016'
+  - text: Jaroszewicz J., Turek A., Borkowski A.S., Zrozumieć przestrzeń – rola systemów informacji geograficznej w zobrazowaniu obiektów i zjawisk w przestrzeni geograficznej, R42, 2015, Zaplanuj swoją przestrzeń. Przestrzeń-Środowisko-Forma. 2015
+    years: '2015'
+  - text: Borkowski A.S., Kwiatkowska-Malina J., Analiza zanieczyszczenia powietrza atmosferycznego pyłem PM10 i PM2,5 z wykorzystaniem technologii GIS, 2015, VI Międzynarodowa Konferencja Naukowa z cyklu "Innowacyjne technologie geodezyjne - zastosowanie w różnych dziedzinach gospodarki", Rzeszów 10–12.06.2015 r.
+    years: '2015'
+  - text: Borkowski A.S., Zaawansowane opcje modelowania bloków dynamicznych, wydruku oraz eksportu w aplikacji Autodesk AutoCAD 2015, Konferencja Kariera Inżyniera, 14.02.2015 r., Stadion Narodowy, Al. Poniatowskiego 1, Warszawa
+    years: '2015'
+  - text: Kwiatkowska-Malina J., Borkowski A.S., Wykorzystanie analizy semiwariancji w oszacowaniu stężenia SO2 w powietrzu atmosferycznym, 2014, V Międzynarodowa Konferencja Naukowa z cyklu "Innowacyjne technologie geodezyjne - zastosowanie w różnych dziedzinach gospodarki", Kamionka 2014.05.28-30
+    years: '2014'
+  - text: Kwiatkowska-Malina J., Borkowski A.S., Wykorzystanie metod geostatystycznych w badaniu zanieczyszczeń powietrza pod kątem oceny stanu gleb, 2014, XX Jubileuszowa Międzynarodowa Konferencja Naukowo-Szkoleniowa "Remediacja, Rekultywacja i Rewitalizacja” 2014
+    years: '2014'
+- category: Posters
+  category_pl: Postery
+  count: true
+  items:
+  - text: Borkowski A.S., Buniewicz G., Zasklepienie gleby obliczane z modelu BIM – przyleganie i współpłaszczyznowość jako relacje topologiczne na granicy obiektu i gruntu, 2026, Krajowa Platforma Glebowa i Krajowy Hub ds. Gleb - "Zdrowie gleb w Polsce – stan aktualny i wyzwania", 29.09.2026, SGGW, Warszawa
+    years: '2026'
+  - text: 'Borkowski A.S., Wyrzykowska N., Model HBIM jako zasób w procesie potencjalnej rekonstrukcji obiektu dziedzictwa kulturowego: studium przypadku Starej Wielkiej Synagogi we Włocławku, 2026, IX Konferencja Naukowo-Techniczna „Kierunki Rozwoju i Innowacje w Geodezji i Kartografii”, 2-3.06.2026, Łańcut'
+    years: '2026'
+  - text: 'Czapp J., Borkowski A.S., City Information Modeling (CIM) in Spatial Planning: Current Research and Application Potential, 2026, Międzynarodowa Konferencja Naukowa „Miasto w ruchu - Ruch w mieście”, 20-22.04.2026, online'
+    years: '2026'
+  - text: Borkowski A.S., Buniewicz G., Zastosowanie BIM w wydawaniu decyzji administracyjnych na przykładzie fragmentu 4 linii metra w Warszawie, 2025, IX Colloquium Miejskie. Przyszłość śląskich miast, 05.11.2025, Uniwersytet Ekonomiczny w Katowicach, Katowice
+    years: '2025'
+  - text: Borkowski A.S., Jarema P., Możliwość adaptacji modelu erozji gleb USLE do symulacji pożaru w środowisku BIM z wykorzystaniem modelowania agentowego w Netlogo, 2025, Konferencja naukowa Krajowa Platforma Glebowa 2025 pt. „Stan zanieczyszczenia substancjami chemicznymi gleb z terenów rolniczych, leśnych, miejskich i poprzemysłowych”, 29.09.2025, SGGW, Warszawa
+    years: '2025'
+  - text: 'Borkowski A.S., Filozofia Kaizen w dydaktyce akademickiej: Jak drobne zmiany przynoszą wielkie efekty, 2024, "Viva Dydaktyka" IV Ogólnopolska Konferencja Dydaktyki Szkoły Wyższej "Dydaktyka bez granic?", 22-23.05.2025, Uniwersytet Gdański, Sopot'
+    years: '2025'
+  - text: Borkowski A.S., Buniewicz G., Wpływ BIM na planowanie przestrzenne i kataster nieruchomości, 2025, Konferencja Naukowo-Techniczna "Miasto i Transport 2025", 7-8.05.2025, Politechnika Warszawska, Warszawa
+    years: '2025'
+  - text: Borkowski A.S., To Duc A., Integracja danych BIM i GIS zabytkowego obiektu budowlanego z wykorzystaniem FME, 2024, XI Konferencja Naukowo-Techniczna „Renowacja budynków i modernizacja obszarów zabudowanych”, 9-11.10.2024, Zielona Góra
+    years: '2024'
+  - text: Borkowski A.S., Blended approach on inquiry-based learning using the example of the interdisciplinary course of BIM in spatial management studies, 2024, Konferencja Naukowa „Architecture-Research-Science 2024”, 18-20.04.2024, Politechnika Wrocławska, Wrocław/online
+    years: '2024'
+  - text: Pinkosz M., Borkowski A.S., Implementacja BIM na poziomie krajowym, 2023, VI Forum Budowlane "Budownictwo zrównoważone", 30.06.2023
+    years: '2023'
+  - text: Borkowski A.S., BIM periodisation – three approaches, 2023, Gala Młodych Naukowców Politechniki Warszawskiej 2023, Warszawa
+    years: '2023'
+  - text: Borkowski A.S., Osińska N., Szymańska N., Analizy energetyczne w modelach BIM 6D, 2023, Gala Młodych Naukowców Politechniki Warszawskiej 2023, Warszawa
+    years: '2023'
+  - text: Sajnóg N., Borkowski A.S., Luxury real estate market in Poland, 2019, 9th International Scientific Conference "Collection and processing of surveying and economic data" 2019, 24-25.10.2019, Kielce
+    years: '2019'
+  - text: Kwiatkowska-Malina J., Bielska A., Borkowski A.S., Mapy glebowo-rolnicze w skali 1:5000 jako źródło danych oceny zmienności przestrzennej gleb, 2017, Konferencja Naukowa "Krajowe bazy danych o glebach - stan, wykorzystanie, potrzeby", Szkoła Główna Gospodarstwa Wiejskiego, Warszawa
+    years: '2017'
+  - text: Kwiatkowska-Malina J., Bielska A., Borkowski A.S., Problems in soil databases creation in Poland, 2016, 2016 international Conference of the European Society for Soil Conservation 2016
+    years: '2016'
+  - text: Borkowski A.S., Technologie Informacyjne, Konferencja „Gospodarka Przestrzenna w naukach technicznych”, 8-9.10.2015 r., Mała Aula Gmachu Głównego, Politechnika Warszawska, Pl. Politechniki 1, 00-661 Warszawa
+    years: '2015'
+  - text: Kwiatkowska-Malina J., Borkowski A.S., Zagrożenia i ochrona powierzchni Ziemi, Konferencja „Gospodarka Przestrzenna w naukach technicznych” 8-9.10.2015 r., Mała Aula Gmachu Głównego, Politechnika Warszawska, Warszawa
+    years: '2015'
+  - text: Denis M., Borkowski A.S., Komputerowe modele przestrzenne – zastosowanie w analizach i projektach, Konferencja „Gospodarka Przestrzenna w naukach technicznych”8-9.10.2015 r., Mała Aula Gmachu Głównego, Politechnika Warszawska, Pl. Politechniki 1, 00-661 Warszawa
+    years: '2015'
+  - text: Borkowski A.S., GIS na kierunku studiów Gospodarka Przestrzenna, Ogólnopolska Konferencja „GIS w edukacji”, 3 czerwca 2015, Wydział Nauk Geograficznych i Geologicznych UAM Kampus Morasko, Collegium Geographicum im. Stanisława Pawłowskiego, Poznań
+    years: '2015'
+  - text: Borkowski A.S., Grylak D., Modelowanie terenu i skarp na podstawie wektorowej mapy zasadniczej fragmentu miasta Bydgoszczy w oprogramowaniu GIS – aplikacji Civil 3D, Ogólnopolska Konferencja Naukowa „Planuj Twórz Zarządzaj” GIS w gospodarce przestrzennej, 7-8.05.2015, Kampus Szkoły Głównej Gospodarstwa Wiejskiego w Warszawie, Warszawa
+    years: '2015'
+  - text: Borkowski A.S., Walczuk M., Obliczanie wskaźników użytkowania terenu dla potrzeb planowania przestrzennego przy użyciu oprogramowania GIS – AutoCAD Map 3D, Ogólnopolska Konferencja Naukowa „Planuj Twórz Zarządzaj” GIS w gospodarce przestrzennej, 7-8.05.2015, Kampus Szkoły Głównej Gospodarstwa Wiejskiego w Warszawie, Warszawa
+    years: '2015'
+  - text: Borkowski A.S., Wyznaczanie granicy rolno-leśnej we wsi Windyki przy użyciu aplikacji QGIS, Ogólnopolska Konferencja Naukowa „Planuj Twórz Zarządzaj” GIS w gospodarce przestrzennej, 7-8.05.2015, Kampus Szkoły Głównej Gospodarstwa Wiejskiego w Warszawie, Warszawa
+    years: '2015'
+  - text: Borkowski A.S., Krupowicz W., Kwiatkowska-Malina J., Analiza rynku nieruchomości na obszarach poprzemysłowych przy użyciu metod geostatystycznych, Konferencja Naukowa pt. „Współczesne trendy w katastrze i gospodarce nieruchomościami”,27.11.2014, Sala Senatu, Politechnika Warszawska, Warszawa
+    years: '2014'
+  - text: Kwiatkowska-Malina J., Borkowski A.S., Analiza transgranicznego oddziaływania wybranych zanieczyszczeń powietrza atmosferycznego na obszarze Polski, II Konferencja Naukowa p.t. "Współczesne uwarunkowania gospodarowania przestrzenią - szanse i zagrożenia dla zrównoważonego rozwoju", 24-25.06.2014
+    years: '2014'
+- category: Science popularisation
+  category_pl: Popularyzacja nauki
+  items:
+  - text: “Modern technologies in the service of building reconstruction – the case of Hilary Koprowski’s villa” (with W. Winiarska) – lesson at the 29th Science Festival, Warsaw University of Technology
+    text_pl: „Nowoczesne technologie w służbie rekonstrukcji budynków – przypadek willi Hilarego Koprowskiego” (z W. Winiarską) – lekcja w ramach 29. Festiwalu Nauki, Politechnika Warszawska
+    years: 25.09.2025

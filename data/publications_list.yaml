@@ -1,0 +1,956 @@
+# ------------------------------------------------------------------
+#  PEŁNY DOROBEK PUBLIKACYJNY (z „Wykazu osiągnięć”, 09.11.2026)
+#  Łączony z ORCID bez duplikatów (po DOI i podobieństwie tytułu).
+#  Ta lista ma pierwszeństwo: tytuły i czasopisma stąd zastępują wersje z ORCID,
+#  a ORCID dopisuje to, czego tu brakuje (np. DOI, pełne imiona autorów, preprinty, dane).
+#  Nowe publikacje możesz dopisywać tutaj albo po prostu w ORCID.
+#  type: journal | conference | book | chapter
+# ------------------------------------------------------------------
+- title: Propedeutyka BIM – filozofia modelowania informacji o obiekcie budowlanym
+  authors:
+  - A. S. Borkowski
+  year: 2024
+  type: book
+  venue: Oficyna Wydawnicza Politechniki Warszawskiej
+- title: Zastosowanie technologii BIM w istniejących obiektach na przykładzie budynku biurowego
+  authors:
+  - A. S. Borkowski
+  - M. Królikowska
+  year: 2022
+  type: journal
+  venue: Materiały Budowlane
+  doi: 10.15199/33.2022.06.11
+- title: Analizy energetyczne w modelach BIM 6D
+  authors:
+  - A. S. Borkowski
+  - N. Osińska
+  - N. Szymańska
+  year: 2022
+  type: journal
+  venue: Materiały Budowlane
+  doi: 10.15199/33.2022.08.07
+- title: Zastosowanie cyfrowego bliźniaka w zarządzaniu obiektem użyteczności publicznej studium przypadku przedszkola w gminie Secemin
+  authors:
+  - A. S. Borkowski
+  - M. Maroń
+  year: 2023
+  type: journal
+  venue: Builder
+  doi: 10.5604/01.3001.0053.6016
+- title: Use of applications and rendering engines in architectural design – state-of-the-art
+  authors:
+  - A. S. Borkowski
+  - P. Nowakowski
+  year: 2023
+  type: journal
+  venue: Budownictwo i Architektura
+  doi: 10.35784/bud-arch.3327
+- title: 'Landscape Information Model (LIM): a case study of Ołtarzew Park in Ożarów Mazowiecki municipality, Poland'
+  authors:
+  - A. S. Borkowski
+  - N. Łuczkiewicz
+  year: 2023
+  type: journal
+  venue: Budownictwo i Architektura
+  doi: 10.35784/bud-arch.3547
+- title: A Case Study on Building Information (BIM) and Land Information (LIM) Models Including Geospatial Data
+  authors:
+  - A. S. Borkowski
+  - Ł. Kochański
+  - M. Wyszomirski
+  year: 2023
+  type: journal
+  venue: Geomatics and Environmental Engineering
+  doi: 10.7494/geom.2023.17.1.19
+- title: Automating the conceptual design of residental areas using visual and generative programming
+  authors:
+  - Ł. Kochański
+  - A. S. Borkowski
+  year: 2024
+  type: journal
+  venue: Journal of Engineering Design
+  doi: 10.1080/09544828.2024.2303282
+- title: Model HBIM jako cyfrowy bliźniak na przykładzie Chaty z Gawrych w Skansenie Kurpiowskim w Nowogrodzie
+  authors:
+  - A. S. Borkowski
+  - P. Olszewska
+  year: 2024
+  type: journal
+  venue: Wiadomości Konserwatorskie
+  doi: 10.48234/wk77gawrych
+- title: Site-specific efficient management of soil resources using GIS and BIM technologies
+  authors:
+  - A. S. Borkowski
+  - A. Bielska
+  - J. Kwiatkowska-Malina
+  year: 2024
+  type: journal
+  venue: Reports on Geodesy and Geoinformatics
+  doi: 10.2478/rgg-2024-0009
+- title: Integration of BIM and GIS Data of a Heritage Building Using FME
+  authors:
+  - A. S. Borkowski
+  - To Duc Alex
+  year: 2024
+  type: journal
+  venue: Civil and Environmental Engineering Reports
+  doi: 10.59440/ceer/190231
+- title: 'Landscape Information modelling: an important aspect of BIM modelling, examples of cubature, infrastructure, and planning projects'
+  authors:
+  - A. S. Borkowski
+  - M. Wyszomirski
+  year: 2021
+  type: journal
+  venue: Geomatics, Landmanagement and Landscape
+  doi: 10.15576/gll/2021.1.7
+- title: 'Technologia BIM w procesie realizacji inwestycji budowlanych: studia przypadków firmy SXD Polska'
+  authors:
+  - A. S. Borkowski
+  - A. Michałkiewicz
+  year: 2022
+  type: journal
+  venue: Builder
+  doi: 10.5604/01.3001.0015.6950
+- title: Modelowanie infrastruktury przesyłowej w środowisku BIM
+  authors:
+  - A. S. Borkowski
+  - S. Firlińska
+  year: 2022
+  type: journal
+  venue: Przegląd Elektrotechniczny
+  doi: 10.15199/48.2022.12.33
+- title: Use of the CDE environment in team collaboration in BIM
+  authors:
+  - A. S. Borkowski
+  - J. Brożyna
+  - J. Litwin
+  - W. Rączka
+  - A. Szponarowicz
+  year: 2023
+  type: journal
+  venue: Informatyka, Automatyka, Pomiary w Gospodarce i Ochronie Środowiska
+  doi: 10.35784/iapgos.4261
+- title: 'A Blended Approach to Inquiry-Based Learning Using the Example of the Interdisciplinary Course of BIM in Spatial Management Studies: A Perspective of Students and Professor'
+  authors:
+  - A. S. Borkowski
+  year: 2024
+  type: journal
+  venue: Education Sciences
+  doi: 10.3390/educsci14050444
+- title: Przegląd metod dydaktycznych na poziomie akademickim w kontekście BIM
+  authors:
+  - A. S. Borkowski
+  - N. Zdzieszyńska
+  - M. Szóstak
+  year: 2024
+  type: journal
+  venue: Inżynieria i Budownictwo
+  doi: 10.5604/01.3001.0054.6416
+- title: BIM Placemat – wdrożenie technologiczne produktu w pracy specjalistów BIM w przedsiębiorstwach projektowych Arcadis i WSP Polska
+  authors:
+  - A. S. Borkowski
+  - K. Nurzyńska
+  - M. Sender
+  - Z. Wiosna
+  year: 2024
+  type: journal
+  venue: Builder
+  doi: 10.5604/01.3001.0054.7088
+- title: 'Integration of Laser Scanning, Digital Photogrammetry and BIM Technology: A Review and Case Studies'
+  authors:
+  - A. S. Borkowski
+  - A. Kubrat
+  year: 2024
+  type: journal
+  venue: Eng
+  doi: 10.3390/eng5040125
+- title: Revit Architecture. Podstawy projektowania (podręcznik)
+  authors:
+  - A. S. Borkowski
+  - P. Węgierek
+  year: 2015
+  type: book
+  venue: Ośrodek Kształcenia Zawodowego ELPRO
+- title: AUTODESK AutoCAD – lispy, makrooperacje, zmienne systemowe (podręcznik)
+  authors:
+  - P. Węgierek
+  - A. S. Borkowski
+  year: 2016
+  type: book
+  venue: Ośrodek Kształcenia Zawodowego ELPRO
+- title: Modelowanie geostatystyczne stanu zanieczyszczeń gleb na podstawie depozycji z powietrza atmosferycznego (rozprawa doktorska)
+  authors:
+  - A. S. Borkowski
+  year: 2019
+  type: book
+  venue: Oficyna Wydawnicza Politechniki Warszawskiej
+- title: Revit Architecture. Modelowanie i zarządzanie informacją o obiekcie budowlanym (podręcznik)
+  authors:
+  - A. S. Borkowski
+  - N. Wyrzykowska
+  - P. Węgierek
+  year: 2024
+  type: book
+  venue: Ośrodek Kształcenia Zawodowego ELPRO
+- title: Analiza stanu wybranych zanieczyszczeń powietrza atmosferycznego na terenie Polski
+  authors:
+  - J. Kwiatkowska-Malina
+  - A. S. Borkowski
+  year: 2014
+  type: chapter
+  venue: Współczesne uwarunkowania gospodarowania przestrzenią - szanse i zagrożenia dla zrównoważonego rozwoju. Organizacja gospodarowania przestrzenią
+- title: Wykorzystanie metod geostatystycznych w badaniu zanieczyszczeń powietrza pod kątem oceny stanu gleb
+  authors:
+  - J. Kwiatkowska-Malina
+  - A. S. Borkowski
+  year: 2014
+  type: chapter
+  venue: Remediacja, rekultywacja i rewitalizacja (PZITS)
+- title: Zastosowanie technik informacyjnych w kształceniu na GP - budowa modeli przestrzennych 3D ze szczególnym uwzględnieniem analizy oddziaływania przedsięwzięć na środowisko przyrodnicze
+  authors:
+  - J. Kwiatkowska-Malina
+  - A. S. Borkowski
+  year: 2016
+  type: chapter
+  venue: Projektowanie urbanistyczne w procesie kształcenia na kierunku studiów Gospodarka Przestrzenna
+- title: The use of available data for the assessment of the spatial variability of soil properties in Poland
+  authors:
+  - J. Kwiatkowska-Malina
+  - A. Bielska
+  - A. S. Borkowski
+  year: 2017
+  type: chapter
+  venue: Water Resources. Forest, Marine and Ocean Ecosystems. Issue 32 – SGEM 2017 Conference Proceedings
+- title: Uczeń/Student w centrum dydaktyki – krytyczna potrzeba zmiany dotychczasowych modeli edukacyjnych
+  authors:
+  - A. S. Borkowski
+  year: 2025
+  type: chapter
+  venue: Nowa Szkoła. Szkoła Wyższa
+- title: Modelowanie i zarządzanie informacją o obiekcie budowlanym (BIM) w procesie inwestycyjnym
+  authors:
+  - A. S. Borkowski
+  year: 2025
+  type: chapter
+  venue: Architekt, inżynier budownictwa, rzeczoznawca budowlany w procesie realizacji inwestycji związanych z budową obiektów cywilnych oraz obiektów specjalnych
+- title: Dobre praktyki w modelowaniu obiektów bibliotecznych BIM z zakresu instalacji i sieci telekomunikacyjnych
+  authors:
+  - A. S. Borkowski
+  - G. Buniewicz
+  year: 2026
+  type: chapter
+  venue: 'Budownictwo, Architektura i Technika: Współczesne kierunki badań i innowacji (Uczelnia Techniczno-Handlowa im. Heleny Chodkowskiej)'
+- title: 'Wdrożenie elementów BIM w wydawaniu pozwoleń na budowę w projektach koncepcyjnych metra: studium przypadku fragmentu 4 linii metra w Warszawie'
+  authors:
+  - A. S. Borkowski
+  - G. Buniewicz
+  year: 2025
+  type: chapter
+  venue: Miasto w kryzysie (Oficyna Wydawnicza Politechniki Warszawskiej)
+- title: Wykorzystanie analizy semiwariancji w ocenie stanu powietrza atmosferycznego
+  doi: 10.14597/infraeco.2014.2.2.027
+  authors:
+  - J. Kwiatkowska-Malina
+  - A. S. Borkowski
+  year: 2014
+  type: journal
+  venue: Infrastruktura i ekologia terenów wiejskich
+- title: 'Use of data of the geostatistics portal in sustainable rural land development: two case studies in Poland'
+  authors:
+  - J. Kwiatkowska-Malina
+  - A. Bielska
+  - A. S. Borkowski
+  year: 2016
+  type: journal
+  venue: Fresenius Environmental Bulletin
+- title: Geostatistical modelling as an assessment tool of soil pollution based on deposition from atmospheric air
+  authors:
+  - A. S. Borkowski
+  - J. Kwiatkowska-Malina
+  year: 2017
+  type: journal
+  venue: Geosciences Journal
+- title: Model analityczny w technologii BIM
+  authors:
+  - A. S. Borkowski
+  year: 2017
+  type: journal
+  venue: Materiały Budowlane
+- title: Importowanie mapy zasadniczej do modelu BIM
+  authors:
+  - A. S. Borkowski
+  year: 2017
+  type: journal
+  venue: Budownictwo i Architektura
+- title: Projektowanie instalacji mechanicznych z wykorzystaniem technologii BIM
+  authors:
+  - A. S. Borkowski
+  year: 2017
+  type: journal
+  venue: Rynek Instalacyjny
+- title: O przygotowaniu detali rysunkowych za pomocą modelu BIM i niezależnie od niego
+  authors:
+  - A. S. Borkowski
+  year: 2018
+  type: journal
+  venue: Inżynieria i Budownictwo
+- title: Analizy nasłonecznienia w BIM
+  doi: 10.15199/33.2018.02.18
+  authors:
+  - A. S. Borkowski
+  year: 2018
+  type: journal
+  venue: Materiały Budowlane
+- title: Programowanie stropów w BIM
+  authors:
+  - A. S. Borkowski
+  year: 2018
+  type: journal
+  venue: Builder
+- title: Obliczanie współczynnika przenikania ciepła w technologii BIM
+  authors:
+  - A. S. Borkowski
+  year: 2019
+  type: journal
+  venue: Materiały Budowlane
+- title: Analiza możliwości zastosowania modelu IFC do opisania obiektów infrastrukturalnych na wybranych przykładach
+  authors:
+  - M. Wyszomirski
+  - A. S. Borkowski
+  year: 2019
+  type: journal
+  venue: Roczniki Geomatyki [Annals of Geomatics]
+- title: 'Mapy glebowe w skali 1:5000 jako źródło bazy danych o glebach z uwzględnieniem rozmycia gleb w Polsce (Soil maps at a scale of 1:5000 as a source of soil databases taking soil variability into consideration: a case study from Czermin commune, S Poland)'
+  authors:
+  - J. Kwiatkowska-Malina
+  - A. Bielska
+  - A. S. Borkowski
+  year: 2019
+  type: journal
+  venue: Soil Science Annual
+- title: Model BIM z chmury punktów
+  authors:
+  - A. S. Borkowski
+  year: 2019
+  type: journal
+  venue: Builder
+- title: 'Evolution of BIM: epistemology, genesis and division into periods'
+  authors:
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: Journal of Information Technology in Construction
+  doi: 10.36680/j.itcon.2023.034
+- title: 'A Literature Review of BIM Definitions: Narrow and Broad Views'
+  authors:
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: Technologies
+  doi: 10.3390/technologies11060176
+- title: Low-Cost Internet of Things Solution for Building Information Modeling Level 3B—Monitoring, Analysis and Management
+  authors:
+  - A. S. Borkowski
+  year: 2024
+  type: journal
+  venue: Journal of Sensor and Actuator Networks
+  doi: 10.3390/jsan13020019
+- title: Digital Twin conceptual framework for the Operation and Maintenance Phase in the Building's Lifecycle
+  authors:
+  - A. S. Borkowski
+  year: 2024
+  type: journal
+  venue: Archives of Civil Engineering
+  doi: 10.24425/ace.2024.150975
+- title: Experiential learning in the context of BIM
+  authors:
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: STEM Education
+  doi: 10.3934/steme.2023012
+- title: Dane a informacje w BIM
+  authors:
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: Izolacje
+- title: Konstytutywne cechy BIM
+  authors:
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: Builder
+  doi: 10.5604/01.3001.0054.1433
+- title: Wdrożenie BIM w przedsiębiorstwie projektowym
+  authors:
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: Izolacje
+- title: Ekologia narzędzi BIM – georeferencja modeli obiektów budowlanych z wykorzystaniem CDE
+  authors:
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: Przegląd Budowlany
+  doi: 10.5604/01.3001.0054.1332
+- title: Edukacja BIM - czego uczyć i jak uczyć studentów
+  authors:
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: Przegląd Budowlany
+  doi: 10.5604/01.3001.0053.6991
+- title: Błędy poznawcze i nowa emfatyczna definicja BIM
+  authors:
+  - A. S. Borkowski
+  - M. Michalak
+  year: 2024
+  type: journal
+  venue: Builder
+  doi: 10.5604/01.3001.0054.4810
+- title: Perceptions of BIM by sphere and stage in the cycle life of the building
+  authors:
+  - A. S. Borkowski
+  year: 2024
+  type: journal
+  venue: Izolacje
+- title: File Hygiene and BIM Models Restrictions
+  authors:
+  - A. S. Borkowski
+  year: 2019
+  type: journal
+  venue: Trends in Civil Engineering and its Architecture
+  doi: 10.32474/tceia.2019.03.000164
+- title: Semantic Enrichment of Non‐Graphical Data of a BIM Model of a Public Building from the Perspective of the Facility Manager
+  authors:
+  - A. S. Borkowski
+  - M. Maroń
+  year: 2024
+  type: journal
+  venue: Big Data and Cognitive Computing
+  doi: 10.3390/bdcc8100138
+- title: Symulacje ewakuacji w modelu BIM
+  authors:
+  - A. S. Borkowski
+  year: 2020
+  type: journal
+  venue: Zeszyty Naukowe Politechniki Częstochowskiej. Budownictwo
+  doi: 10.17512/znb.2020.1.01
+- title: Subiektywna analiza porównawcza technologii CAD i BIM w świetle projektowania architektoniczno-urbanistycznego
+  authors:
+  - A. S. Borkowski
+  - M. Kruk
+  year: 2021
+  type: journal
+  venue: Builder
+  doi: 10.5604/01.3001.0015.2631
+- title: Przegląd dotychczasowych rozwiązań na poziomie aplikacyjnym w zakresie integracji technologii BIM i GIS
+  authors:
+  - A. S. Borkowski
+  - N. Osińska
+  - N. Szymańska
+  year: 2022
+  type: journal
+  venue: Builder
+  doi: 10.5604/01.3001.0016.0937
+- title: Procedura wprowadzania zmian w kontrakcie za pośrednictwem platformy CDE
+  authors:
+  - A. S. Borkowski
+  - K. Mielcarz
+  - D. Michalski
+  - B. Milewski
+  year: 2023
+  type: journal
+  venue: Nowoczesne Budownictwo Inżynieryjne
+- title: Problematyka implementacji BIM na poziomie krajowym
+  authors:
+  - M. Pinkosz
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: Przegląd Budowlany
+  doi: 10.5604/01.3001.0053.6994
+- title: Facility management using Autodesk Tandem
+  authors:
+  - A. S. Borkowski
+  - J. Sieczkowska
+  - W. Urbańska
+  - A. Winnicka
+  year: 2023
+  type: journal
+  venue: Zeszyty Naukowe Politechniki Częstochowskiej. Budownictwo
+- title: Using BIM to select the most energy-efficient insulation materials
+  authors:
+  - A. S. Borkowski
+  - W. Kołpa
+  - D. Kwiecińska
+  - M. Lewandowska
+  year: 2024
+  type: journal
+  venue: Izolacje
+- title: Using BIM for the development of accessibility
+  authors:
+  - A. S. Borkowski
+  - M. Kładź
+  year: 2024
+  type: journal
+  venue: Budownictwo i Architektura
+  doi: 10.35784/bud-arch.5693
+- title: Problems of calculating the carbon footprint in scope 3 using BIM
+  authors:
+  - A. S. Borkowski
+  - M. Maroń
+  - P. Olszewska
+  - K. Wójcik
+  year: 2024
+  type: journal
+  venue: Structure and Environment
+  doi: 10.30540/sae-2024-007
+- title: Nowoczesne materiały i technologie Keramikplatte zastosowane w autonomicznej wiosce podmiejskiej z wykorzystaniem BIM
+  authors:
+  - A. S. Borkowski
+  year: 2024
+  type: journal
+  venue: Przegląd Budowlany
+  doi: 10.5604/01.3001.0054.7634
+- title: 'The Status of the Implementation of the Building Information Modeling Mandate in Poland: A Literature Review'
+  authors:
+  - A. S. Borkowski
+  - W. Drozd
+  - K. Zima
+  year: 2024
+  type: journal
+  venue: ISPRS International Journal of Geo-Information
+  doi: 10.3390/ijgi13100343
+- title: Implementation of the Telemetric Integration of the BIM-RFID in Context of Access Control
+  authors:
+  - A. S. Borkowski
+  - J. Brożyna
+  - J. Lesiuk
+  year: 2024
+  type: journal
+  venue: Buildings
+  doi: 10.3390/buildings14113356
+- title: IDS Standard and bSDD Service as Tools for Automating Information Exchange and Verification in Projects Implemented in the BIM Methodology
+  authors:
+  - M. Kładź
+  - A. S. Borkowski
+  year: 2025
+  type: journal
+  venue: Buildings
+  doi: 10.3390/buildings15030378
+- title: Integracja modeli BIM i GIS na przykładzie projektu infrastrukturalnego
+  authors:
+  - M. Pinkosz
+  - A. S. Borkowski
+  year: 2025
+  type: journal
+  venue: Izolacje
+- title: Badanie możliwości zasilania katastru wielowymiarowego danymi z systemów BIM
+  authors:
+  - A. S. Borkowski
+  - N. Adamczyk
+  - J. Gadosz
+  - M. Marynowski
+  year: 2025
+  type: journal
+  venue: Przegląd Geodezyjny
+- title: 'Analysis of the tools for evaluating embodied energy through BIM tools: case study of a Single-unit Shell Building'
+  authors:
+  - A. S. Borkowski
+  - U. Hajdukiewicz
+  - J. Herbich
+  - K. Kostana
+  - A. Kubala
+  year: 2025
+  type: journal
+  venue: Earth
+  doi: 10.3390/earth6020025
+- title: 'A critical review of the implementation of building information modelling (BIM) in construction processes in Poland: deep insights'
+  authors:
+  - A. S. Borkowski
+  - G. Buniewicz
+  year: 2025
+  type: journal
+  venue: Acta Scientiarum Polonorum. Architectura
+  doi: 10.22630/aspa.2025.24.6
+- title: 'Integration of BIM and GIS in Predicting Flood Damage to Historic Buildings: The Case of Auschwitz Death Camp I'
+  authors:
+  - A. S. Borkowski
+  - M. Kawka
+  - K. Markowska
+  - Z. Molak
+  year: 2025
+  type: journal
+  venue: Modern Engineering
+- title: 'The HBIM Model as a Source in the Building Reconstruction Process: A Case Study of the “Koprówka” in Celestynów, Poland'
+  authors:
+  - A. S. Borkowski
+  - W. Winiarska
+  year: 2025
+  type: journal
+  venue: Buildings
+  doi: 10.3390/buildings15091442
+- title: 'BIM Model of District Heating Networks in Design and Investment Management Processes: A Case Study, Poland'
+  authors:
+  - A. S. Borkowski
+  - P. Olszewska
+  year: 2025
+  type: journal
+  venue: Sustainability
+  doi: 10.3390/su17094102
+- title: BIM in assessing the suitability of historic fortifications for military purposes, using the example of the gunpowder laboratory at Boyen Fortress in Giżycko
+  authors:
+  - A. S. Borkowski
+  - K. Zelkowska
+  - M. Żach
+  year: 2026
+  type: journal
+  venue: Architectus
+  doi: 10.37190/arc260308
+- title: 'Agent sterujący interfejsem graficznym oprogramowania BIM: Eksploracyjne badanie modelu GPT-6 Astra w środowisku Autodesk Revit'
+  authors:
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Przegląd Geodezyjny
+  doi: 10.15199/50.2026.10.2
+- title: 'Dark lecture: an innovative teaching method based on transparent expert ignorance exploration. A case study in BIM engineering education'
+  authors:
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: European Journal of Engineering Education
+  doi: 10.1080/03043797.2026.2730643
+- title: Metoda implementacji usług WMS jako warstwy kontekstu geoprzestrzennego w modelach BIM
+  authors:
+  - A. S. Borkowski
+  - M. Chmura
+  year: 2026
+  type: journal
+  venue: Przegląd Geodezyjny
+  doi: 10.15199/50.2026.8.5
+- title: Rola mediów społecznościowych w rozwoju BIM
+  authors:
+  - A. Gołębiowski
+  - M. Deperas
+  - M. Dębski
+  - S. Dowierciał
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Izolacje
+- title: 'Inteligentne zarządzanie procesami budowlanymi: analiza SWOT/TOWS możliwości i wyzwań wdrożenia automatyzacji i robotyzacji w polskim sektorze budowlanym'
+  authors:
+  - A. S. Borkowski
+  - J. Ostrowska
+  - M. Marchewka
+  year: 2026
+  type: journal
+  venue: Przegląd Budowlany
+  doi: 10.5604/01.3001.0055.8794
+- title: 'BIM washing as a decoupling mechanism: analysis of ceremonial isomorphism in the construction industry'
+  authors:
+  - A. S. Borkowski
+  - M. Michalak
+  year: 2026
+  type: journal
+  venue: Construction Management and Economics
+  doi: 10.1080/01446193.2026.2706507
+- title: 'Temporally Qualified Building Elements: A DOLCE-Based Ontology for Phase-Dependent Identity and Change Tracking in BIM Models'
+  authors:
+  - A. S. Borkowski
+  - P. Jarema
+  - M. Kładź
+  - A. Smoliar
+  year: 2026
+  type: journal
+  venue: Technologies
+  doi: 10.3390/technologies14070413
+- title: 'The evolution of BIM work standards: current, best, and future practices from a BIM Manager''s perspective'
+  authors:
+  - A. S. Borkowski
+  - M. Czajkowski
+  year: 2026
+  type: journal
+  venue: Budownictwo i Architektura
+  doi: 10.35784/bud-arch.9187
+- title: 'Spory sądowe dotyczące BIM: przegląd literatury i studia przypadków ze szczególnym uwzględnieniem kwestii własności danych i odpowiedzialności projektowej'
+  authors:
+  - G. Buniewicz
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Biegły Sądowy
+- title: Have we entered the fourth era of BIM? From the era of open standards to the era of artificial intelligence
+  authors:
+  - A. S. Borkowski
+  year: 2025
+  type: journal
+  venue: Structure and Environment
+  doi: 10.30540/sae-2025-015
+- title: 'Generative Design in Urban Planning with Regard to Local Zoning Regulations: A BIM Case Study'
+  authors:
+  - A. S. Borkowski
+  - F. Pawlikowski
+  - A. Ptaszek
+  - P. Raczkowska
+  - W. Winiarska
+  - N. Wyrzykowska
+  year: 2026
+  type: journal
+  venue: Urban Science
+  doi: 10.3390/urbansci10050267
+- title: Inferencja i dezambiguacja semantyczna w modelowaniu budynku i jego otoczenia przestrzennego w standardzie IFC – część II
+  authors:
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Przegląd Geodezyjny
+  doi: 10.15199/50.2026.5.2
+- title: Analiza możliwości wdrożenia cyfrowego zarządzania informacją i BIM w procesie realizacji inwestycji wiatrowych w Polsce
+  authors:
+  - A. S. Borkowski
+  - J. Kaczmarska
+  - P. Klusiewicz
+  - A. Krasieńko
+  year: 2026
+  type: journal
+  venue: Builder
+  doi: 10.5604/01.3001.0055.7157
+- title: BIM Collaboration Format (BCF) as an Example of Reification and Serialization in Building Information Modeling (BIM) Practice
+  authors:
+  - A. S. Borkowski
+  - M. Kładź
+  - M. Michalak
+  year: 2026
+  type: journal
+  venue: Buildings
+  doi: 10.3390/buildings16091669
+- title: 'Ontosaturation: A Novel Ontological Mechanism for Property Completeness Validation in Building Information Modeling (BIM)'
+  authors:
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Infrastructures
+  doi: 10.3390/infrastructures11050145
+- title: Inferencja i dezambiguacja semantyczna w modelowaniu budynku i jego otoczenia przestrzennego w standardzie IFC – część I
+  authors:
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Przegląd Geodezyjny
+  doi: 10.15199/50.2026.4.3
+- title: 'A critical analysis of the direction of BIM development: From CAD through file-based approaches and SaaS to granular data'
+  authors:
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Journal of Information Technology in Construction
+  doi: 10.36680/j.itcon.2026.016
+- title: HBIM in the digital reconstruction of historic buildings based on point clouds – a case study of the manor house in Nużewo, Poland
+  authors:
+  - E. Dudzińska
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Budownictwo i Architektura
+  doi: 10.35784/bud-arch.8693
+- title: Health Checker – narzędzie do automatycznej kontroli jakości danych w modelach BIM. Część 2
+  authors:
+  - A. S. Borkowski
+  - P. Jarema
+  year: 2026
+  type: journal
+  venue: Przegląd Geodezyjny
+- title: Integracja BIM i GIS – wyzwania i ograniczenia
+  authors:
+  - G. Buniewicz
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Inżynier Budownictwa
+- title: Integrating CARVER Matrix with BIM for Security by Design in Critical Infrastructure Projects
+  authors:
+  - A. S. Borkowski
+  - G. Buniewicz
+  year: 2026
+  type: journal
+  venue: Sustainability
+  doi: 10.3390/su18052492
+- title: Paradygmaty programowania obiektowego w technologii modelowania informacji o obiekcie budowlanym (BIM)
+  authors:
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Przegląd Budowlany
+  doi: 10.5604/01.3001.0055.6456
+- title: 'A Conceptual AI-Based Framework for Clash Triage in Building Information Modeling (BIM): Towards Automated Prioritization in Complex Construction Projects'
+  authors:
+  - A. S. Borkowski
+  - A. Kubrat
+  year: 2026
+  type: journal
+  venue: Buildings
+  doi: 10.3390/buildings16040690
+- title: Health Checker – narzędzie do automatycznej kontroli jakości danych w modelach BIM. Część 1
+  authors:
+  - A. S. Borkowski
+  - P. Jarema
+  year: 2026
+  type: journal
+  venue: Przegląd Geodezyjny
+- title: 'Automated Identification of Heavy BIM Library Components: A Multi-Criteria Analysis Tool for Model Optimization'
+  authors:
+  - A. S. Borkowski
+  year: 2026
+  type: journal
+  venue: Smart Cities
+  doi: 10.3390/smartcities9020022
+- title: 'Evolution of Convolutional and Recurrent Artificial Neural Networks in the Context of BIM: Deep Insight and New Tool, Bimetria'
+  authors:
+  - A. S. Borkowski
+  - Ł. Kochański
+  - K. Rukat
+  year: 2026
+  type: journal
+  venue: Infrastructures
+  doi: 10.3390/infrastructures11010006
+- title: Agent-based Modeling of Fire Situations in Buildings in NetLogo Using BIM
+  authors:
+  - A. S. Borkowski
+  - M. Woźniewicz
+  year: 2025
+  type: journal
+  venue: Modern Engineering
+- title: Modelowanie terenu działki pod inwestycję i wykorzystanie zestawienia mas ziemnych w BIM
+  authors:
+  - A. S. Borkowski
+  year: 2025
+  type: journal
+  venue: Izolacje
+- title: A comparative analysis of high-rise building models as a data source for multidimensional cadastre
+  authors:
+  - A. S. Borkowski
+  - A. Danieluk
+  - P. Gałązka
+  - M. Grzybek
+  year: 2025
+  type: journal
+  venue: Acta Scientiarum Polonorum. Architectura
+  doi: 10.22630/aspa.2025.24.12
+- title: Piramida zawodów BIM
+  authors:
+  - A. S. Borkowski
+  - B. Mielnicki
+  year: 2025
+  type: journal
+  venue: Przegląd Budowlany
+  doi: 10.5604/01.3001.0055.3027
+- title: 'HBIM model as a resource in the process of possible reconstruction of a cultural heritage site: case study of Old Great Synagogue in Włocławek, Poland'
+  authors:
+  - A. S. Borkowski
+  - N. Wyrzykowska
+  year: 2025
+  type: journal
+  venue: Architectural Engineering and Design Management
+  doi: 10.1080/17452007.2025.2566108
+- title: Braki regulacyjne w AEC w zakresie integracji BIM-AI
+  authors:
+  - A. S. Borkowski
+  year: 2025
+  type: journal
+  venue: Izolacje
+- title: Modelowanie i zarządzanie informacją o obiekcie budowlanym (BIM) w procesie inwestycyjnym
+  authors:
+  - A. S. Borkowski
+  year: 2025
+  type: journal
+  venue: Izolacje
+- title: Otwarte standardy wymiany danych w kontekście idei openBIM
+  authors:
+  - A. S. Borkowski
+  - G. Buniewicz
+  year: 2025
+  type: journal
+  venue: Inżynier Budownictwa
+- title: Standard IFC jako repozytorium stanów przeszłych, teraźniejszych i przyszłych w całym cyklu życia obiektu budowlanego
+  authors:
+  - A. S. Borkowski
+  - G. Buniewicz
+  year: 2025
+  type: journal
+  venue: Przegląd Budowlany
+  doi: 10.5604/01.3001.0055.2437
+- title: 'Theoretical Mechanisms of Building Information Modelling (BIM): Information Representation, Data Exchange, and Decision Support'
+  authors:
+  - A. S. Borkowski
+  year: 2025
+  type: journal
+  venue: Journal of Civil and Hydraulic Engineering
+  doi: 10.56578/jche030304
+- title: 'Geostatistical modelling of soil contamination with arsenic, cadmium, lead, and nickel: the Silesian voivodeship, Poland case study'
+  authors:
+  - J. Kwiatkowska-Malina
+  - A. S. Borkowski
+  year: 2020
+  type: journal
+  venue: AIMS Geosciences
+  doi: 10.3934/geosci.2020009
+- title: Evaluating the potential of suburban and rural areas for tourism and recreation, including individual short-term tourism under pandemic conditions
+  authors:
+  - A. Bielska
+  - A. S. Borkowski
+  - A. Czarnecka
+  - M. Delnicki
+  - J. Kwiatkowska-Malina
+  - M. Piotrkowska
+  year: 2022
+  type: journal
+  venue: Scientific Reports
+  doi: 10.1038/s41598-022-24503-z
+- title: The Designation of Recreational and Tourist Areas in the Sustainable Management of Rural and Suburban Areas
+  authors:
+  - A. Bielska
+  - A. S. Borkowski
+  - A. Czarnecka
+  - M. Delnicki
+  - J. Kwiatkowska-Malina
+  - M. Piotrkowska
+  year: 2023
+  type: journal
+  venue: Geomatics and Environmental Engineering
+  doi: 10.7494/geom.2023.17.3.5
+- title: From Monofunctional Commercial Districts into Multifunctional Urban Areas - Implementation of Sustainable Urban Practices
+  authors:
+  - B. Miączyńska
+  - A. S. Borkowski
+  year: 2023
+  type: journal
+  venue: Teka Komisji Architektury, Urbanistyki i Studiów Krajobrazowych PAN
+  doi: 10.35784/teka.5549
+- title: 'The potential water erosion hazard analysis: The Kielce case study'
+  authors:
+  - A. S. Borkowski
+  - M. Delnicki
+  - J. M. Chmielewski
+  - J. Kwiatkowska-Malina
+  year: 2014
+  type: conference
+  venue: International Multidisciplinary Scientific GeoConference SGEM – Conference Proceedings
+- title: 'Analysis of atmospheric air pollution deposition to soil environment: The Masovian Voivodeship case study'
+  authors:
+  - J. Kwiatkowska-Malina
+  - A. S. Borkowski
+  year: 2015
+  type: conference
+  venue: International Multidisciplinary Scientific GeoConference SGEM – Conference Proceedings
+- title: Luxury real estate market in Poland
+  authors:
+  - N. Sajnóg
+  - A. S. Borkowski
+  year: 2019
+  type: conference
+  venue: International Multidisciplinary Scientific GeoConference SGEM – Conference Proceedings

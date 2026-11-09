@@ -21,7 +21,12 @@ Strona jest generowana automatycznie:
 |---|---|
 | dodać studenta | edytuję `data/students.yaml` (ołówek na GitHubie), kopiuję blok, zapisuję *Commit* |
 | dodać projekt/grant | `data/projects.yaml` |
-| dodać funkcję, redakcję, komitet | `data/service.yaml` |
+| dodać funkcję, redakcję, komitet, recenzję | `data/service.yaml` |
+| dodać wystąpienie, wykład, poster | `data/talks.yaml` |
+| dodać współpracę z firmą, wdrożenie | `data/cooperation.yaml` |
+| dodać nagrodę, wyróżnienie | `data/awards.yaml` |
+| zmienić liczby w kafelkach na stronie głównej | `config.yaml` → `stats` (i `supervision` dla strony „Studenci”) |
+| pełny dorobek publikacyjny (z wykazu osiągnięć) | `data/publications_list.yaml` – ma pierwszeństwo przed ORCID, duplikaty łączone automatycznie |
 | zmienić bio, zdjęcie, linki | `config.yaml`; zdjęcie wgrywam jako `assets/photo.jpg` |
 | nowa publikacja | dodaję ją w Bazie Wiedzy PW → Profil → *Eksportuj dorobek do ORCID*; strona zaktualizuje się następnego dnia (albo od razu: Actions → Run workflow) |
 | ukryć/dopisać publikację | `data/publications_overrides.yaml` |

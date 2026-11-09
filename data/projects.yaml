@@ -1,29 +1,114 @@
 # ------------------------------------------------------------------
 #  PROJEKTY / GRANTY – dopisz nowy, kopiując blok "- title:".
-#  role:   PI | Contractor | Co-investigator | Coordinator
 #  status: ongoing | completed
 #  Pola funder, years, partners, url, description są opcjonalne.
 #  Wersje polskie: title_pl, funder_pl, role_pl, description_pl.
+#  Źródło: Wykaz osiągnięć, pkt 2.9 (stan na 09.11.2026).
 # ------------------------------------------------------------------
-- title: "PRZYKŁAD – wpisz nazwę projektu NCBiR"
-  funder: "NCBR"
+- title: "Phase dependence and granularity of BIM data: ontological and information aspects of modelling buildings and spatial development"
+  title_pl: "Fazowość i granularność danych BIM: ontologiczne i informacyjne aspekty modelowania obiektów budowlanych i zagospodarowania przestrzennego"
+  funder: "Scientific Council of the Discipline Civil Engineering, Geodesy and Transport, WUT (agreement 1/ILGiT/2026)"
+  funder_pl: "Rada Naukowa Dyscypliny Inżynieria Lądowa, Geodezja i Transport PW (porozumienie nr 1/ILGiT/2026)"
+  role: "Principal investigator"
+  role_pl: "Kierownik"
+  years: "2026–2027"
+  status: ongoing
+
+- title: "MAST – Digital twin of mast structures as an innovative inventory service using unmanned aerial vehicles and artificial intelligence"
+  title_pl: "MAST – Cyfrowy bliźniak obiektów masztowych jako innowacyjna usługa inwentaryzacji z wykorzystaniem bezzałogowych statków powietrznych i sztucznej inteligencji"
+  funder: "National Centre for Research and Development (POIR.01.01.01-00-0426/22)"
+  funder_pl: "Narodowe Centrum Badań i Rozwoju (POIR.01.01.01-00-0426/22)"
+  role: "Expert"
+  role_pl: "Ekspert"
+  years: "2023"
+  status: completed
+
+- title: "Warsaw University of Technology – Ambassador of Innovation for Accessibility"
+  title_pl: "Politechnika Warszawska Ambasadorem Innowacji na Rzecz Dostępności"
+  funder: "National Centre for Research and Development (POWR.03.05.00-00-A022/19)"
+  funder_pl: "Narodowe Centrum Badań i Rozwoju (POWR.03.05.00-00-A022/19)"
   role: "Contractor"
   role_pl: "Wykonawca"
   years: "2020–2023"
   status: completed
-  description: "Krótki opis projektu (1–2 zdania)."
 
-- title: "PRZYKŁAD – wpisz nazwę grantu wewnętrznego PW"
-  funder: "Warsaw University of Technology"
-  role: "PI"
-  role_pl: "Kierownik projektu"
-  years: "2024–2025"
+- title: "Innovative spatial solutions minimising the negative effects of the COVID-19 pandemic under limited social mobility"
+  title_pl: "Innowacyjne rozwiązania przestrzenne minimalizujące negatywne skutki pandemii COVID-19 w warunkach ograniczonej mobilności społecznej"
+  funder: "Warsaw University of Technology (Excellence Initiative – Research University, IDUB)"
+  funder_pl: "Politechnika Warszawska (Inicjatywa Doskonałości – Uczelnia Badawcza, IDUB)"
+  role: "Contractor"
+  role_pl: "Wykonawca"
+  years: "2020–2022"
   status: completed
 
-- title: "BIM–GIS research cooperation"
-  title_pl: "Współpraca badawcza BIM–GIS"
-  funder: "Industry collaboration – Bimetria Sp. z o.o."
-  funder_pl: "Współpraca z przemysłem – Bimetria Sp. z o.o."
-  role: "Coordinator"
-  role_pl: "Koordynator"
-  status: ongoing
+- title: "Extending and certifying the qualifications of students at the Faculty of Geodesy and Cartography (Task 41 of the NERW PW project)"
+  title_pl: "Rozszerzenie i certyfikacja kwalifikacji studentów na Wydziale Geodezji i Kartografii PW (Zadanie 41 projektu NERW PW)"
+  funder: "National Centre for Research and Development (POWR.03.05.00-00-Z306/17)"
+  funder_pl: "Narodowe Centrum Badań i Rozwoju (POWR.03.05.00-00-Z306/17)"
+  role: "Task 41 leader"
+  role_pl: "Kierownik Zadania 41"
+  years: "2018–2022"
+  status: completed
+
+- title: "A subjective comparative analysis of CAD and BIM technologies in architectural and urban design"
+  title_pl: "Subiektywna analiza porównawcza technologii CAD i BIM w świetle projektowania architektoniczno-urbanistycznego"
+  funder: "Warsaw University of Technology – team grant of the Civil Engineering and Transport discipline council"
+  funder_pl: "Politechnika Warszawska – grant zespołowy Rady Dyscypliny Inżynieria Lądowa i Transport"
+  role: "Principal investigator"
+  role_pl: "Kierownik"
+  years: "2021"
+  status: completed
+
+- title: "Rational management of soil resources using available spatial datasets"
+  title_pl: "Racjonalne zagospodarowanie zasobów glebowych z wykorzystaniem dostępnych zbiorów danych przestrzennych"
+  funder: "Warsaw University of Technology – team grant of the Civil Engineering and Transport discipline council"
+  funder_pl: "Politechnika Warszawska – grant zespołowy Rady Dyscypliny Inżynieria Lądowa i Transport"
+  role: "Contractor"
+  role_pl: "Wykonawca"
+  years: "2020–2021"
+  status: completed
+
+- title: "Geostatistical modelling as a tool for assessing soil contamination based on atmospheric deposition"
+  title_pl: "Modelowanie geostatystyczne jako narzędzie do oceny stanu zanieczyszczenia gleb na podstawie depozycji z powietrza atmosferycznego"
+  funder: "Warsaw University of Technology – individual doctoral grant"
+  funder_pl: "Politechnika Warszawska – grant doktorski indywidualny"
+  role: "Principal investigator"
+  role_pl: "Kierownik"
+  years: "2017–2018"
+  status: completed
+
+- title: "Promotional map of the Cegłów municipality"
+  title_pl: "Opracowanie mapy na potrzeby promocji gminy Cegłów"
+  funder: "Cegłów municipality (commissioned work)"
+  funder_pl: "Gmina Cegłów (projekt na zlecenie)"
+  role: "Contractor"
+  role_pl: "Wykonawca"
+  years: "2017–2018"
+  status: completed
+
+- title: "Using 1:5000 soil-agricultural maps to assess the spatial variability of soil properties"
+  title_pl: "Wykorzystanie map glebowo-rolniczych w skali 1:5000 do oceny zmienności przestrzennej właściwości gleb"
+  funder: "Warsaw University of Technology – dean's team grant"
+  funder_pl: "Politechnika Warszawska – grant dziekański zespołowy"
+  role: "Contractor"
+  role_pl: "Wykonawca"
+  years: "2015–2016"
+  status: completed
+
+- title: "Plan your space. Space – Environment – Form"
+  title_pl: "Zaplanuj swoją przestrzeń. Przestrzeń – Środowisko – Forma"
+  funder: "Ministry of Science and Higher Education (MNiSW/2014/DIR/603/UMN)"
+  funder_pl: "Ministerstwo Nauki i Szkolnictwa Wyższego (MNiSW/2014/DIR/603/UMN)"
+  role: "Contractor"
+  role_pl: "Wykonawca"
+  years: "2014–2015"
+  status: completed
+
+- title: "Geostatistical methods for studying the deposition of selected air pollutants in assessing soil condition"
+  title_pl: "Metody geostatystyczne w badaniu depozycji wybranych zanieczyszczeń powietrza atmosferycznego pod kątem oceny stanu gleb"
+  funder: "Warsaw University of Technology – individual infrastructure grant"
+  funder_pl: "Politechnika Warszawska – grant infrastrukturalny indywidualny"
+  role: "Principal investigator"
+  role_pl: "Kierownik"
+  years: "2013–2014"
+  status: completed

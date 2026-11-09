@@ -33,16 +33,66 @@ links:
     url: "https://pl.wikipedia.org/wiki/Andrzej_Szymon_Borkowski"
 
 bio: >
-  My research focuses on Building Information Modelling (BIM), BIM–GIS
-  integration, formal ontologies (DOLCE, OWL 2 DL), machine learning in AEC,
-  IFC standards and digital twins. I teach BIM at the graduate level and
-  supervise doctoral, master's and engineering theses.
+  I am an associate professor at the Faculty of Geodesy and Cartography,
+  Warsaw University of Technology (discipline: civil engineering, geodesy and
+  transport). My research focuses on Building Information Modelling (BIM),
+  BIM–GIS integration, formal ontologies (DOLCE, OWL 2 DL), artificial
+  intelligence and machine learning in AEC, IFC standards, HBIM and digital
+  twins. I am the author of the monograph “Propedeutyka BIM – filozofia
+  modelowania informacji o obiekcie budowlanym” (WUT Press, 2024) and of more
+  than 120 publications. I teach BIM at the graduate level, supervise doctoral,
+  master's and engineering theses, and work closely with industry on BIM
+  implementation.
 
 bio_pl: >
-  Zajmuję się modelowaniem informacji o budynku (BIM), integracją BIM–GIS,
-  ontologiami formalnymi (DOLCE, OWL 2 DL), uczeniem maszynowym w budownictwie,
-  standardami IFC oraz cyfrowymi bliźniakami. Prowadzę zajęcia z BIM na studiach
-  magisterskich oraz opiekuję się pracami doktorskimi, magisterskimi i inżynierskimi.
+  Jestem profesorem uczelni na Wydziale Geodezji i Kartografii Politechniki
+  Warszawskiej (dyscyplina: inżynieria lądowa, geodezja i transport). Zajmuję się
+  modelowaniem informacji o obiekcie budowlanym (BIM), integracją BIM–GIS,
+  ontologiami formalnymi (DOLCE, OWL 2 DL), sztuczną inteligencją i uczeniem
+  maszynowym w budownictwie, standardami IFC, HBIM oraz cyfrowymi bliźniakami.
+  Jestem autorem monografii „Propedeutyka BIM – filozofia modelowania informacji
+  o obiekcie budowlanym” (Oficyna Wydawnicza PW, 2024) i ponad 120 publikacji.
+  Prowadzę zajęcia z BIM na studiach magisterskich, opiekuję się pracami
+  doktorskimi, magisterskimi i inżynierskimi oraz współpracuję z przemysłem
+  przy wdrożeniach BIM.
+
+highlights:
+  - text: "Rector's Awards of WUT for scientific achievements (2023, 2025) and Bronze Medal for Long Service (2025)"
+    text_pl: "Nagrody JM Rektora PW za osiągnięcia naukowe (2023, 2025) i Brązowy Medal za Długoletnią Służbę (2025)"
+  - text: "Highly Cited Paper 2023–2024 (Journal of Sensor and Actuator Networks)"
+    text_pl: "Highly Cited Paper 2023–2024 (Journal of Sensor and Actuator Networks)"
+  - text: "Guest editor: Land, Infrastructures (MDPI), Budownictwo i Architektura"
+    text_pl: "Redaktor gościnny: Land, Infrastructures (MDPI), Budownictwo i Architektura"
+  - text: "Member of PKN Technical Committee KT 232 and the Geoinformatics Commission of PAU"
+    text_pl: "Członek KT 232 PKN i Komisji Geoinformatyki PAU"
+  - text: "Plenary and invited lectures, 50+ conference presentations"
+    text_pl: "Wykłady plenarne i na zaproszenie, ponad 50 referatów konferencyjnych"
+
+# Liczby w kafelkach na stronie głównej. auto: pubs | journals | data | phd | projects
+# (liczone automatycznie), albo value: liczba wpisana ręcznie. Kolejność = kolejność kafelków.
+stats:
+  - auto: pubs
+    label: "publications"
+    label_pl: "publikacji"
+  - auto: journals
+  - value: 13
+    label: "h-index (Scopus)"
+    label_pl: "indeks Hirscha (Scopus)"
+  - value: 187
+    label: "manuscript reviews"
+    label_pl: "recenzji artykułów"
+  - value: 69
+    label: "theses supervised"
+    label_pl: "wypromowanych prac"
+  - auto: projects
+    label: "research projects"
+    label_pl: "projektów badawczych"
+
+# Promotorstwo – liczby do kafelków na stronie „Studenci” (Wykaz osiągnięć, tab. 2).
+supervision:
+  phd: 1
+  msc: 20
+  beng: 48
 
 research_interests_pl:
   - BIM i openBIM (IFC, IDS, BCF)
@@ -50,6 +100,7 @@ research_interests_pl:
   - Ontologie formalne w budownictwie (DOLCE, OWL 2 DL)
   - Agenty AI i uczenie maszynowe w budownictwie
   - Cyfrowe bliźniaki i HBIM
+  - Dydaktyka BIM
 
 research_interests:
   - BIM and openBIM (IFC, IDS, BCF)
@@ -57,6 +108,7 @@ research_interests:
   - Formal ontologies in AEC (DOLCE, OWL 2 DL)
   - AI agents and machine learning in AEC
   - Digital twins and HBIM
+  - BIM education
 
 # Język główny strony (pod adresem głównym): "en" albo "pl". Druga wersja jest w /pl/ lub /en/.
 lang: "en"

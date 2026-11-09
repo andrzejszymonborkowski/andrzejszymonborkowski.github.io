@@ -5,7 +5,8 @@
 #  manual: publikacje, których nie ma w ORCID ani w extra.bib
 #          type: journal | conference | book | chapter | other
 # ------------------------------------------------------------------
-hide: []
+hide:
+  - "instrukcja oprogramowania"   # duplikat podręcznika Revit Architecture (2015) z ORCID
 #  - "10.1234/przyklad.doi"
 #  - "fragment tytułu do ukrycia"
 
