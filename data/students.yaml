@@ -12,7 +12,8 @@
   status: current
   role: "Supervisor"
   role_pl: "Promotor"
-  # topic: "Temat rozprawy"
+  topic: "A model of BIM information continuity across the life cycle of a construction investment based on open standards"
+  topic_pl: "Model ciągłości informacji BIM w cyklu życia inwestycji budowlanej oparty na otwartych standardach"
 
 - name: "Gabriela Buniewicz, MSc Eng."
   name_pl: "mgr inż. Gabriela Buniewicz"
@@ -20,7 +21,8 @@
   status: current
   role: "Supervisor"
   role_pl: "Promotor"
-  # topic: "Temat rozprawy"
+  topic: "A methodology for evaluating and fine-tuning large language models in the BIM process"
+  topic_pl: "Metodyka ewaluacji i dostrajania dużych modeli językowych w procesie BIM"
 
 - name: "Emilia Dudzińska, PhD Eng."
   name_pl: "dr inż. Emilia Dudzińska"
@@ -28,7 +30,8 @@
   status: completed
   role: "Auxiliary supervisor"
   role_pl: "Promotor pomocniczy"
-  # topic: "Temat rozprawy"
+  topic: "Conservation through documentation – point clouds and endangered architectural heritage"
+  topic_pl: "Konserwacja przez dokumentowanie – chmura punktów a zagrożone dziedzictwo architektoniczne"
   # year: 2025
 
 - name: "Paulina Jarema, BEng"
