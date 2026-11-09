@@ -80,7 +80,7 @@ stats:
     label: "publications"
     label_pl: "publikacji"
   - auto: journals
-  - value: 13
+  - value: 12
     label: "h-index (Scopus)"
     label_pl: "indeks Hirscha (Scopus)"
   - value: 187
