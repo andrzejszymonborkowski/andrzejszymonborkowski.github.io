@@ -1058,15 +1058,19 @@ def page(ctx, active, title, body, band=""):
     site = (cfg.get("site_url") or "").rstrip("/") + "/"
     url = site + ctx["prefix"] + ("" if active == "index.html" else active)
     desc = tr(cfg, "og_description", lang) or f"{cfg['name']} – {tr(cfg, 'affiliation', lang)}"
+    og_file = "og-pl.png" if lang == "pl" and (ROOT / "assets" / "og-pl.png").exists() else "og.png"
+    og_p = ROOT / "assets" / og_file
+    og_img = f"{site}assets/{og_file}" + (f"?v={hashlib.md5(og_p.read_bytes()).hexdigest()[:8]}" if og_p.exists() else "")
     og = f"""<meta property="og:type" content="website">
 <meta property="og:title" content="{esc(cfg['name'])} – {esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{esc(url)}">
-<meta property="og:image" content="{esc(site)}assets/og.png">
+<meta property="og:image" content="{esc(og_img)}">
+<meta property="og:image:alt" content="{esc(cfg['name'])}">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:locale" content="{'pl_PL' if lang == 'pl' else 'en_GB'}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{esc(site)}assets/og.png">
+<meta name="twitter:image" content="{esc(og_img)}">
 <link rel="canonical" href="{esc(url)}">
 <link rel="alternate" hreflang="{lang}" href="{esc(url)}">
 <link rel="alternate" hreflang="{other}" href="{esc(site + ctx['other_site_prefix'] + ('' if active == 'index.html' else active))}">"""
@@ -1387,7 +1391,9 @@ def build(demo=False, offline=False):
     (OUT / "site.js").write_text(JS, encoding="utf-8")
     if (ROOT / "assets").exists():
         shutil.copytree(ROOT / "assets", OUT / "assets", dirs_exist_ok=True)
-    if not make_og_image(cfg, OUT / "assets" / "og.png"):
+    if (ROOT / "assets" / "og.png").exists():
+        pass  # gotowe miniatury z tools/make_og.py (styl strony, zdjęcie) – nie nadpisujemy
+    elif not make_og_image(cfg, OUT / "assets" / "og.png"):
         print("Pillow niedostępny – używam assets/og.png z repozytorium", file=sys.stderr)
     (OUT / ".nojekyll").write_text("")
 
