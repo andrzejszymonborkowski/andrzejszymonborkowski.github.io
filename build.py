@@ -357,7 +357,7 @@ I18N = {
                cite="Cite", copy="Copy", copied="Copied!", close="Close", contact="Contact",
                nores="No matching publications.", peer="publications", about="About",
                recent="Recent publications", allp="all", datasets="datasets & software", journals="journal articles",
-               talks="Talks", coop="Cooperation", awards="Awards", highlights="Highlights",
+               home_kick="Profile", talks="Talks", coop="Cooperation", awards="Awards", highlights="Highlights",
                talks_sub="Invited and plenary lectures, conference presentations and posters",
                coop_sub="Industry cooperation, implemented results and academic partners",
                awards_sub="Awards, distinctions and recognition",
@@ -383,7 +383,7 @@ I18N = {
                nores="Brak pasujących publikacji.", peer="publikacji", about="O mnie",
                recent="Najnowsze publikacje", allp="wszystkie", datasets="zbiorów danych i oprogramowania",
                journals="artykułów w czasopismach",
-               talks="Wystąpienia", coop="Współpraca", awards="Nagrody", highlights="Najważniejsze osiągnięcia",
+               home_kick="Profil", talks="Wystąpienia", coop="Współpraca", awards="Nagrody", highlights="Najważniejsze osiągnięcia",
                talks_sub="Wykłady na zaproszenie i plenarne, referaty konferencyjne i postery",
                coop_sub="Współpraca z przemysłem, wdrożenia i partnerzy naukowi",
                awards_sub="Nagrody, wyróżnienia i odznaczenia",
@@ -419,7 +419,7 @@ def tlabels(lang):
 
 
 CSS = """
-/* Styl spójny z prezentacjami konferencyjnymi: granat, błękit, złoto; Georgia + Calibri */
+/* Styl bazowy; motyw „Ciemny Wykład” nadpisuje go niżej */
 :root{--navy:#1A1F36;--primary:#0C5C8F;--accent:#18A0D6;--gold:#E8A838;--light:#F0F4F8;--white:#fff;
 --muted:#6B7B8D;--text:#1E293B;--ltext:#CBD5E1;--line:#DCE3EA;--teal:#2A9D8F;
 --shadow:0 3px 14px rgba(0,0,0,.08);--shadow-h:0 8px 24px rgba(12,92,143,.16);
@@ -592,6 +592,100 @@ nav a.lang:hover{background:var(--white);color:var(--navy)}
 .contact-band p{margin:0;max-width:560px}
 """
 
+CSS += """
+/* ================================================================
+   MOTYW „CIEMNY WYKŁAD” – styl prezentacji konferencyjnych:
+   głęboki granat z bursztynową poświatą, złote kropki i rozstrzelone
+   etykiety, Georgia w zwykłej grubości, płaskie jasne karty.
+   ================================================================ */
+:root{--navy:#0F1B2D;--navy2:#1B355A;--primary:#2C5F7C;--accent:#3F7FA6;--gold:#E3A73B;--light:#F1F4F8;
+--muted:#66758A;--text:#0F1B2D;--ltext:#A9B8CC;--line:#DCE3EC;--teal:#2C5F7C;--blue:#5A9AD6;
+--shadow:none;--shadow-h:0 6px 20px rgba(15,27,45,.10)}
+body{background:#fff}
+h1,h2,h3{font-weight:400;letter-spacing:-.005em}
+a:hover{color:var(--navy2)}
+/* nagłówek */
+header.site{background:var(--navy);border-top:0;box-shadow:none;border-bottom:1px solid rgba(169,184,204,.14)}
+.brand{font-weight:400;font-size:1.15rem}
+nav a{color:var(--ltext)}
+/* etykieta-kropka (jak „● PROBLEM BADAWCZY” na slajdach) */
+.kick{display:flex;align-items:center;gap:12px;font:700 .72rem/1.2 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--primary);margin:64px 0 10px}
+.kick::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.kick+h2{margin-top:0}
+.band .kick{color:var(--gold);margin:0 0 22px}
+h2{font-size:1.85rem;margin:56px 0 22px;color:var(--navy)}
+h2::after{display:none}
+/* ciemne pasy jak slajd tytułowy */
+.band{background:radial-gradient(ellipse 55% 70% at 88% 105%,rgba(227,167,59,.22),rgba(227,167,59,0) 70%),
+ linear-gradient(120deg,#1B355A 0%,#13243C 45%,#0F1B2D 100%)}
+.band::after{right:-160px;top:-210px;width:520px;height:520px;background:none;border:1.5px solid rgba(227,167,59,.45)}
+.band::before{content:"";position:absolute;right:278px;top:228px;width:11px;height:11px;border-radius:50%;background:var(--gold);z-index:1;pointer-events:none}
+.goldbar{display:none}
+.band.small .wrap{padding-top:56px;padding-bottom:52px}
+.band.small h1{font-size:2.9rem;font-weight:400}
+.band.small p{color:var(--ltext);font-style:normal;font-size:1.12rem;margin-top:12px}
+.hero .wrap{grid-template-columns:200px 1fr;gap:52px;padding-top:64px;padding-bottom:104px}
+.hero img,.hero .ph{width:200px;height:242px;border:6px solid #fff;border-radius:8px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.hero h1{font-size:3.1rem;font-weight:400}
+.hero .title{color:var(--ltext);font-style:normal;font-size:1.2rem;margin:10px 0 16px}
+.hero .aff{color:var(--ltext)}
+.hero .foot{margin-top:26px;font:700 .74rem var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.links a{border-color:rgba(169,184,204,.35);background:transparent}
+.links a:hover{border-color:var(--gold);color:var(--gold);background:transparent}
+/* kafelki liczb */
+.stat{background:#fff;border:1px solid var(--line);border-top:0;border-radius:8px;box-shadow:0 10px 30px rgba(15,27,45,.08);padding:20px 20px 16px;position:relative}
+.stat::before{content:"";position:absolute;left:20px;top:0;width:28px;height:3px;background:var(--gold)}
+.stat b{font-weight:400;font-size:2.35rem;color:var(--navy)}
+.stats.inpage .stat{box-shadow:none;background:var(--light);border:0}
+/* treść */
+.lead{font-size:1.1rem;color:var(--text)}
+.chips li{background:#fff;box-shadow:none;border:1.5px solid var(--gold);border-left:1.5px solid var(--gold);border-radius:999px;padding:7px 18px;color:var(--navy);font-weight:700;font-size:.93rem}
+ul.hl li:before{width:9px;height:9px;border-radius:50%;transform:none;top:12px}
+.more{color:var(--primary)}
+h2 .cnt{background:var(--navy2)}
+/* publikacje */
+.toolbar{background:#fff}
+.toolbar input,.toolbar select{box-shadow:none;background:var(--light);border-color:var(--line)}
+.toolbar input:focus,.toolbar select:focus{outline-color:var(--gold)}
+.years a{background:var(--light);box-shadow:none;color:var(--navy2)}
+.years a:hover{background:var(--navy2);color:#fff}
+.pub{background:var(--light);box-shadow:none;border-left:3px solid var(--navy2);border-radius:6px}
+.pub:hover{box-shadow:var(--shadow-h);transform:none;background:#fff}
+.pub[data-t=conference]{border-left-color:var(--primary)}.pub[data-t=data]{border-left-color:var(--blue)}
+.pub .t{font-family:var(--serif);font-weight:400;font-size:1.1rem;color:var(--navy)}
+.pub .a .me{color:var(--navy2)}
+.badge{background:var(--navy2);letter-spacing:.14em;border-radius:3px}
+.badge.conference{background:var(--primary)}.badge.data{background:var(--blue)}.badge.chapter,.badge.book{background:var(--gold);color:var(--navy)}
+.btn:hover{color:var(--gold)}
+/* karty: jasne, a bieżące – granatowe (jak „Czego nie widzą”) */
+.card{background:var(--light);box-shadow:none;border-top:0;border-radius:8px;padding:22px 24px}
+.card .t{font-weight:400;font-size:1.2rem}
+.card:not(.done):not(.topic-card){background:var(--navy2);color:#fff}
+.card:not(.done):not(.topic-card) .t,.card:not(.done):not(.topic-card) .t a{color:#fff}
+.card:not(.done):not(.topic-card) .meta{color:var(--ltext)}
+.pill{background:#fff;color:var(--muted);letter-spacing:.14em}
+.pill.on{background:var(--gold);color:var(--navy)}
+table.s{border-spacing:0 8px}
+table.s td{background:var(--light);box-shadow:none}
+table.s td:first-child{border-left:3px solid var(--gold)}
+/* sieć, okno cytowania, stopka */
+.netbox{background:radial-gradient(ellipse 50% 60% at 90% 100%,rgba(227,167,59,.16),rgba(227,167,59,0) 70%),linear-gradient(120deg,#1B355A,#0F1B2D);border-top:0;border-radius:10px}
+#net line{stroke:rgba(169,184,204,.28)}
+#net line.hl{stroke:rgba(227,167,59,.9)}
+.net-legend i{background:var(--primary)}.net-legend i.st{background:var(--blue)}
+.modal{background:rgba(15,27,45,.66)}
+.modal .box{border-top:4px solid var(--gold)}
+.tabs button.on{color:var(--navy2);border-bottom-color:var(--gold)}
+.cta{background:var(--navy2)}.cta:hover{background:var(--navy)}
+.offer div{background:var(--light);box-shadow:none;border-left:3px solid var(--gold)}
+.offer b{font-weight:400}
+.contact-band{background:linear-gradient(120deg,#1B355A,#0F1B2D);border-left:0}
+.topic-card .lvl{background:var(--navy2)}
+footer{background:var(--navy);border-top:0;color:var(--ltext)}
+@media (max-width:720px){.band::before,.band::after{display:none}.hero .wrap{grid-template-columns:1fr;gap:26px;padding-top:40px;padding-bottom:96px}.kick{letter-spacing:.2em}.hero h1{font-size:2.2rem}.band.small h1{font-size:2.1rem}
+.hero img,.hero .ph{width:150px;height:182px}.kick{margin-top:48px}}
+"""
+
 JS = """
 /* ---- animowana sieć (węzły i krawędzie) w ciemnych pasach ---- */
 (function(){
@@ -610,8 +704,8 @@ JS = """
    ctx.clearRect(0,0,W,H);const D=130;
    for(let i=0;i<pts.length;i++){const a=pts[i];
     for(let j=i+1;j<pts.length;j++){const b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
-     if(d<D){ctx.strokeStyle=`rgba(24,160,214,${(1-d/D)*.28})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}}
-   pts.forEach(p=>{ctx.fillStyle=p.g?'rgba(232,168,56,.85)':'rgba(24,160,214,.65)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill();});
+     if(d<D){ctx.strokeStyle=`rgba(169,184,204,${(1-d/D)*.16})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}}
+   pts.forEach(p=>{ctx.fillStyle=p.g?'rgba(227,167,59,.75)':'rgba(169,184,204,.45)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill();});
   }
   function step(){pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;});
    draw();raf=visible?requestAnimationFrame(step):null;}
@@ -650,7 +744,7 @@ JS = """
  links.forEach(l=>{l.el=document.createElementNS(NS,'line');l.el.setAttribute('stroke-width',l.me?Math.min(1+l.w*.7,6):Math.min(.6+l.w*.4,3));g.appendChild(l.el);});
  nodes.forEach(n=>{
   n.c=document.createElementNS(NS,'circle');n.c.setAttribute('r',n.r);
-  n.c.setAttribute('fill',n.me?'#E8A838':n.st?'#18A0D6':'#0C5C8F');g.appendChild(n.c);
+  n.c.setAttribute('fill',n.me?'#E3A73B':n.st?'#5A9AD6':'#2C5F7C');g.appendChild(n.c);
   n.t=document.createElementNS(NS,'text');n.t.textContent=n.me?'':n.name;
   const minN=W<600?3:2;
   if(n.n>=minN||n.st)n.t.classList.add('big');else n.t.style.opacity=0;
@@ -982,6 +1076,13 @@ def page(ctx, active, title, body, band=""):
 <div class="hd"><h3>{L['cite']}</h3><button class="x" aria-label="{L['close']}">×</button></div>
 <div class="tabs"><button data-f="apa" class="on">APA</button><button data-f="ieee">IEEE</button><button data-f="bib">BibTeX</button></div>
 <pre></pre><div class="ft"><button class="cta copy" data-ok="{L['copied']}">{L['copy']}</button></div></div></div>"""
+    # etykiety-kropki nad nagłówkami sekcji, jak na slajdach („● WYSTĄPIENIA 2 / 6”)
+    n_h2 = body.count("<h2>")
+    kname = L["home_kick"] if active == "index.html" else title
+    cnt = iter(range(1, n_h2 + 1))
+    body = re.sub(r"<h2>", lambda m: f'<div class="kick">{esc(kname)} &nbsp;{next(cnt)} / {n_h2}</div><h2>', body)
+    band = band.replace('<div class="goldbar"></div>',
+                        f'<div class="kick">{esc(tr(cfg, "kicker", lang) if "hero" in band else cfg["name"])}</div>', 1)
     return f"""<!DOCTYPE html>
 <html lang="{lang}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1144,6 +1245,7 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
 <p class="title">{esc(tr(cfg, 'title', lang))}</p>
 <p class="aff">{esc(tr(cfg, 'unit', lang))}<br>{esc(tr(cfg, 'affiliation', lang))}</p>
 <div class="links">{links}</div>
+{f'<div class="foot">{esc(tr(cfg, "hero_foot", lang))}</div>' if tr(cfg, "hero_foot", lang) else ""}
 </div></div></section>"""
     auto = {"pubs": (n_pub, L["peer"]), "journals": (n_j, L["journals"]), "data": (n_data, L["datasets"]),
             "phd": (n_phd, L["phd"].lower()), "projects": (n_proj, L["projects"].lower())}

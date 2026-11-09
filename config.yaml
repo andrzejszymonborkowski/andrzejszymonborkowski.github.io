@@ -13,6 +13,11 @@ site_url: "https://andrzejszymonborkowski.github.io/"
 og_description: "BIM, BIM–GIS integration, formal ontologies and AI in AEC – publications, projects and thesis topics."
 og_description_pl: "BIM, integracja BIM–GIS, ontologie formalne i AI w budownictwie – publikacje, projekty i tematy prac dyplomowych."
 email: "andrzej.borkowski@pw.edu.pl"
+# Złota etykieta nad nazwiskiem i złoty podpis pod linkami (jak na slajdzie tytułowym)
+kicker: "Warsaw University of Technology"
+kicker_pl: "Politechnika Warszawska"
+hero_foot: "Warsaw · Civil engineering, geodesy and transport"
+hero_foot_pl: "Warszawa · Inżynieria lądowa, geodezja i transport"
 photo: "assets/photo.jpg"          # wgraj zdjęcie pod tą nazwą (opcjonalnie)
 
 orcid: "0000-0002-7013-670X"
