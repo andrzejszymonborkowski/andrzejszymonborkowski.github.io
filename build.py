@@ -1087,13 +1087,16 @@ def page(ctx, active, title, body, band=""):
     body = re.sub(r"<h2>", lambda m: f'<div class="kick">{esc(kname)} &nbsp;{next(cnt)} / {n_h2}</div><h2>', body)
     band = band.replace('<div class="goldbar"></div>',
                         f'<div class="kick">{esc(tr(cfg, "kicker", lang) if "hero" in band else cfg["name"])}</div>', 1)
+    gc = cfg.get("goatcounter")  # statystyki odwiedzin (GoatCounter, bez ciasteczek)
+    gc_html = (f'<script data-goatcounter="https://{esc(gc)}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>\n'
+               if gc else "")
     return f"""<!DOCTYPE html>
 <html lang="{lang}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)} – {esc(cfg['name'])}</title>
 <meta name="description" content="{esc(desc)}">
 {og}
-<link rel="stylesheet" href="{base}style.css?v={ASSET_V}"></head><body>
+<link rel="stylesheet" href="{base}style.css?v={ASSET_V}">{gc_html}</head><body>
 <header class="site"><div class="wrap"><a class="brand" href="index.html">{esc(cfg['name'])}</a><nav>{nav}</nav></div></header>
 {band}
 <main><div class="wrap">{body}</div></main>
