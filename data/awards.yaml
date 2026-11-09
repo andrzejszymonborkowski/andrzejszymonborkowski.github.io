@@ -53,9 +53,9 @@
 - category: "Students' awards"
   category_pl: "Nagrody studentów"
   items:
-    - text: "Paulina Jarema and Anna Pieńkowska – finalists of SkillsPoland (WorldSkills)"
-      text_pl: "Paulina Jarema i Anna Pieńkowska – finalistki SkillsPoland (WorldSkills)"
+    - text: "Paulina Jarema, BEng, and Anna Pieńkowska – finalists of SkillsPoland (WorldSkills)"
+      text_pl: "inż. Paulina Jarema i Anna Pieńkowska – finalistki SkillsPoland (WorldSkills)"
       years: "2026"
-    - text: "Paulina Jarema – “Srebrny Sukces” award in the Science category"
-      text_pl: "Paulina Jarema – nagroda „Srebrny Sukces” w kategorii „Nauka”"
+    - text: "Paulina Jarema, BEng – “Srebrny Sukces” award in the Science category"
+      text_pl: "inż. Paulina Jarema – nagroda „Srebrny Sukces” w kategorii „Nauka”"
       years: "2026"

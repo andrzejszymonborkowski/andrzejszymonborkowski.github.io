@@ -31,7 +31,8 @@
   # topic: "Temat rozprawy"
   # year: 2025
 
-- name: "Paulina Jarema"
+- name: "Paulina Jarema, BEng"
+  name_pl: "inż. Paulina Jarema"
   level: ips
   status: current
   role: "Supervisor, Individual Study Programme (IPS)"
