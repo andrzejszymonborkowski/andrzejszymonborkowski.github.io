@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------
 #  WYSTĄPIENIA – wykłady na zaproszenie, plenarne, referaty, postery.
 #  Każda grupa (category) to osobny nagłówek; nowe pozycje dopisuj na górze grupy.
-#  count: true  → przy nagłówku pokazuje się liczba pozycji.
+#  Przy nagłówku pokazuje się liczba pozycji; count: false ją ukrywa.
 #  Referaty i postery podane są w języku wystąpienia (jedno pole text).
 # ------------------------------------------------------------------
 - category: Invited lectures

@@ -1108,7 +1108,7 @@ def sections_html(groups, lang):
     out = []
     for g in groups or []:
         items = g.get("items", []) or []
-        cnt = f' <span class="cnt">{len(items)}</span>' if g.get("count") else ""
+        cnt = f' <span class="cnt">{len(items)}</span>' if g.get("count", True) and items else ""
         out.append(f"<h2>{esc(tr(g, 'category', lang))}{cnt}</h2><table class='s'>")
         for it in items:
             out.append(f"<tr><td>{esc(tr(it, 'text', lang))}</td><td>{esc(str(it.get('years', '')))}</td></tr>")
@@ -1274,7 +1274,7 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
     ylinks = "".join(f'<a href="#y{y}">{y or "n.d."}</a>' for y in years)
     blocks, idx = [], 0
     for y in years:
-        blocks.append(f'<h2 class="year-h" id="y{y}" data-y="{y}">{y or "n.d."}</h2>')
+        blocks.append(f'<h2 class="year-h" id="y{y}" data-y="{y}">{y or "n.d."} <span class="cnt">{sum(1 for q in pubs if q["year"] == y)}</span></h2>')
         for p in (p for p in pubs if p["year"] == y):
             blocks.append(render_pub(p, idx, me, L, TL)); idx += 1
     pubs_html = f"""<div class="years">{ylinks}</div>
@@ -1298,7 +1298,7 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
         if not group:
             continue
         group.sort(key=lambda s: s.get("status") != "current")
-        sh.append(f"<h2>{LEVEL_NAMES[lang][lvl]}</h2><div class='cards'>")
+        sh.append(f"<h2>{LEVEL_NAMES[lang][lvl]} <span class=\"cnt\">{len(group)}</span></h2><div class='cards'>")
         for s in group:
             st = s.get("status", "current")
             pill = f'<span class="pill{" on" if st=="current" else ""}">{L[st]}{(" " + str(s["year"])) if s.get("year") else ""}</span>'
@@ -1317,7 +1317,7 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
         group = [p for p in projects if p.get("status", "completed") == st]
         if not group:
             continue
-        ph.append(f"<h2>{label}</h2><div class='cards'>")
+        ph.append(f"<h2>{label} <span class=\"cnt\">{len(group)}</span></h2><div class='cards'>")
         for p in group:
             ttl = tr(p, "title", lang)
             t = f'<a href="{esc(p["url"])}">{esc(ttl)}</a>' if p.get("url") else esc(ttl)
@@ -1347,7 +1347,7 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
     if tr(fs, "intro", lang):
         fh.append(f'<p class="lead">{esc(tr(fs, "intro", lang))}</p>')
     if fs.get("topics"):
-        fh.append(f"<h2>{L['topics']}</h2><div class='cards'>")
+        fh.append(f"<h2>{L['topics']} <span class=\"cnt\">{len(fs['topics'])}</span></h2><div class='cards'>")
         for t in fs["topics"]:
             lv = t.get("level", "any")
             kws = "".join(f"<span>{esc(k)}</span>" for k in tr(t, "keywords", lang, []))

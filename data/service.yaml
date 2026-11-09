@@ -1,6 +1,7 @@
 # ------------------------------------------------------------------
 #  DZIAŁALNOŚĆ – każda grupa (category) to osobny nagłówek.
 #  Wersje polskie: category_pl, text_pl. Kolumna po prawej: years.
+#  Przy nagłówku pokazuje się liczba pozycji; count: false ją ukrywa.
 #  Źródło: Wykaz osiągnięć, pkt 2.8, 2.10, 2.12–2.14, 2.17, 3.8, 4.1 (stan na 09.11.2026).
 # ------------------------------------------------------------------
 - category: "Editorial work"
@@ -30,6 +31,7 @@
 
 - category: "Peer review"
   category_pl: "Recenzje"
+  count: false   # liczba pozycji (4) myliłaby – recenzji jest 187
   items:
     - text: "187 manuscript reviews for 73 scientific journals (77 of them after the habilitation)"
       text_pl: "187 recenzji artykułów dla 73 czasopism naukowych (77 po uzyskaniu stopnia dr. hab.)"
