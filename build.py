@@ -1287,9 +1287,12 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
     sh = []
     sv = cfg.get("supervision") or {}
     if sv:
-        tot = sum(int(sv.get(k) or 0) for k in ("phd", "msc", "beng"))
-        sh.append(stats_html([(tot, L["sv_all"]), (sv.get("msc", 0), L["sv_msc"]), (sv.get("beng", 0), L["sv_beng"]),
-                              (sv.get("phd", 0), L["sv_phd"])], " inpage"))
+        parts = sum(int(sv.get(k) or 0) for k in ("phd", "msc", "beng"))
+        tot = int(sv.get("total") or parts)
+        items = [(tot, L["sv_all"])]
+        if parts == tot:  # podział tylko, gdy jest zgodny z sumą
+            items += [(sv.get("msc", 0), L["sv_msc"]), (sv.get("beng", 0), L["sv_beng"]), (sv.get("phd", 0), L["sv_phd"])]
+        sh.append(stats_html(items, " inpage"))
     for lvl in ("phd", "ips", "msc", "beng", "intern"):
         group = [s for s in students if s.get("level") == lvl]
         if not group:

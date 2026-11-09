@@ -86,18 +86,21 @@ stats:
   - value: 187
     label: "manuscript reviews"
     label_pl: "recenzji artykułów"
-  - value: 69
+  - value: 81
     label: "theses supervised"
     label_pl: "wypromowanych prac"
   - auto: projects
     label: "research projects"
     label_pl: "projektów badawczych"
 
-# Promotorstwo – liczby do kafelków na stronie „Studenci” (Wykaz osiągnięć, tab. 2).
+# Promotorstwo – liczby do kafelków na stronie „Studenci”.
+# total: łączna liczba wypromowanych prac (Baza Wiedzy PW, XI 2026).
+# Podział (phd / msc / beng) pokazuje się tylko, gdy sumuje się do total – dopisz go, gdy będziesz go mieć.
 supervision:
-  phd: 1
-  msc: 20
-  beng: 48
+  total: 81
+#  phd: 1
+#  msc: 20
+#  beng: 48
 
 research_interests_pl:
   - BIM i openBIM (IFC, IDS, BCF)
