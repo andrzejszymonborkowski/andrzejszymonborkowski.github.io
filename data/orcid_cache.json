@@ -65,21 +65,6 @@
   "source": "ORCID"
  },
  {
-  "title": "Piramida zawodów w BIM",
-  "year": 2025,
-  "type": "journal",
-  "orcid_type": "journal-article",
-  "venue": "Przegląd Budowlany",
-  "doi": "10.5604/01.3001.0055.3027",
-  "url": "https://doi.org/10.5604/01.3001.0055.3027",
-  "authors": [
-   "Andrzej Szymon Borkowski",
-   "Bartłomiej Mielnicki"
-  ],
-  "bibtex": null,
-  "source": "ORCID"
- },
- {
   "title": "BCF as an Example of Reification and Serialization in Building Information Modeling (BIM) Practice",
   "year": 2026,
   "type": "preprint",
@@ -673,7 +658,7 @@
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "Zenodo",
-  "doi": "10.5281/zenodo.22924334",
+  "doi": "10.5281/zenodo.22924335",
   "url": "",
   "authors": [
    "Andrzej Borkowski",
@@ -738,6 +723,20 @@
    "Klaudia Maciąg",
    "Przemysław Leń",
    "Michał Maciąg"
+  ],
+  "bibtex": null,
+  "source": "ORCID"
+ },
+ {
+  "title": "Rule-Based Software Agent as the Author of a Coordination Issue: Automatic Generation of BCF Files from an IFC Model",
+  "year": 2026,
+  "type": "journal",
+  "orcid_type": "journal-article",
+  "venue": "Geoinformatica Polonica",
+  "doi": "10.4467/21995923gp.26.002.24383",
+  "url": "https://doi.org/10.4467/21995923GP.26.002.24383",
+  "authors": [
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": null,
   "source": "ORCID"
@@ -854,20 +853,6 @@
   "venue": "Journal of Civil and Hydraulic Engineering",
   "doi": "10.56578/jche030304",
   "url": "https://doi.org/10.56578/jche030304",
-  "authors": [
-   "Andrzej Szymon Borkowski"
-  ],
-  "bibtex": null,
-  "source": "ORCID"
- },
- {
-  "title": "Edukacja BIM czego uczy i jak uczy studentw",
-  "year": 2023,
-  "type": "journal",
-  "orcid_type": "journal-article",
-  "venue": "Przegląd Budowlany",
-  "doi": "10.5604/01.3001.0053.6991",
-  "url": "https://doi.org/10.5604/01.3001.0053.6991",
   "authors": [
    "Andrzej Szymon Borkowski"
   ],
@@ -1003,6 +988,21 @@
    "Joanna Litwin",
    "Weronika Rączka",
    "Aleksandra Szporanowicz"
+  ],
+  "bibtex": null,
+  "source": "ORCID"
+ },
+ {
+  "title": "Piramida zawodów w BIM",
+  "year": 2025,
+  "type": "journal",
+  "orcid_type": "journal-article",
+  "venue": "Przegląd Budowlany",
+  "doi": "10.5604/01.3001.0055.3027",
+  "url": "https://doi.org/10.5604/01.3001.0055.3027",
+  "authors": [
+   "Andrzej Szymon Borkowski",
+   "Bartłomiej Mielnicki"
   ],
   "bibtex": null,
   "source": "ORCID"
@@ -2016,16 +2016,15 @@
   "source": "ORCID"
  },
  {
-  "title": "Obliczanie wskaźników użytkowania terenu dla potrzeb planowania przestrzennego przy użyciu oprogramowania GIS - AutoCAD Map 3D",
-  "year": 2015,
-  "type": "conference",
-  "orcid_type": "conference-poster",
-  "venue": "",
-  "doi": "",
-  "url": "",
+  "title": "Edukacja BIM czego uczy i jak uczy studentw",
+  "year": 2023,
+  "type": "journal",
+  "orcid_type": "journal-article",
+  "venue": "Przegląd Budowlany",
+  "doi": "10.5604/01.3001.0053.6991",
+  "url": "https://doi.org/10.5604/01.3001.0053.6991",
   "authors": [
-   "Andrzej Szymon Borkowski",
-   "M. Walczuk"
+   "Andrzej Szymon Borkowski"
   ],
   "bibtex": null,
   "source": "ORCID"
@@ -2382,6 +2381,21 @@
    "Joanna Jaroszewicz",
    "Agnieszka Turek",
    "Andrzej Szymon Borkowski"
+  ],
+  "bibtex": null,
+  "source": "ORCID"
+ },
+ {
+  "title": "Obliczanie wskaźników użytkowania terenu dla potrzeb planowania przestrzennego przy użyciu oprogramowania GIS - AutoCAD Map 3D",
+  "year": 2015,
+  "type": "conference",
+  "orcid_type": "conference-poster",
+  "venue": "",
+  "doi": "",
+  "url": "",
+  "authors": [
+   "Andrzej Szymon Borkowski",
+   "M. Walczuk"
   ],
   "bibtex": null,
   "source": "ORCID"
