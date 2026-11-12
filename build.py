@@ -1076,7 +1076,12 @@ def page(ctx, active, title, body, band=""):
 <meta name="twitter:image" content="{esc(og_img)}">
 <link rel="canonical" href="{esc(url)}">
 <link rel="alternate" hreflang="{lang}" href="{esc(url)}">
-<link rel="alternate" hreflang="{other}" href="{esc(site + ctx['other_site_prefix'] + ('' if active == 'index.html' else active))}">"""
+<link rel="alternate" hreflang="{other}" href="{esc(site + ctx['other_site_prefix'] + ('' if active == 'index.html' else active))}">
+<link rel="icon" type="image/png" sizes="32x32" href="{esc(site)}assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{esc(site)}assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="{esc(site)}assets/favicon-192.png">
+<link rel="apple-touch-icon" href="{esc(site)}assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0F1B2D">"""
     cite_modal = ""
     if "data-cite" in body:
         cite_modal = f"""<div class="modal" id="cite" role="dialog" aria-modal="true"><div class="box">
@@ -1399,6 +1404,8 @@ def build(demo=False, offline=False):
     (OUT / "site.js").write_text(JS, encoding="utf-8")
     if (ROOT / "assets").exists():
         shutil.copytree(ROOT / "assets", OUT / "assets", dirs_exist_ok=True)
+        if (ROOT / "assets" / "favicon.ico").exists():
+            shutil.copy(ROOT / "assets" / "favicon.ico", OUT / "favicon.ico")  # przeglądarki szukają /favicon.ico
     if (ROOT / "assets" / "og.png").exists():
         pass  # gotowe miniatury z tools/make_og.py (styl strony, zdjęcie) – nie nadpisujemy
     elif not make_og_image(cfg, OUT / "assets" / "og.png"):

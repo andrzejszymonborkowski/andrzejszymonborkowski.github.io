@@ -28,6 +28,7 @@ Strona jest generowana automatycznie:
 | zmienić liczby w kafelkach na stronie głównej | `config.yaml` → `stats` (i `supervision` dla strony „Studenci”) |
 | pełny dorobek publikacyjny (z wykazu osiągnięć) | `data/publications_list.yaml` – ma pierwszeństwo przed ORCID, duplikaty łączone automatycznie |
 | zmienić bio, zdjęcie, linki | `config.yaml`; zdjęcie wgrywam jako `assets/photo.jpg` |
+| ikonka strony (karta przeglądarki, telefon) | `assets/favicon-*.png`, `favicon.ico`; generuje je `python tools/make_favicon.py` |
 | miniatura do Facebooka/LinkedIna | `assets/og.png` (EN) i `assets/og-pl.png` (PL); generuje je `python tools/make_og.py` (teksty w tym pliku) |
 | nowa publikacja | dodaję ją w Bazie Wiedzy PW → Profil → *Eksportuj dorobek do ORCID*; strona zaktualizuje się następnego dnia (albo od razu: Actions → Run workflow) |
 | ukryć/dopisać publikację | `data/publications_overrides.yaml` |
