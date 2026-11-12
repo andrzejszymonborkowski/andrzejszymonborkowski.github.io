@@ -810,7 +810,7 @@ JS = """
   const ns=nb[n.id]||new Set();
   nodes.forEach(m=>{const on=m===n||ns.has(m.id);m.c.classList.toggle('dim',!on);m.t.classList.toggle('dim',!on);if(on&&m!==n&&!m.me)m.t.style.opacity=1;});
   links.forEach(l=>{const on=l.s===n||l.t===n;l.el.classList.toggle('hl',on);l.el.classList.toggle('dim',!on);});
-  tip.innerHTML='<b>'+n.name+'</b>'+n.n+' '+(n.me?box.dataset.all:box.dataset.joint);tip.style.opacity=1;
+  tip.textContent='';const bb=document.createElement('b');bb.textContent=n.name;tip.append(bb,n.n+' '+(n.me?box.dataset.all:box.dataset.joint));tip.style.opacity=1;
  }
  function blur(){nodes.forEach(m=>{m.c.classList.remove('dim');m.t.classList.remove('dim');if(!m.t.classList.contains('big'))m.t.style.opacity=0;});
   links.forEach(l=>l.el.classList.remove('hl','dim'));tip.style.opacity=0;}
@@ -1061,6 +1061,14 @@ def page(ctx, active, title, body, band=""):
     site = (cfg.get("site_url") or "").rstrip("/") + "/"
     url = site + ctx["prefix"] + ("" if active == "index.html" else active)
     desc = tr(cfg, "og_description", lang) or f"{cfg['name']} – {tr(cfg, 'affiliation', lang)}"
+    gc = cfg.get("goatcounter")  # statystyki odwiedzin (GoatCounter, bez ciasteczek)
+    # Polityka bezpieczeństwa treści: strona może ładować skrypty tylko z siebie i z licznika GoatCounter
+    gch = f" https://{gc}.goatcounter.com" if gc else ""
+    csp = ("default-src 'self'; script-src 'self'" + (" https://gc.zgo.at" if gc else "") +
+           "; style-src 'self' 'unsafe-inline'; img-src 'self' data:" + gch + "; connect-src 'self'" + gch +
+           "; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests")
+    gc_html = (f'<script data-goatcounter="https://{esc(gc)}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n'
+               if gc else "")
     og_file = "og-pl.png" if lang == "pl" and (ROOT / "assets" / "og-pl.png").exists() else "og.png"
     og_p = ROOT / "assets" / og_file
     og_img = f"{site}assets/{og_file}" + (f"?v={hashlib.md5(og_p.read_bytes()).hexdigest()[:8]}" if og_p.exists() else "")
@@ -1077,6 +1085,8 @@ def page(ctx, active, title, body, band=""):
 <link rel="canonical" href="{esc(url)}">
 <link rel="alternate" hreflang="{lang}" href="{esc(url)}">
 <link rel="alternate" hreflang="{other}" href="{esc(site + ctx['other_site_prefix'] + ('' if active == 'index.html' else active))}">
+<meta http-equiv="Content-Security-Policy" content="{esc(csp)}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/png" sizes="32x32" href="{esc(site)}assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="{esc(site)}assets/favicon-16.png">
 <link rel="icon" type="image/png" sizes="192x192" href="{esc(site)}assets/favicon-192.png">
@@ -1095,9 +1105,6 @@ def page(ctx, active, title, body, band=""):
     body = re.sub(r"<h2>", lambda m: f'<div class="kick">{esc(kname)} &nbsp;{next(cnt)} / {n_h2}</div><h2>', body)
     band = band.replace('<div class="goldbar"></div>',
                         f'<div class="kick">{esc(tr(cfg, "kicker", lang) if "hero" in band else cfg["name"])}</div>', 1)
-    gc = cfg.get("goatcounter")  # statystyki odwiedzin (GoatCounter, bez ciasteczek)
-    gc_html = (f'<script data-goatcounter="https://{esc(gc)}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>\n'
-               if gc else "")
     return f"""<!DOCTYPE html>
 <html lang="{lang}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">

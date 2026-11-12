@@ -1,0 +1,7 @@
+# Co miesiąc sprawdza aktualizacje akcji GitHuba (przypiętych do konkretnych wersji) i proponuje je jako PR
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
