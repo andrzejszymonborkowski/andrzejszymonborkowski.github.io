@@ -137,6 +137,9 @@ def parse_orcid_work(w):
     return {
         "title": _v(w, "title", "title", "value") or "",
         "year": int(_v(w, "publication-date", "year", "value") or 0),
+        "month": int(_v(w, "publication-date", "month", "value") or 0),
+        # kiedy pozycja trafiła do ORCID – w obrębie roku najnowsze idą na górę
+        "added": int(_v(w, "created-date", "value") or 0),
         "type": ORCID_TYPES.get(w.get("type"), "other"),
         "orcid_type": w.get("type"),
         "venue": _v(w, "journal-title", "value") or "",
@@ -288,7 +291,7 @@ def merge(*lists):
                 for k in keys:
                     seen[k] = p
             else:  # uzupełnij brakujące pola z drugiego źródła
-                for f in ("authors", "venue", "doi", "url", "bibtex", "year"):
+                for f in ("authors", "venue", "doi", "url", "bibtex", "year", "month", "added"):
                     if f == "bibtex" and hit.get("source") == "list":
                         continue  # dla pozycji z listy BibTeX generujemy z poprawnych danych
                     if not hit.get(f) and p.get(f):
@@ -1200,7 +1203,9 @@ def collect(demo, offline, cfg):
     publ = [(norm_title(q["title"]), q["year"]) for q in pubs if q["type"] in ("journal", "conference", "chapter")]
     pubs = [p for p in pubs if p["type"] != "preprint" or not any(
         abs(y - p["year"]) <= 1 and _similar_lo(t, norm_title(p["title"])) for t, y in publ)]
-    pubs.sort(key=lambda p: (-(p.get("year") or 0), TYPE_RANK.index(p["type"]), p["title"].lower()))
+    # rok malejąco, w roku: najpóźniej dodane do ORCID na górze (nowa publikacja = pierwsza na liście)
+    pubs.sort(key=lambda p: (-(p.get("year") or 0), -(p.get("added") or 0), -(p.get("month") or 0),
+                             TYPE_RANK.index(p["type"]), p["title"].lower()))
     return pubs, auto_links
 
 
