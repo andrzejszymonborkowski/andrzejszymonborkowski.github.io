@@ -2,6 +2,8 @@
  {
   "title": "Generative Design in Urban Planning with Regard to Local Zoning Regulations: A BIM Case Study",
   "year": 2026,
+  "month": 5,
+  "added": 1778667128038,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Urban Science",
@@ -21,6 +23,8 @@
  {
   "title": "BIM Collaboration Format (BCF) as an Example of Reification and Serialization in Building Information Modeling (BIM) Practice",
   "year": 2026,
+  "month": 4,
+  "added": 1776975862442,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Buildings",
@@ -37,6 +41,8 @@
  {
   "title": "IFC2COBie: A Provenance-Aware Semantic Translator for Bridging the BIM Data Gap",
   "year": 2026,
+  "month": 0,
+  "added": 1772475548781,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -52,6 +58,8 @@
  {
   "title": "HBIM in the digital reconstruction of historic buildings based on point clouds – a case study of the manor house in Nużewo, Poland",
   "year": 2026,
+  "month": 3,
+  "added": 1775558247444,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Budownictwo i Architektura / Civil and Architectural Engineering",
@@ -67,6 +75,8 @@
  {
   "title": "BCF as an Example of Reification and Serialization in Building Information Modeling (BIM) Practice",
   "year": 2026,
+  "month": 3,
+  "added": 1773970482891,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -83,6 +93,8 @@
  {
   "title": "Editorial for the Special Issue “Modern Digital Technologies for the Built Environment of the Future”",
   "year": 2026,
+  "month": 4,
+  "added": 1777376104694,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Infrastructures",
@@ -97,6 +109,8 @@
  {
   "title": "BIM Washing as a Decoupling Mechanism: Analysis of Ceremonial Isomorphism in the Construction Industry",
   "year": 2026,
+  "month": 1,
+  "added": 1769088848399,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "Zenodo",
@@ -111,6 +125,8 @@
  {
   "title": "Applying Generative Design and Visual Programming in the Context of Digital Twins for Future Smart Cities - script",
   "year": 2026,
+  "month": 3,
+  "added": 1772608492653,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -126,6 +142,8 @@
  {
   "title": "Evolution of Convolutional and Recurrent Artificial Neural Networks in the Context of BIM: Deep Insight and New Tool, Bimetria",
   "year": 2025,
+  "month": 12,
+  "added": 1766503556800,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Infrastructures",
@@ -142,6 +160,8 @@
  {
   "title": "IFC2COBie - Semantic Translator converting data from IFC schema to COBie spreadsheet",
   "year": 2026,
+  "month": 2,
+  "added": 1772026158759,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -156,6 +176,8 @@
  {
   "title": "BIM–CARVER for Blender BIM (Bonsai): Assessment Methodology with BIM for Security-by-Design in Critical Infrastructure Projects",
   "year": 2026,
+  "month": 0,
+  "added": 1768823909295,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -170,6 +192,8 @@
  {
   "title": "Evolution of Convolutional and Recurrent Artificial Neural Networks in the Context of BIM: Deep Insight and New Tool, Bimetria",
   "year": 2025,
+  "month": 11,
+  "added": 1764148814658,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -186,6 +210,8 @@
  {
   "title": "The BIM Neural Pathways (BNP) concept: BIM competence pathways reinforced by micro-loops in real project events",
   "year": 2025,
+  "month": 12,
+  "added": 1764761877629,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "Zenodo",
@@ -200,6 +226,8 @@
  {
   "title": "The ‘Heavy Families’ plug-in for Autodesk Revit, used to detect heavy BIM library objects",
   "year": 2025,
+  "month": 12,
+  "added": 1765808688574,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -214,6 +242,8 @@
  {
   "title": "Automated Identification of Heavy BIM Library Components: A Multi-Criteria Analysis Tool for Model Optimization",
   "year": 2025,
+  "month": 12,
+  "added": 1766365581662,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -228,6 +258,8 @@
  {
   "title": "A Conceptual AI-based Framework for Clash Triage in Building Information Modeling (BIM)",
   "year": 2025,
+  "month": 12,
+  "added": 1766718958845,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -243,6 +275,8 @@
  {
   "title": "Health Checker – a tool for automatic data quality control in BIM models",
   "year": 2026,
+  "month": 1,
+  "added": 1767770257026,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -257,6 +291,8 @@
  {
   "title": "Automated Identification of Heavy BIM Library Components: A Multi-Criteria Analysis Tool for Model Optimization",
   "year": 2026,
+  "month": 1,
+  "added": 1769426525285,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Smart Cities",
@@ -271,6 +307,8 @@
  {
   "title": "Integrating CARVER Vulnerability Assessment Methodology with BIM for Security-by-Design in Critical Infrastructure Projects",
   "year": 2026,
+  "month": 2,
+  "added": 1770264811800,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -286,6 +324,8 @@
  {
   "title": "A Conceptual AI-Based Framework for Clash Triage in Building Information Modeling (BIM): Towards Automated Prioritization in Complex Construction Projects",
   "year": 2026,
+  "month": 2,
+  "added": 1770662253087,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Buildings",
@@ -301,6 +341,8 @@
  {
   "title": "Paradygmaty programowania obiektowegow technologii modelowania informacji o obiekciebudowlanym (BIM)",
   "year": 2026,
+  "month": 2,
+  "added": 1771602246595,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Przegląd Budowlany",
@@ -315,6 +357,8 @@
  {
   "title": "Mariensztat Land use plan",
   "year": 2026,
+  "month": 3,
+  "added": 1772632990094,
   "type": "other",
   "orcid_type": "other",
   "venue": "Zenodo",
@@ -330,6 +374,8 @@
  {
   "title": "Integrating CARVER Matrix with BIM for Security by Design in Critical Infrastructure Projects",
   "year": 2026,
+  "month": 3,
+  "added": 1772635585640,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Sustainability",
@@ -345,6 +391,8 @@
  {
   "title": "Lightweight version control for BIM data: a Git and CSV-based approach to tracking parametric changes in building models",
   "year": 2026,
+  "month": 3,
+  "added": 1774356789605,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -359,6 +407,8 @@
  {
   "title": "The BIM application model used for ontosaturation",
   "year": 2026,
+  "month": 3,
+  "added": 1773647640275,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -373,6 +423,8 @@
  {
   "title": "A BIM used to develop an example of a phase ontology",
   "year": 2026,
+  "month": 3,
+  "added": 1773648916349,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -387,6 +439,8 @@
  {
   "title": "Ontosaturation: A Novel Ontological Mechanism for Property Completeness Validation in Building Information Modeling (BIM)",
   "year": 2026,
+  "month": 3,
+  "added": 1774240885475,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -401,6 +455,8 @@
  {
   "title": "Research Data: Student Survey Responses - Dark Lecture",
   "year": 2026,
+  "month": 3,
+  "added": 1774253491391,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -415,6 +471,8 @@
  {
   "title": "Generative Design in Urban Planning with Regard to Local Zoning Regulations: A BIM Case Study",
   "year": 2026,
+  "month": 3,
+  "added": 1774852357650,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -434,6 +492,8 @@
  {
   "title": "A critical analysis of the direction of BIM development: From CAD through file-based approaches and SaaS to granular data",
   "year": 2026,
+  "month": 3,
+  "added": 1774953678262,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Journal of Information Technology in Construction",
@@ -448,6 +508,8 @@
  {
   "title": "Analysis of a large language model in the quantity surveying and cost estimation process using interoperable BIM models",
   "year": 2026,
+  "month": 4,
+  "added": 1775633070381,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -463,6 +525,8 @@
  {
   "title": "Ontosaturation: A Novel Ontological Mechanism for Property Completeness Validation in Building Information Modeling (BIM)",
   "year": 2026,
+  "month": 4,
+  "added": 1776951237079,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Infrastructures",
@@ -477,6 +541,8 @@
  {
   "title": "Analiza możliwości wdrożenia cyfrowego zarządzania informacją i BIM w procesie realizacji inwestycji wiatrowych w Polsce",
   "year": 2026,
+  "month": 4,
+  "added": 1776951237480,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "BUILDER",
@@ -494,6 +560,8 @@
  {
   "title": "Inteligentne zarządzanie procesami budowlanymi:analiza SWOT/TOWS możliwości i wyzwańwdrożenia automatyzacji i robotyzacji w polskimsektorze budowlanym",
   "year": 2026,
+  "month": 8,
+  "added": 1787235071123,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Przegląd Budowlany",
@@ -508,6 +576,8 @@
  {
   "title": "Analysis of a Large Language Model in the Process of Quantity Surveying and Cost Estimation Using Interoperable BIM Models",
   "year": 2026,
+  "month": 0,
+  "added": 1779313208141,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -523,6 +593,8 @@
  {
   "title": "Temporally-Qualified Building Elements: A DOLCE-Based Ontology for Phase-Dependent Identity and Change Tracking in BIM Models",
   "year": 2026,
+  "month": 5,
+  "added": 1779333367178,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -539,6 +611,8 @@
  {
   "title": "Installer and code for the WMS Reader plug-in for Autodesk Revit",
   "year": 2026,
+  "month": 0,
+  "added": 1779690208069,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -553,6 +627,8 @@
  {
   "title": "Korelacja a kauzacja w badaniach aplikacyjnych nadmodelowaniem informacji o obiekcie budowlanym (BIM)",
   "year": 2026,
+  "month": 6,
+  "added": 1781542992382,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Przegląd Budowlany",
@@ -567,6 +643,8 @@
  {
   "title": "The evolution of BIM work standards: current, best, and future practices from a BIM Manager's perspective",
   "year": 2026,
+  "month": 6,
+  "added": 1782728147560,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Budownictwo i Architektura / Civil and Architectural Engineering",
@@ -582,6 +660,8 @@
  {
   "title": "Temporally Qualified Building Elements: A DOLCE-Based Ontology for Phase-Dependent Identity and Change Tracking in BIM Models",
   "year": 2026,
+  "month": 7,
+  "added": 1783357824315,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Technologies",
@@ -599,6 +679,8 @@
  {
   "title": "Automatic generation of BCF files based on an IFC model",
   "year": 2026,
+  "month": 9,
+  "added": 1788269716359,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -613,6 +695,8 @@
  {
   "title": "Data from an analysis of retracted publications in research on BIM and the construction industry",
   "year": 2026,
+  "month": 9,
+  "added": 1788931912271,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -627,6 +711,8 @@
  {
   "title": "An AI Agent that Verifies and Resolves BCF Coordination Issues in a Revised IFC Model – a Case Study",
   "year": 2026,
+  "month": 9,
+  "added": 1789372365037,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -641,6 +727,8 @@
  {
   "title": "Dark lecture: an innovative teaching method based on transparent expert ignorance exploration. A case study in BIM engineering education",
   "year": 2026,
+  "month": 9,
+  "added": 1789524825252,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "European Journal of Engineering Education",
@@ -655,6 +743,8 @@
  {
   "title": "Metadata audit of manufacturer-supplied Revit families: a method and a pilot study on a Polish BIM content library",
   "year": 2026,
+  "month": 9,
+  "added": 1790196177185,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "Zenodo",
@@ -670,6 +760,8 @@
  {
   "title": "A method and a pilot study on a Polish BIM content library",
   "year": 2026,
+  "month": 9,
+  "added": 1790230700890,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -684,6 +776,8 @@
  {
   "title": "The BIM model of the Trupel hillfort",
   "year": 2026,
+  "month": 10,
+  "added": 1791881484860,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -699,6 +793,8 @@
  {
   "title": "Analysis of Retractions in BIM and Construction Research: Two Mechanisms of Failure",
   "year": 2026,
+  "month": 10,
+  "added": 1791984225964,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -713,6 +809,8 @@
  {
   "title": "Script: Building Models in the Design Phase as a Source of Legal Spaces for a Three-Dimensional Cadastral Survey",
   "year": 2026,
+  "month": 10,
+  "added": 1792666728282,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -730,6 +828,8 @@
  {
   "title": "Rule-Based Software Agent as the Author of a Coordination Issue: Automatic Generation of BCF Files from an IFC Model",
   "year": 2026,
+  "month": 11,
+  "added": 1794314644497,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Geoinformatica Polonica",
@@ -744,6 +844,8 @@
  {
   "title": "Open standards IDS and bSDD used in the project of the Rectorate of Poznan University of Technology.",
   "year": 2025,
+  "month": 2,
+  "added": 1739957436542,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -759,6 +861,8 @@
  {
   "title": "Automating the conceptual design of residental areas using visual and generative programming",
   "year": 2024,
+  "month": 2,
+  "added": 1705426005406,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Journal of Engineering Design",
@@ -774,6 +878,8 @@
  {
   "title": "BIM comparison models used to compare geometry in accordance with EGiB and near-actual state",
   "year": 2025,
+  "month": 7,
+  "added": 1753350193057,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -788,6 +894,8 @@
  {
   "title": "Building for simulating the supply of a multidimensional cadastre with data from BIM models",
   "year": 2025,
+  "month": 7,
+  "added": 1753350346539,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -802,6 +910,8 @@
  {
   "title": "BIM model of the Public Kindergarten in Secemin Poland",
   "year": 2025,
+  "month": 1,
+  "added": 1736406351289,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -817,6 +927,8 @@
  {
   "title": "Implementation of the Telemetric Integration of the BIM-RFID in Context of Access Control",
   "year": 2024,
+  "month": 10,
+  "added": 1729705682497,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Buildings",
@@ -833,6 +945,8 @@
  {
   "title": "Agent-based Modeling of Fire Situation in NetLogo Using BIM",
   "year": 2025,
+  "month": 5,
+  "added": 1746498919761,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -848,6 +962,8 @@
  {
   "title": "Theoretical Mechanisms of Building Information Modelling (BIM): Information Representation, Data Exchange, and Decision Support",
   "year": 2025,
+  "month": 9,
+  "added": 1757415150392,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Journal of Civil and Hydraulic Engineering",
@@ -862,6 +978,8 @@
  {
   "title": "From Monofunctional Commercial Districts into Multifunctional Urban Areas - Implementation of Sustainable Urban Practices",
   "year": 2023,
+  "month": 12,
+  "added": 1704447487351,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Teka Komisji Architektury, Urbanistyki i Studiów Krajobrazowych",
@@ -877,6 +995,8 @@
  {
   "title": "Błędy poznawczei nowa emfatyczna definicja BIM",
   "year": 2024,
+  "month": 4,
+  "added": 1713527681596,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "BUILDER",
@@ -892,6 +1012,8 @@
  {
   "title": "Landscape Information Model (LIM): a case study of Ołtarzew Park in Ożarów Mazowiecki municipality",
   "year": 2023,
+  "month": 6,
+  "added": 1689063599605,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Budownictwo i Architektura",
@@ -907,6 +1029,8 @@
  {
   "title": "Low-Cost Internet of Things Solution for Building Information Modeling Level 3B—Monitoring, Analysis and Management",
   "year": 2024,
+  "month": 2,
+  "added": 1709292096202,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Journal of Sensor and Actuator Networks",
@@ -921,6 +1045,8 @@
  {
   "title": "A Literature Review of BIM Definitions: Narrow and Broad Views",
   "year": 2023,
+  "month": 11,
+  "added": 1699930517395,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -935,6 +1061,8 @@
  {
   "title": "A Literature Review of BIM Definitions: Narrow and Broad Views",
   "year": 2023,
+  "month": 12,
+  "added": 1702293715231,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Technologies",
@@ -949,6 +1077,8 @@
  {
   "title": "Ekologia narzędzi BIM – georeferencja modeli obiektówbudowlanych z wykorzystaniem CDE",
   "year": 2023,
+  "month": 12,
+  "added": 1702306081081,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Przegląd Budowlany",
@@ -963,6 +1093,8 @@
  {
   "title": "Konstytutywne cechy BIM – parametryczność, interoperacyjność, wielowymiarowość",
   "year": 2023,
+  "month": 12,
+  "added": 1702906248799,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "BUILDER",
@@ -977,6 +1109,8 @@
  {
   "title": "USE OF THE CDE ENVIRONMENT IN TEAM COLLABORATION IN BIM",
   "year": 2023,
+  "month": 12,
+  "added": 1703082319198,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Informatyka, Automatyka, Pomiary w Gospodarce i Ochronie Środowiska",
@@ -995,6 +1129,8 @@
  {
   "title": "Piramida zawodów w BIM",
   "year": 2025,
+  "month": 10,
+  "added": 1759664890195,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Przegląd Budowlany",
@@ -1010,6 +1146,8 @@
  {
   "title": "A critical review of the implementation of building information modelling (BIM) in construction processes in Poland: deep insights",
   "year": 2025,
+  "month": 4,
+  "added": 1744718073569,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Acta Scientiarum Polonorum. Architectura",
@@ -1025,6 +1163,8 @@
  {
   "title": "Semantic Enrichment of Non-graphical Data of a BIM Model of a Public Building from the Perspective of the Facility Manager",
   "year": 2024,
+  "month": 7,
+  "added": 1722342339338,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -1040,6 +1180,8 @@
  {
   "title": "Integration of BIM and GIS data of a heritage building using FME",
   "year": 2024,
+  "month": 3,
+  "added": 1711320544571,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "Zenodo",
@@ -1055,6 +1197,8 @@
  {
   "title": "Integration of BIM and GIS data of a heritage building using FME",
   "year": 2024,
+  "month": 3,
+  "added": 1711320544881,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "Zenodo",
@@ -1070,6 +1214,8 @@
  {
   "title": "Implementation of the telemetric integration of the BIM-RFID in context of access control",
   "year": 2024,
+  "month": 4,
+  "added": 1713792018660,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "ScienceOpen Preprints",
@@ -1086,6 +1232,8 @@
  {
   "title": "A Blended Approach to Inquiry-Based Learning Using the Example of the Interdisciplinary Course of BIM in Spatial Management Studies: A Perspective of Students and Professor",
   "year": 2024,
+  "month": 4,
+  "added": 1713952352770,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Education Sciences",
@@ -1100,6 +1248,8 @@
  {
   "title": "The future of building information modeling – a systematic literature review using artificial intelligence",
   "year": 2024,
+  "month": 2,
+  "added": 1715021297909,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Inżynieria i Budownictwo",
@@ -1114,6 +1264,8 @@
  {
   "title": "IDS Standard and bSDD Service as Tools for Automating Information Exchange and Verification in Projects Implemented in the BIM Methodology",
   "year": 2025,
+  "month": 1,
+  "added": 1737990929596,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Buildings",
@@ -1129,6 +1281,8 @@
  {
   "title": "Site-specific efficient management of soil resources using GIS and BIM technologies",
   "year": 2024,
+  "month": 6,
+  "added": 1717586046981,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Reports on Geodesy and Geoinformatics",
@@ -1145,6 +1299,8 @@
  {
   "title": "Using BIM for the development of accessibility",
   "year": 2024,
+  "month": 6,
+  "added": 1718702215790,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Budownictwo i Architektura",
@@ -1160,6 +1316,8 @@
  {
   "title": "Integration of BIM and GIS Data of a Heritage Building Using FME",
   "year": 2024,
+  "month": 6,
+  "added": 1719435747910,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Civil and Environmental Engineering Reports",
@@ -1175,6 +1333,8 @@
  {
   "title": "BIM Placemat – wdrożenie technologiczne produktu w pracy specjalistów BIM w przedsiębiorstwach projektowych Arcadis i WSP Polska",
   "year": 2024,
+  "month": 8,
+  "added": 1724055190461,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "BUILDER",
@@ -1192,6 +1352,8 @@
  {
   "title": "Review of didactic methodologies at the academic level in the context of BIM",
   "year": 2024,
+  "month": 6,
+  "added": 1720970485358,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Inżynieria i Budownictwo",
@@ -1208,6 +1370,8 @@
  {
   "title": "Standard IFC jako repozytorium stanówprzeszłych, teraźniejszych i przyszłychw całym cyklu życia obiektu budowlanego",
   "year": 2025,
+  "month": 8,
+  "added": 1755617909757,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Przegląd Budowlany",
@@ -1222,6 +1386,8 @@
  {
   "title": "Integration of Laser Scanning, Digital Photogrammetry and BIM Technology: A Review and Case Studies",
   "year": 2024,
+  "month": 9,
+  "added": 1727449402259,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Eng",
@@ -1237,6 +1403,8 @@
  {
   "title": "Nowoczesne materiały i technologie Keramikplattezastosowane w autonomicznej wiosce podmiejskiejz wykorzystaniem BIM",
   "year": 2024,
+  "month": 9,
+  "added": 1727524755430,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Przegląd Budowlany",
@@ -1251,6 +1419,8 @@
  {
   "title": "The Status of the Implementation of the Building Information Modeling Mandate in Poland: A Literature Review",
   "year": 2024,
+  "month": 9,
+  "added": 1727357378615,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "ISPRS International Journal of Geo-Information",
@@ -1267,6 +1437,8 @@
  {
   "title": "Semantic Enrichment of Non-Graphical Data of a BIM Model of a Public Building from the Perspective of the Facility Manager",
   "year": 2024,
+  "month": 10,
+  "added": 1728934352753,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Big Data and Cognitive Computing",
@@ -1282,6 +1454,8 @@
  {
   "title": "HBIM model of the Old Great Synagogue in Włocławek, Poland",
   "year": 2025,
+  "month": 3,
+  "added": 1742393571639,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -1297,6 +1471,8 @@
  {
   "title": "BIM model of Professor Hilary Koprowski's house (“Koprówka”) in Celestynów, Poland",
   "year": 2025,
+  "month": 2,
+  "added": 1740655510268,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -1312,6 +1488,8 @@
  {
   "title": "BIM model of Professor Hilary Koprowski's house (“Koprówka”) in Celestynów, Poland",
   "year": 2025,
+  "month": 2,
+  "added": 1740655596622,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -1327,6 +1505,8 @@
  {
   "title": "INTEGRATION OF BIM AND GIS IN PREDICTING FLOOD DAMAGE TO HISTORIC BUILDINGS: THE CASE OF AUSCHWITZ DEATH CAMP I",
   "year": 2025,
+  "month": 3,
+  "added": 1741599845816,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -1344,6 +1524,8 @@
  {
   "title": "Open standards IDS and bSDD used in the project of the Rectorate of Poznan University of Technology.",
   "year": 2025,
+  "month": 2,
+  "added": 1742459585541,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -1359,6 +1541,8 @@
  {
   "title": "Integrated BIM-GIS model of a section of the planned 4th metro line in Warsaw, Poland",
   "year": 2025,
+  "month": 7,
+  "added": 1753707652428,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -1374,6 +1558,8 @@
  {
   "title": "Analysis of the Tools for Evaluating Embodied Energy Through Building Information Modeling Tools: A Case Study of a Single-Unit Shell Building",
   "year": 2025,
+  "month": 4,
+  "added": 1744045999821,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Earth",
@@ -1392,6 +1578,8 @@
  {
   "title": "Integrated BIM and GIS model of building no. 17 in Auschwitz I camp",
   "year": 2025,
+  "month": 4,
+  "added": 1745827823015,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -1409,6 +1597,8 @@
  {
   "title": "The HBIM Model as a Source in the Building Reconstruction Process: A Case Study of the “Koprówka” in Celestynów, Poland",
   "year": 2025,
+  "month": 4,
+  "added": 1745505919879,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Buildings",
@@ -1424,6 +1614,8 @@
  {
   "title": "BIM Model of District Heating Networks in Design and Investment Management Processes: A Case Study",
   "year": 2025,
+  "month": 5,
+  "added": 1746489910599,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Sustainability",
@@ -1439,6 +1631,8 @@
  {
   "title": "Agent-based modeling of fire situation in NetLogo using BIM model",
   "year": 2025,
+  "month": 5,
+  "added": 1746508380361,
   "type": "preprint",
   "orcid_type": "preprint",
   "venue": "",
@@ -1454,6 +1648,8 @@
  {
   "title": "BIM comparison models used to compare geometry in accordance with EGiB and near-actual state",
   "year": 2025,
+  "month": 7,
+  "added": 1751962472626,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -1468,6 +1664,8 @@
  {
   "title": "Building for simulating the supply of a multidimensional cadastre with data from BIM models",
   "year": 2025,
+  "month": 7,
+  "added": 1751962573154,
   "type": "data",
   "orcid_type": "data-set",
   "venue": "Warsaw University of Technology",
@@ -1482,6 +1680,8 @@
  {
   "title": "A comparative analysis of high-rise building models as a data source for multidimensional cadastre",
   "year": 2025,
+  "month": 10,
+  "added": 1760028345890,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Acta Scientiarum Polonorum. Architectura",
@@ -1499,6 +1699,8 @@
  {
   "title": "Zastosowanie technologii BIM w istniejących obiektach na przykładzie budynku biurowego",
   "year": 2022,
+  "month": 6,
+  "added": 1656610237945,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "MATERIAŁY BUDOWLANE",
@@ -1513,6 +1715,8 @@
  {
   "title": "Budowa modeli przestrzennych 3D ze szczególnym uwzględnieniem analizy oddziaływania przedsięwzięć na środowisko przyrodnicze",
   "year": 2015,
+  "month": 0,
+  "added": 1625503586107,
   "type": "conference",
   "orcid_type": "conference-abstract",
   "venue": "",
@@ -1528,6 +1732,8 @@
  {
   "title": "The Designation of Recreational and Tourist Areas in the Sustainable Management of Rural and Suburban Areas",
   "year": 2023,
+  "month": 1,
+  "added": 1675180388374,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Geomatics and Environmental Engineering",
@@ -1547,6 +1753,8 @@
  {
   "title": "Model BIM z chmury punktów",
   "year": 2019,
+  "month": 0,
+  "added": 1616080495860,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Builder",
@@ -1561,6 +1769,8 @@
  {
   "title": "Geostatistical modelling as an assessment tool of soil pollution based on deposition from atmospheric air",
   "year": 2017,
+  "month": 0,
+  "added": 1616080496025,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Geosciences Journal",
@@ -1576,6 +1786,8 @@
  {
   "title": "Luxury real estate market in Poland",
   "year": 2019,
+  "month": 0,
+  "added": 1616080496302,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "Informatics, Geoinformatics and Remote Sensing. Issue 2.2, Conference Proceedings, Volume 19. Geodesy and Mine Surveying, Photogrammetry and Remote Sensing, Cartography and GIS",
@@ -1591,6 +1803,8 @@
  {
   "title": "Zastosowanie technik informacyjnych w kształceniu na GP - budowa modeli przestrzennych 3D ze szczególnym uwzględnieniem analizy oddziaływania przedsięwzięć na środowisko przyrodnicze",
   "year": 2016,
+  "month": 0,
+  "added": 1616080496623,
   "type": "chapter",
   "orcid_type": "book-chapter",
   "venue": "Projektowanie urbanistyczne w procesie kształcenia na kierunku studiów Gospodarka Przestrzenna",
@@ -1606,6 +1820,8 @@
  {
   "title": "AUTODESK AutoCAD - lispy, makrooperacje, zmienne systemowe",
   "year": 2016,
+  "month": 0,
+  "added": 1616080496621,
   "type": "book",
   "orcid_type": "book",
   "venue": "",
@@ -1621,6 +1837,8 @@
  {
   "title": "Obliczanie współczynnika przenikania ciepła w technologii BIM",
   "year": 2019,
+  "month": 2,
+  "added": 1555326905418,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "",
@@ -1633,6 +1851,8 @@
  {
   "title": "Analysis of atmospheric air pollution deposition to soil environment: The Masovian voivodeship case study",
   "year": 2015,
+  "month": 0,
+  "added": 1555326603921,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "International Multidisciplinary Scientific GeoConference Surveying Geology and Mining Ecology Management, SGEM",
@@ -1648,6 +1868,8 @@
  {
   "title": "Analizy nasłonecznienia z wykorzystaniem BIM",
   "year": 2018,
+  "month": 2,
+  "added": 1555326860162,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "",
@@ -1660,6 +1882,8 @@
  {
   "title": "Use of data of the geostatistics portal in sustainable rural land development: two case studies in Poland",
   "year": 2016,
+  "month": 0,
+  "added": 1625503570229,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Fresenius Environmental Bulletin",
@@ -1676,6 +1900,8 @@
  {
   "title": "Komputerowe modele przestrzenne - zastosowanie w analizach i projektach",
   "year": 2015,
+  "month": 0,
+  "added": 1625503572266,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -1691,6 +1917,8 @@
  {
   "title": "Analiza zanieczyszczenia powietrza atmosferycznego pyłem PM10 i PM2,5 z wykorzystaniem technologii GIS",
   "year": 2015,
+  "month": 0,
+  "added": 1625503585244,
   "type": "conference",
   "orcid_type": "conference-abstract",
   "venue": "",
@@ -1706,6 +1934,8 @@
  {
   "title": "Use of applications and rendering engines in architectural design – state-of-the-art",
   "year": 2023,
+  "month": 3,
+  "added": 1681201244405,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Budownictwo i Architektura",
@@ -1721,6 +1951,8 @@
  {
   "title": "A Case Study on Building Information (BIM) and Land Information (LIM) Models Including Geospatial Data",
   "year": 2022,
+  "month": 11,
+  "added": 1670772212996,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Geomatics and Environmental Engineering",
@@ -1737,6 +1969,8 @@
  {
   "title": "Geostatistical modelling of soil contamination with arsenic, cadmium, lead, and nickel: the Silesian voivodeship, Poland case study",
   "year": 2020,
+  "month": 0,
+  "added": 1608302791825,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "AIMS Geosciences",
@@ -1752,6 +1986,8 @@
  {
   "title": "Zastosowanie cyfrowego bliniakaw zarzdzaniu obiektem uytecznoci publicznej studium przypadku przedszkola w gminie Secemin",
   "year": 2023,
+  "month": 5,
+  "added": 1684921475255,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "BUILDER",
@@ -1767,6 +2003,8 @@
  {
   "title": "SYMULACJE EWAKUACJI W MODELU BIM",
   "year": 2020,
+  "month": 0,
+  "added": 1616080495830,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Zeszyty Naukowe Politechniki Częstochowskiej. Budownictwo.",
@@ -1781,6 +2019,8 @@
  {
   "title": "Model analityczny w technologii BIM",
   "year": 2017,
+  "month": 0,
+  "added": 1616080496046,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Materiały Budowlane",
@@ -1795,6 +2035,8 @@
  {
   "title": "Importowanie mapy zasadniczej do modelu BIM",
   "year": 2017,
+  "month": 0,
+  "added": 1616080496622,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Budownictwo i Architektura",
@@ -1809,6 +2051,8 @@
  {
   "title": "Use of data of the geostatistics portal in sustainable rural land development: two case studies in Poland",
   "year": 2016,
+  "month": 0,
+  "added": 1616080496659,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Fresenius Environmental Bulletin",
@@ -1825,6 +2069,8 @@
  {
   "title": "Analysis of atmospheric air pollution deposition to soil environment: The Masovian Voivodeship case study",
   "year": 2015,
+  "month": 0,
+  "added": 1616080497009,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "Informatics, Geoinformatics and Remote Sensing. Conference Proceedings V. I, Informatics, Geoinformatics, Photogrametry and Remote Sensing",
@@ -1840,6 +2086,8 @@
  {
   "title": "Soil maps at a scale of 1:5000 as a source of soil databases taking soil variability into consideration: a case study from Czermin commune, S Poland",
   "year": 2019,
+  "month": 0,
+  "added": 1616080496398,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Soil Science Annual",
@@ -1856,6 +2104,8 @@
  {
   "title": "O przygotowaniu detali rysunkowych za pomocą modelu BIM i niezależnie od niego",
   "year": 2018,
+  "month": 0,
+  "added": 1616080496614,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Inżynieria i Budownictwo",
@@ -1870,6 +2120,8 @@
  {
   "title": "The use of available data for the assessment of the spatial variability of soil properties in Poland",
   "year": 2017,
+  "month": 0,
+  "added": 1616080496097,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "Water Resources. Forest, Marine and Ocean Ecosystems. Issue 32. Conference Proceedings , Volume 17",
@@ -1886,6 +2138,8 @@
  {
   "title": "Programowanie stropów w BIM",
   "year": 2018,
+  "month": 0,
+  "added": 1616080496622,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Builder",
@@ -1900,6 +2154,8 @@
  {
   "title": "File Hygiene and BIM Models Restrictions",
   "year": 2019,
+  "month": 0,
+  "added": 1616080496347,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Trends in Civil Engineering and its Architecture",
@@ -1914,6 +2170,8 @@
  {
   "title": "Projektowanie instalacji mechanicznych z wykorzystaniem technologii BIM",
   "year": 2017,
+  "month": 0,
+  "added": 1616080496077,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Rynek Instalacyjny",
@@ -1928,6 +2186,8 @@
  {
   "title": "Landscape information modelling: an important aspect of BIM modelling, examples of cubature, infrastructure, and planning projects",
   "year": 2021,
+  "month": 3,
+  "added": 1621943457579,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Geomatics, Landmanagement and Landscape",
@@ -1943,6 +2203,8 @@
  {
   "title": "Zastosowanie technik informacyjnych w kształceniu na GP - budowa modeli przestrzennych 3D ze szczególnym uwzględnieniem analizy oddziaływania przedsięwzięć na środowisko przyrodnicze",
   "year": 2016,
+  "month": 0,
+  "added": 1625503578798,
   "type": "chapter",
   "orcid_type": "book-chapter",
   "venue": "",
@@ -1958,6 +2220,8 @@
  {
   "title": "Luxury real estate market in Poland",
   "year": 2019,
+  "month": 0,
+  "added": 1625503572548,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -1973,6 +2237,8 @@
  {
   "title": "Programowanie stropów w BIM",
   "year": 2018,
+  "month": 0,
+  "added": 1625503593562,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Builder",
@@ -1987,6 +2253,8 @@
  {
   "title": "Analizy energetyczne w modelach BIM 6D",
   "year": 2022,
+  "month": 8,
+  "added": 1666107015977,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "MATERIAŁY BUDOWLANE",
@@ -2003,6 +2271,8 @@
  {
   "title": "Problematyka implementacji BIM na poziomie krajowym",
   "year": 2023,
+  "month": 6,
+  "added": 1687867286342,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Przegląd Budowlany",
@@ -2018,6 +2288,8 @@
  {
   "title": "Edukacja BIM czego uczy i jak uczy studentw",
   "year": 2023,
+  "month": 6,
+  "added": 1687867285475,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Przegląd Budowlany",
@@ -2032,6 +2304,8 @@
  {
   "title": "Modelowanie terenu i skarp na podstawie wektorowej mapy zasadniczej fragmentu miasta Bydgoszczy w oprogramowaniu GIS",
   "year": 2015,
+  "month": 0,
+  "added": 1625503577083,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2047,6 +2321,8 @@
  {
   "title": "Mapy glebowo-rolnicze w skali 1:5000 jako źródło danych oceny zmienności przestrzennej gleb",
   "year": 2017,
+  "month": 0,
+  "added": 1625503573344,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2063,6 +2339,8 @@
  {
   "title": "Modelowanie geostatystyczne w badaniach środowiska przyrodniczego",
   "year": 2016,
+  "month": 0,
+  "added": 1625503573637,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "",
@@ -2077,6 +2355,8 @@
  {
   "title": "Narzędzia optymalizacji, tolerancja geometryczna, hiperłącza, tabele stylów wydruku w projektowaniu CAD",
   "year": 2016,
+  "month": 0,
+  "added": 1625503574491,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "",
@@ -2091,6 +2371,8 @@
  {
   "title": "GIS na kierunku studiów Gospodarka Przestrzenna",
   "year": 2015,
+  "month": 0,
+  "added": 1625503576302,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2105,6 +2387,8 @@
  {
   "title": "AUTODESK AutoCAD - lispy, makrooperacje, zmienne systemowe",
   "year": 2016,
+  "month": 0,
+  "added": 1625503584891,
   "type": "book",
   "orcid_type": "book",
   "venue": "",
@@ -2120,6 +2404,8 @@
  {
   "title": "Analiza zanieczyszczenia powietrza atmosferycznego pyłem PM10 i PM2,5 z wykorzystaniem technologii GIS",
   "year": 2015,
+  "month": 0,
+  "added": 1625503581877,
   "type": "other",
   "orcid_type": "lecture-speech",
   "venue": "",
@@ -2135,6 +2421,8 @@
  {
   "title": "Geochemical cartography as a tool for assessing the degree of soil cantamination with heavy metals in Poland",
   "year": 2016,
+  "month": 0,
+  "added": 1625503582683,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "",
@@ -2150,6 +2438,8 @@
  {
   "title": "Problems in soil databases creation in Poland",
   "year": 2016,
+  "month": 0,
+  "added": 1625503583014,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2166,6 +2456,8 @@
  {
   "title": "Analysis of atmospheric air pollution deposition to soil environment: The Masovian Voivodeship case study",
   "year": 2015,
+  "month": 0,
+  "added": 1625503583682,
   "type": "chapter",
   "orcid_type": "book-chapter",
   "venue": "",
@@ -2181,6 +2473,8 @@
  {
   "title": "Projektowanie instalacji mechanicznych z wykorzystaniem technologii BIM",
   "year": 2017,
+  "month": 0,
+  "added": 1625503594854,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Rynek Instalacyjny",
@@ -2195,6 +2489,8 @@
  {
   "title": "O przygotowaniu detali rysunkowych za pomocą modelu BIM i niezależnie od niego",
   "year": 2018,
+  "month": 0,
+  "added": 1625503593183,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Inżynieria i Budownictwo",
@@ -2209,6 +2505,8 @@
  {
   "title": "Analiza możliwości zastosowania modelu IFC do opisania obiektów infrastrukturalnych na wybranych przykładach",
   "year": 2019,
+  "month": 0,
+  "added": 1625503598110,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Roczniki Geomatyki [Annals of Geomatics]",
@@ -2224,6 +2522,8 @@
  {
   "title": "Importowanie mapy zasadniczej do modelu BIM",
   "year": 2017,
+  "month": 0,
+  "added": 1516876290576,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "Wydział Budownictwa i Architektury",
@@ -2238,6 +2538,8 @@
  {
   "title": "Revit Architecture. Podstawy projektowania (instrukcja oprogramowania)",
   "year": 2015,
+  "month": 0,
+  "added": 1616080496152,
   "type": "book",
   "orcid_type": "book",
   "venue": "",
@@ -2253,6 +2555,8 @@
  {
   "title": "The potential water erosion hazard analysis: The Kielce case study",
   "year": 2014,
+  "month": 0,
+  "added": 1616080497092,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "Soils Forest Ecosystems Marine and Ocean Ecosystems. Conference Proceedings",
@@ -2270,6 +2574,8 @@
  {
   "title": "The potential water erosion hazard analysis: The Kielce case study",
   "year": 2015,
+  "month": 0,
+  "added": 1555326603932,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "International Multidisciplinary Scientific GeoConference Surveying Geology and Mining Ecology Management, SGEM",
@@ -2287,6 +2593,8 @@
  {
   "title": "Wykorzystanie analizy semiwariancji w oszacowaniu stężenia SO2",
   "year": 2014,
+  "month": 6,
+  "added": 1555326924451,
   "type": "journal",
   "orcid_type": "journal-article",
   "venue": "",
@@ -2299,6 +2607,8 @@
  {
   "title": "Wykorzystanie metod geostatystycznych w badaniu zanieczyszczeń powietrza pod kątem oceny stanu gleb",
   "year": 2014,
+  "month": 0,
+  "added": 1616080497029,
   "type": "chapter",
   "orcid_type": "book-chapter",
   "venue": "Remediacja, rekultywacja i rewitalizacja",
@@ -2314,6 +2624,8 @@
  {
   "title": "Analiza stanu wybranych zanieczyszczeń powietrza atmosferycznego na terenie Polski",
   "year": 2014,
+  "month": 0,
+  "added": 1616080497052,
   "type": "chapter",
   "orcid_type": "book-chapter",
   "venue": "Współczesne uwarunkowania gospodarowania przestrzenią - szanse i zagrożenia dla zrównoważonego rozwoju. Organizacja gospodarowania przestrzenią",
@@ -2329,6 +2641,8 @@
  {
   "title": "Technologie Informacyjne",
   "year": 2015,
+  "month": 0,
+  "added": 1625503575666,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2343,6 +2657,8 @@
  {
   "title": "Wyznaczanie granicy rolno-leśnej we wsi Windyki przy użyciu aplikacji QGIS",
   "year": 2015,
+  "month": 0,
+  "added": 1625503577671,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2357,6 +2673,8 @@
  {
   "title": "Analiza transgranicznego oddziaływania wybranych zanieczyszczeń powietrza atmosferycznego na obszarze Polski",
   "year": 2014,
+  "month": 0,
+  "added": 1625503578464,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2372,6 +2690,8 @@
  {
   "title": "Zrozumieć przestrzeń – rola systemów informacji geograficznej w zobrazowaniu obiektów i zjawisk w przestrzeni geograficznej",
   "year": 2015,
+  "month": 0,
+  "added": 1625503580637,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "",
@@ -2388,6 +2708,8 @@
  {
   "title": "Obliczanie wskaźników użytkowania terenu dla potrzeb planowania przestrzennego przy użyciu oprogramowania GIS - AutoCAD Map 3D",
   "year": 2015,
+  "month": 0,
+  "added": 1625503577377,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2403,6 +2725,8 @@
  {
   "title": "Zaawansowane opcje modelowania bloków dynamicznych, wydruku oraz eksportu w aplikacji Autodesk AutoCAD 2015",
   "year": 2015,
+  "month": 0,
+  "added": 1625503575347,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "",
@@ -2417,6 +2741,8 @@
  {
   "title": "Zagrożenia i ochrona powierzchni Ziemi",
   "year": 2015,
+  "month": 0,
+  "added": 1625503575995,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2432,6 +2758,8 @@
  {
   "title": "Analiza rynku nieruchomości na obszarach poprzemysłowych przy użyciu metod geostatystycznych",
   "year": 2014,
+  "month": 0,
+  "added": 1625503577969,
   "type": "conference",
   "orcid_type": "conference-poster",
   "venue": "",
@@ -2448,6 +2776,8 @@
  {
   "title": "Analiza transgranicznego oddziaływania wybranych zanieczyszczeń powietrza atmosferycznego na obszarze Polski. Streszczenie",
   "year": 2014,
+  "month": 0,
+  "added": 1625503579110,
   "type": "conference",
   "orcid_type": "conference-abstract",
   "venue": "",
@@ -2463,6 +2793,8 @@
  {
   "title": "Wykorzystanie metod geostatystycznych w badaniu zanieczyszczeń powietrza pod kątem oceny stanu gleb",
   "year": 2014,
+  "month": 0,
+  "added": 1625503579977,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "",
@@ -2478,6 +2810,8 @@
  {
   "title": "Wykorzystanie analizy semiwariancji w oszacowaniu stężenia SO2 w powietrzu atmosferycznym",
   "year": 2014,
+  "month": 0,
+  "added": 1625503580296,
   "type": "conference",
   "orcid_type": "conference-paper",
   "venue": "",
@@ -2493,6 +2827,8 @@
  {
   "title": "Wykorzystanie metod geostatystycznych w badaniu zanieczyszczenia powietrza pod kątem oceny stanu gleb",
   "year": 2014,
+  "month": 0,
+  "added": 1625503581536,
   "type": "other",
   "orcid_type": "lecture-speech",
   "venue": "",
@@ -2508,6 +2844,8 @@
  {
   "title": "Wykorzystanie analizy semiwariancji w ocenie stanu powietrza atmosferycznego",
   "year": 2014,
+  "month": 0,
+  "added": 1625503583326,
   "type": "conference",
   "orcid_type": "conference-abstract",
   "venue": "",
@@ -2523,6 +2861,8 @@
  {
   "title": "Revit Architecture. Podstawy projektowania (instrukcja oprogramowania)",
   "year": 2015,
+  "month": 0,
+  "added": 1625503584538,
   "type": "book",
   "orcid_type": "book",
   "venue": "",
@@ -2538,6 +2878,8 @@
  {
   "title": "Zrozumieć przestrzeń-rola systemów informacji geograficznej w zobrazowaniu obiektów i zjawisk w przestrzeni geograficznej",
   "year": 2015,
+  "month": 0,
+  "added": 1625503586442,
   "type": "conference",
   "orcid_type": "conference-abstract",
   "venue": "",
@@ -2554,6 +2896,8 @@
  {
   "title": "Projekt zagospodarowania Przedpola Pałacu Wilanowskiego- nr 3",
   "year": 2015,
+  "month": 0,
+  "added": 1625503586781,
   "type": "conference",
   "orcid_type": "conference-abstract",
   "venue": "",
@@ -2573,6 +2917,8 @@
  {
   "title": "Wykorzystanie metod geostatystycznych w badaniu zanieczyszczeń powietrza pod kątem oceny stanu gleb",
   "year": 2014,
+  "month": 0,
+  "added": 1625503587137,
   "type": "chapter",
   "orcid_type": "book-chapter",
   "venue": "",
@@ -2588,6 +2934,8 @@
  {
   "title": "Analiza stanu wybranych zanieczyszczeń powietrza atmosferycznego na terenie Polski",
   "year": 2014,
+  "month": 0,
+  "added": 1625503589061,
   "type": "chapter",
   "orcid_type": "book-chapter",
   "venue": "",
