@@ -6,6 +6,7 @@
 #          type: journal | conference | book | chapter | other
 # ------------------------------------------------------------------
 hide:
+  - "10.14293/pr2199.000824.v1"   # preprint artykułu BIM-RFID (wersja opublikowana jest w Buildings)
   - "instrukcja oprogramowania"   # duplikat podręcznika Revit Architecture (2015) z ORCID
 #  - "10.1234/przyklad.doi"
 #  - "fragment tytułu do ukrycia"

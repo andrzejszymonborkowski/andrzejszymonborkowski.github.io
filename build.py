@@ -266,6 +266,14 @@ def _similar_lo(a, b):
 TALK_TYPES = ("conference-poster", "conference-abstract", "conference-presentation", "lecture-speech")
 
 
+def _distinct(q, p):
+    """Na pewno różne prace: dwie pozycje z ręcznej listy (np. część 1 i 2, przedruk w innym czasopiśmie)
+    albo dwa różne DOI."""
+    if q.get("source") == "list" and p.get("source") == "list":
+        return True
+    return bool(q.get("doi") and p.get("doi") and q["doi"] != p["doi"])
+
+
 def merge(*lists):
     seen, out = {}, []
     for lst in lists:
@@ -275,11 +283,11 @@ def merge(*lists):
             p = classify(dict(p))
             keys = [k for k in (("doi:" + p["doi"]) if p.get("doi") else None,
                                 "t:" + norm_title(p["title"])) if k]
-            hit = next((seen[k] for k in keys if k in seen), None)
+            hit = next((seen[k] for k in keys if k in seen and not _distinct(seen[k], p)), None)
             if hit is None:  # podobny tytuł (±1 rok) = ta sama praca w innej wersji
                 nt = norm_title(p["title"])
                 hit = next((q for q in out if abs((q.get("year") or 0) - (p.get("year") or 0)) <= 1
-                            and q["type"] != "data" and p["type"] != "data"
+                            and q["type"] != "data" and p["type"] != "data" and not _distinct(q, p)
                             and _similar(norm_title(q["title"]), nt)), None)
                 if hit is not None and TYPE_RANK.index(p["type"]) < TYPE_RANK.index(hit["type"]):
                     # nowsza/ważniejsza wersja (np. artykuł zamiast preprintu) wygrywa

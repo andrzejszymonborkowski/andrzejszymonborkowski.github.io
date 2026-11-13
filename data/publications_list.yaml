@@ -492,8 +492,8 @@
   venue: Izolacje
 - title: Using BIM for the development of accessibility
   authors:
-  - A. S. Borkowski
   - M. Kładź
+  - A. S. Borkowski
   year: 2024
   type: journal
   venue: Budownictwo i Architektura
@@ -764,6 +764,7 @@
   year: 2026
   type: journal
   venue: Przegląd Geodezyjny
+  doi: 10.15199/50.2026.3.2
 - title: Integracja BIM i GIS – wyzwania i ograniczenia
   authors:
   - G. Buniewicz
@@ -801,6 +802,7 @@
   year: 2026
   type: journal
   venue: Przegląd Geodezyjny
+  doi: 10.15199/50.2026.2.2
 - title: 'Automated Identification of Heavy BIM Library Components: A Multi-Criteria Analysis Tool for Model Optimization'
   authors:
   - A. S. Borkowski
@@ -827,6 +829,7 @@
 - title: Modelowanie terenu działki pod inwestycję i wykorzystanie zestawienia mas ziemnych w BIM
   authors:
   - A. S. Borkowski
+  - A. Kozłowska
   year: 2025
   type: journal
   venue: Izolacje
@@ -953,3 +956,25 @@
   year: 2019
   type: conference
   venue: International Multidisciplinary Scientific GeoConference SGEM – Conference Proceedings
+# --- uzupełnienia z PDF-ów publikacji (13.11.2026) ---
+- title: Analiza warunków lokalizacji zabudowy jednorodzinnej wolnostojącej na wybranej działce ewidencyjnej z wykorzystaniem BIM
+  authors:
+  - A. S. Borkowski
+  - M. Mórawska
+  year: 2023
+  type: journal
+  venue: Izolacje
+- title: Energooszczędne rozwiązania dla domów jednorodzinnych oparte na analizach energetycznych w modelach BIM 6D
+  authors:
+  - A. S. Borkowski
+  - N. Osińska
+  - N. Szymańska
+  year: 2023
+  type: journal
+  venue: Izolacje
+- title: Wdrożenie BIM w przedsiębiorstwie projektowym
+  authors:
+  - A. S. Borkowski
+  year: 2024
+  type: journal
+  venue: Rynek Instalacyjny
