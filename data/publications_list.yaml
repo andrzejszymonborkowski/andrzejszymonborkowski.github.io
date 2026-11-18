@@ -320,7 +320,8 @@
   year: 2019
   type: journal
   venue: Roczniki Geomatyki [Annals of Geomatics]
-- title: 'Mapy glebowe w skali 1:5000 jako źródło bazy danych o glebach z uwzględnieniem rozmycia gleb w Polsce (Soil maps at a scale of 1:5000 as a source of soil databases taking soil variability into consideration: a case study from Czermin commune, S Poland)'
+- title: 'Soil maps at a scale of 1:5000 as a source of soil databases taking soil variability into consideration: a case study from Czermin commune, S Poland'
+  doi: 10.2478/ssa-2019-0006
   authors:
   - J. Kwiatkowska-Malina
   - A. Bielska
