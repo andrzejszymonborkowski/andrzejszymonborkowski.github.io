@@ -723,6 +723,7 @@ header.site.open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45
 main h2::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--gold);margin-right:14px;vertical-align:middle;position:relative;top:-4px}
 /* ikony profili i przycisk kontaktu */
 .links{align-items:center;gap:8px}
+.links a{padding:9px 18px;font-size:.93rem}
 .links a.ic{width:40px;height:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font:700 .8rem var(--sans);letter-spacing:.02em}
 .links a.contact{display:inline-flex;align-items:center;gap:8px;background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:700;padding:9px 20px;margin-right:8px}
 .links a.contact:hover{background:#fff;border-color:#fff;color:var(--navy)}
@@ -1339,8 +1340,7 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
         key = l["url"].rstrip("/").lower()
         if key not in seen_l and l["label"] not in [x["label"] for x in all_links]:
             seen_l.add(key); all_links.append(l)
-    links = "".join(f'<a class="ic" href="{esc(l["url"])}" title="{esc(l["label"])}" aria-label="{esc(l["label"])}">'
-                    f'{esc(icon_abbr(l["label"]))}</a>' for l in all_links)
+    links = "".join(f'<a href="{esc(l["url"])}">{esc(l["label"])}</a>' for l in all_links)
     if cfg.get("email"):
         links = (f'<a class="contact" href="mailto:{esc(cfg.get("email"))}" title="{esc(cfg.get("email"))}">'
                  f'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'
