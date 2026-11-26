@@ -368,7 +368,8 @@ I18N = {
                cite="Cite", copy="Copy", copied="Copied!", close="Close", contact="Contact",
                nores="No matching publications.", peer="publications", about="About",
                recent="Recent publications", allp="all", datasets="datasets & software", journals="journal articles",
-               home_kick="Profile", talks="Talks", coop="Cooperation", awards="Awards", highlights="Highlights",
+               home_kick="Profile", contact_btn="Contact", show_all="show all",
+               show_older="Show older publications", all_nodata="All publications", talks="Talks", coop="Cooperation", awards="Awards", highlights="Highlights",
                talks_sub="Invited and plenary lectures, conference presentations and posters",
                coop_sub="Industry cooperation, implemented results and academic partners",
                awards_sub="Awards, distinctions and recognition",
@@ -394,7 +395,8 @@ I18N = {
                nores="Brak pasujących publikacji.", peer="publikacji", about="O mnie",
                recent="Najnowsze publikacje", allp="wszystkie", datasets="zbiorów danych i oprogramowania",
                journals="artykułów w czasopismach",
-               home_kick="Profil", talks="Wystąpienia", coop="Współpraca", awards="Nagrody", highlights="Najważniejsze osiągnięcia",
+               home_kick="Profil", contact_btn="Kontakt", show_all="pokaż wszystkie",
+               show_older="Pokaż starsze publikacje", all_nodata="Wszystkie publikacje", talks="Wystąpienia", coop="Współpraca", awards="Nagrody", highlights="Najważniejsze osiągnięcia",
                talks_sub="Wykłady na zaproszenie i plenarne, referaty konferencyjne i postery",
                coop_sub="Współpraca z przemysłem, wdrożenia i partnerzy naukowi",
                awards_sub="Nagrody, wyróżnienia i odznaczenia",
@@ -697,6 +699,69 @@ footer{background:var(--navy);border-top:0;color:var(--ltext)}
 .hero img,.hero .ph{width:150px;height:182px}.kick{margin-top:48px}}
 """
 
+CSS += """
+/* ================= układ: menu, kafelki, zwijanie, projekty, ikony ================= */
+header.site .wrap{max-width:1240px;flex-wrap:nowrap;padding-top:12px;padding-bottom:12px}
+.brand{white-space:nowrap}
+nav{flex-wrap:nowrap;gap:4px 20px;align-items:center}
+nav a{font-size:.94rem;white-space:nowrap}
+.burger{display:none;background:none;border:1px solid rgba(169,184,204,.35);border-radius:6px;width:42px;height:38px;padding:9px 10px;cursor:pointer;flex:none}
+.burger span{display:block;height:2px;background:#fff;border-radius:2px;margin:4px 0;transition:transform .2s,opacity .2s}
+header.site.open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+header.site.open .burger span:nth-child(2){opacity:0}
+header.site.open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:1120px){
+ header.site .wrap{flex-wrap:wrap}
+ .burger{display:block}
+ nav{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0 6px}
+ header.site.open nav{display:flex}
+ nav a{padding:11px 2px;border-bottom:1px solid rgba(169,184,204,.12);font-size:1rem}
+ nav a.active{border-bottom-color:var(--gold)}
+ nav a.lang{align-self:flex-start;margin:12px 0 4px;border-bottom:0}
+}
+/* nagłówki sekcji ze złotą kropką zamiast numerowanych etykiet */
+main h2::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--gold);margin-right:14px;vertical-align:middle;position:relative;top:-4px}
+/* ikony profili i przycisk kontaktu */
+.links{align-items:center;gap:8px}
+.links a.ic{width:40px;height:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font:700 .8rem var(--sans);letter-spacing:.02em}
+.links a.contact{display:inline-flex;align-items:center;gap:8px;background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:700;padding:9px 20px;margin-right:8px}
+.links a.contact:hover{background:#fff;border-color:#fff;color:var(--navy)}
+.links a.contact svg{width:18px;height:18px}
+/* publikacje: starsze lata zwinięte, dane osobno */
+body:not(.showall) .old{display:none}
+.showold{display:block;width:100%;margin:34px 0 0;padding:14px;border:1.5px solid var(--gold);background:#fff;border-radius:8px;font:700 .95rem var(--sans);color:var(--navy);cursor:pointer}
+.showold:hover{background:var(--light)}
+body.showall .showold{display:none}
+/* zwijane długie grupy (wystąpienia) */
+details.fold{margin:56px 0 0}
+details.fold summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+details.fold summary::-webkit-details-marker{display:none}
+details.fold summary h2{margin:0}
+.fold-hint{font:700 .74rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--primary)}
+.fold-hint::after{content:" ▾"}
+details.fold[open] .fold-hint{display:none}
+details.fold table.s{margin-top:18px}
+/* projekty */
+.cards.feature{grid-template-columns:1fr}
+.cards.feature .card{padding:30px 34px}
+.cards.feature .card .t{font-size:1.5rem;line-height:1.3}
+table.proj .pt{font-family:var(--serif);font-size:1.05rem;color:var(--navy);line-height:1.35}
+table.proj .pm{color:var(--muted);font-size:.88rem;margin-top:4px}
+/* kafelki liczb na telefonie: 3 kolumny, mniejsze */
+@media (max-width:720px){
+ .stats{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:-44px}
+ .stat{padding:14px 10px 10px}
+ .stat::before{left:10px;width:20px}
+ .stat b{font-size:1.55rem}
+ .stat span{font-size:.72rem;line-height:1.25;display:block;margin-top:2px}
+ .stats.inpage{grid-template-columns:repeat(2,1fr)}
+ .cards.feature .card{padding:22px}
+ .cards.feature .card .t{font-size:1.2rem}
+ table.proj td:last-child{display:none}
+ table.proj .pm::after{content:attr(data-y)}
+}
+"""
+
 JS = """
 /* ---- animowana sieć (węzły i krawędzie) w ciemnych pasach ---- */
 (function(){
@@ -852,6 +917,12 @@ JS = """
   els.forEach(el=>io.observe(el));
  } else els.forEach(run);
 })();
+/* ---- menu na telefonie ---- */
+(function(){
+ const b=document.querySelector('.burger'),h=document.querySelector('header.site');if(!b)return;
+ b.addEventListener('click',()=>{const o=h.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){h.classList.remove('open');b.setAttribute('aria-expanded',false);}});
+})();
 /* ---- wyszukiwarka publikacji ---- */
 (function(){
  const q=document.getElementById('q'),t=document.getElementById('t');
@@ -859,11 +930,18 @@ JS = """
  const items=[...document.querySelectorAll('.pub')],heads=[...document.querySelectorAll('.year-h')],empty=document.querySelector('.empty');
  function run(){
   const s=q.value.trim().toLowerCase(),ty=t.value;let n=0;
-  items.forEach(el=>{const ok=(!s||el.dataset.s.includes(s))&&(!ty||el.dataset.t===ty);el.hidden=!ok;if(ok)n++;});
-  heads.forEach(h=>{const y=h.dataset.y;h.hidden=!items.some(el=>el.dataset.y===y&&!el.hidden);});
+  // przy wyszukiwaniu lub filtrze pokazujemy wszystkie lata; dane badawcze tylko po wybraniu filtra „Dane”
+  document.body.classList.toggle('showall',!!(s||ty)||document.body.classList.contains('olderopen'));
+  items.forEach(el=>{const ok=(!s||el.dataset.s.includes(s))&&(ty?el.dataset.t===ty:el.dataset.t!=='data');el.hidden=!ok;if(ok)n++;});
+  heads.forEach(h=>{const y=h.dataset.y,v=items.filter(el=>el.dataset.y===y&&!el.hidden).length;h.hidden=!v;const c=h.querySelector('.cnt');if(c)c.textContent=v;});
   empty.style.display=n?'none':'block';
  }
  q.addEventListener('input',run);t.addEventListener('change',run);
+ const so=document.querySelector('.showold');
+ const openOld=()=>{document.body.classList.add('olderopen','showall');if(so)so.hidden=true;};
+ if(so)so.addEventListener('click',openOld);
+ document.querySelectorAll('.years a').forEach(a=>a.addEventListener('click',()=>{const h=document.querySelector(a.getAttribute('href'));if(h&&h.classList.contains('old'))openOld();}));
+ run();
  const m=location.hash.match(/^#q=(.+)$/);if(m){q.value=decodeURIComponent(m[1]);run();window.scrollTo(0,0);}
 })();
 /* ---- okno Cite (APA / IEEE / BibTeX) ---- */
@@ -1110,7 +1188,6 @@ def page(ctx, active, title, body, band=""):
     n_h2 = body.count("<h2>")
     kname = L["home_kick"] if active == "index.html" else title
     cnt = iter(range(1, n_h2 + 1))
-    body = re.sub(r"<h2>", lambda m: f'<div class="kick">{esc(kname)} &nbsp;{next(cnt)} / {n_h2}</div><h2>', body)
     band = band.replace('<div class="goldbar"></div>',
                         f'<div class="kick">{esc(tr(cfg, "kicker", lang) if "hero" in band else cfg["name"])}</div>', 1)
     return f"""<!DOCTYPE html>
@@ -1120,7 +1197,9 @@ def page(ctx, active, title, body, band=""):
 <meta name="description" content="{esc(desc)}">
 {og}
 <link rel="stylesheet" href="{base}style.css?v={ASSET_V}">{gc_html}</head><body>
-<header class="site"><div class="wrap"><a class="brand" href="index.html">{esc(cfg['name'])}</a><nav>{nav}</nav></div></header>
+<header class="site"><div class="wrap"><a class="brand" href="index.html">{esc(cfg['name'])}</a>
+<button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
+<nav id="mainnav">{nav}</nav></div></header>
 {band}
 <main><div class="wrap">{body}</div></main>
 <footer><div class="wrap"><span>© {date.today().year} {esc(cfg['name'])} · {esc(tr(cfg, 'affiliation', lang))}</span><span>{L['updated']}: {date.today().isoformat()}</span></div></footer>
@@ -1133,16 +1212,27 @@ def small_band(title, sub=""):
             + (f'<p>{esc(sub)}</p>' if sub else "") + '</div></section>')
 
 
-def sections_html(groups, lang):
+ICON_ABBR = {"orcid": "iD", "baza wiedzy": "BW", "scopus": "Sc", "web of science": "WoS", "google scholar": "GS",
+             "researchgate": "RG", "wikipedia": "W", "linkedin": "in", "github": "GH"}
+
+
+def icon_abbr(label):
+    l = label.lower()
+    return next((v for k, v in ICON_ABBR.items() if k in l), "".join(w[0] for w in label.split()[:2]).upper())
+
+
+def sections_html(groups, lang, more_label="", fold_over=12):
     """Grupy {category, items:[{text, years}]} jako tabele – Działalność, Wystąpienia, Współpraca, Nagrody."""
     out = []
     for g in groups or []:
         items = g.get("items", []) or []
         cnt = f' <span class="cnt">{len(items)}</span>' if g.get("count", True) and items else ""
-        out.append(f"<h2>{esc(tr(g, 'category', lang))}{cnt}</h2><table class='s'>")
-        for it in items:
-            out.append(f"<tr><td>{esc(tr(it, 'text', lang))}</td><td>{esc(str(it.get('years', '')))}</td></tr>")
-        out.append("</table>")
+        rows = "".join(f"<tr><td>{esc(tr(it, 'text', lang))}</td><td>{esc(str(it.get('years', '')))}</td></tr>" for it in items)
+        if fold_over and len(items) > fold_over:  # długie grupy zwinięte – rozwija się kliknięciem w nagłówek
+            out.append(f"<details class='fold'><summary><h2>{esc(tr(g, 'category', lang))}{cnt}</h2>"
+                       f"<span class='fold-hint'>{more_label}</span></summary><table class='s'>{rows}</table></details>")
+        else:
+            out.append(f"<h2>{esc(tr(g, 'category', lang))}{cnt}</h2><table class='s'>{rows}</table>")
     return "".join(out)
 
 
@@ -1249,8 +1339,12 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
         key = l["url"].rstrip("/").lower()
         if key not in seen_l and l["label"] not in [x["label"] for x in all_links]:
             seen_l.add(key); all_links.append(l)
-    links = "".join(f'<a href="{esc(l["url"])}">{esc(l["label"])}</a>' for l in all_links)
-    links += f'<a href="mailto:{esc(cfg.get("email"))}">{esc(cfg.get("email"))}</a>' if cfg.get("email") else ""
+    links = "".join(f'<a class="ic" href="{esc(l["url"])}" title="{esc(l["label"])}" aria-label="{esc(l["label"])}">'
+                    f'{esc(icon_abbr(l["label"]))}</a>' for l in all_links)
+    if cfg.get("email"):
+        links = (f'<a class="contact" href="mailto:{esc(cfg.get("email"))}" title="{esc(cfg.get("email"))}">'
+                 f'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'
+                 f'{L["contact_btn"]}</a>') + links
     n_j = sum(1 for p in pubs if p["type"] == "journal")
     n_pub = sum(1 for p in pubs if p["type"] not in ("data", "preprint", "other"))
     n_data = sum(1 for p in pubs if p["type"] == "data")
@@ -1301,19 +1395,31 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
     # ---- publikacje
     years = sorted({p["year"] for p in pubs}, reverse=True)
     types_present = [k for k in TL if any(p["type"] == k for p in pubs)]
-    opts = f'<option value="">{L["all"]}</option>' + "".join(
+    n_nodata = sum(1 for p in pubs if p["type"] != "data")
+    opts = f'<option value="">{L["all_nodata"]} ({n_nodata})</option>' + "".join(
         f'<option value="{k}">{TL[k][0]} ({sum(1 for p in pubs if p["type"]==k)})</option>' for k in types_present)
     ylinks = "".join(f'<a href="#y{y}">{y or "n.d."}</a>' for y in years)
     blocks, idx = [], 0
+    open_years = [y for y in years if y][:3]  # trzy ostatnie lata rozwinięte, starsze pod przyciskiem
+    n_old = 0
     for y in years:
-        blocks.append(f'<h2 class="year-h" id="y{y}" data-y="{y}">{y or "n.d."} <span class="cnt">{sum(1 for q in pubs if q["year"] == y)}</span></h2>')
+        old = "" if y in open_years else " old"
+        ny = sum(1 for q in pubs if q["year"] == y and q["type"] != "data")
+        if old and not any("showold" in x for x in blocks):
+            blocks.append(f'<button class="showold" type="button">{L["show_older"]} ({{N_OLD}})</button>')
+        blocks.append(f'<h2 class="year-h{old}" id="y{y}" data-y="{y}">{y or "n.d."} <span class="cnt">{ny}</span></h2>')
         for p in (p for p in pubs if p["year"] == y):
-            blocks.append(render_pub(p, idx, me, L, TL)); idx += 1
+            h = render_pub(p, idx, me, L, TL); idx += 1
+            if old:
+                h = h.replace('<div class="pub"', '<div class="pub old"', 1)
+                n_old += p["type"] != "data"
+            blocks.append(h)
+
     pubs_html = f"""<div class="years">{ylinks}</div>
 <div class="toolbar"><input id="q" type="search" placeholder="{L['search']}"><select id="t">{opts}</select></div>
-{''.join(blocks)}<div class="empty">{L['nores']}</div>"""
+{''.join(blocks).replace("{N_OLD}", str(n_old))}<div class="empty">{L['nores']}</div>"""
     W("publications.html", page(ctx, "publications.html", L["pubs"], pubs_html,
-                                small_band(L["pubs"], f"{len(pubs)} {L['total']} · {L['source']}")))
+                                small_band(L["pubs"], f"{n_nodata} {L['total']} · {len(pubs) - n_nodata} {L['datasets']} · {L['source']}")))
 
     # ---- studenci
     sh = []
@@ -1349,7 +1455,18 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
         group = [p for p in projects if p.get("status", "completed") == st]
         if not group:
             continue
-        ph.append(f"<h2>{label} <span class=\"cnt\">{len(group)}</span></h2><div class='cards'>")
+        ph.append(f"<h2>{label} <span class=\"cnt\">{len(group)}</span></h2>")
+        if st == "completed":  # zakończone jako zwarta lista
+            ph.append("<table class='s proj'>")
+            for p in group:
+                ttl = tr(p, "title", lang)
+                t = f'<a href="{esc(p["url"])}">{esc(ttl)}</a>' if p.get("url") else esc(ttl)
+                meta = " · ".join(esc(x) for x in (tr(p, "funder", lang),
+                                  f'{L["role"]}: {tr(p, "role", lang)}' if p.get("role") else None) if x)
+                ph.append(f'<tr><td><div class="pt">{t}</div><div class="pm" data-y=" · {esc(p.get('years', ''))}">{meta}</div></td><td>{esc(p.get("years", ""))}</td></tr>')
+            ph.append("</table>")
+            continue
+        ph.append("<div class='cards feature'>")
         for p in group:
             ttl = tr(p, "title", lang)
             t = f'<a href="{esc(p["url"])}">{esc(ttl)}</a>' if p.get("url") else esc(ttl)
@@ -1367,7 +1484,7 @@ def build_lang(ctx, pubs, auto_links, data, outdir):
 
     # ---- wystąpienia, współpraca, nagrody
     W("talks.html", page(ctx, "talks.html", L["talks"],
-                         sections_html(data["talks"], lang) + f'<p class="note">{L["talks_note"]}</p>',
+                         sections_html(data["talks"], lang, L["show_all"]) + f'<p class="note">{L["talks_note"]}</p>',
                          small_band(L["talks"], L["talks_sub"])))
     W("cooperation.html", page(ctx, "cooperation.html", L["coop"], sections_html(data["coop"], lang),
                                small_band(L["coop"], L["coop_sub"])))
